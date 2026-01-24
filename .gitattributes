@@ -1,0 +1,93 @@
+# Set default behavior to automatically normalize line endings.
+* text=auto
+
+# Unity YAML files
+*.meta text eol=lf
+*.prefab text eol=lf merge=unityyamlmerge
+*.unity text eol=lf merge=unityyamlmerge
+*.asset text eol=lf
+*.controller text eol=lf
+*.mat text eol=lf
+*.anim text eol=lf
+*.overrideController text eol=lf
+
+# Unity binary files
+*.cubemap binary
+*.unitypackage binary
+
+# 3D models
+*.fbx binary
+*.FBX binary
+*.blend binary
+*.obj binary
+
+# Audio
+*.mp3 binary
+*.wav binary
+*.ogg binary
+*.aif binary
+*.aiff binary
+*.mod binary
+*.it binary
+*.s3m binary
+*.xm binary
+
+# Video
+*.mov binary
+*.avi binary
+*.mp4 binary
+*.mpg binary
+*.mpeg binary
+*.webm binary
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.psd binary
+*.ai binary
+*.tif binary
+*.tiff binary
+*.exr binary
+*.tga binary
+*.bmp binary
+*.svg binary
+
+# Fonts
+*.ttf binary
+*.otf binary
+
+# Compressed archives
+*.zip binary
+*.7z binary
+*.gz binary
+*.rar binary
+
+# Executables
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+
+# Shader files
+*.shader text eol=lf
+*.cginc text eol=lf
+*.compute text eol=lf
+*.hlsl text eol=lf
+*.glsl text eol=lf
+
+# Code files
+*.cs text eol=lf diff=csharp
+*.js text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+
+# Project files
+*.csproj text eol=crlf
+*.sln text eol=crlf
+
+# Documentation
+*.pdf binary
