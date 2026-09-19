@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 666be13cef695d34dad9f41be0c252c9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Prefabs/FenceA.prefab
+  uploadId: 834056

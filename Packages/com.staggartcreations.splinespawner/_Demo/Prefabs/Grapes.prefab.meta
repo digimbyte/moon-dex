@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f6394e6cf6d4e3142bb5d103c910f4f0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Prefabs/Grapes.prefab
+  uploadId: 834056

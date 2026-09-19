@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 675b09a2bc00c744db1cb33563ee6bc9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Prefabs/Arrow.prefab
+  uploadId: 834056

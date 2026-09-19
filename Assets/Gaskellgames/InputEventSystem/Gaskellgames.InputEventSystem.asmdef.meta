@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 841cee5f278faaa44b687f2e81c9b6e2
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Gaskellgames.InputEventSystem.asmdef
+  uploadId: 846358

@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 48d04c487c704aa1bb24474a93a8c998
+timeCreated: 1733255337
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Runtime/Modifiers/Scale.cs
+  uploadId: 834056

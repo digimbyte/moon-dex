@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: fb0a1488dbfd49df9d011f5380e1bd6e
+timeCreated: 1764433154
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Editor/MaskLayerSettings.cs
+  uploadId: 834056

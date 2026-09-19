@@ -1,0 +1,1 @@
+{"timestamp":12345,"version":5.2,"zones":[{"name":"Test Name 1","desc":"This is test zone number 1","pin":[0,0,0],"link":"test-zone-1"},{"name":"Test Name 2","desc":"This is test zone number 2","pin":[0,0,0],"link":"test-zone-2"}]}

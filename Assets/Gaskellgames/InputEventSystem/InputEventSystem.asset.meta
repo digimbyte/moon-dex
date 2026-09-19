@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5b98264cb354e0c46b7b3231d92d0cc3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/InputEventSystem.asset
+  uploadId: 846358

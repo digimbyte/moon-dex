@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 8fdc53f8acae4515bf664b8244dd393c
+timeCreated: 1733819902
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Runtime/Modifiers/SnapToGrid.cs
+  uploadId: 834056

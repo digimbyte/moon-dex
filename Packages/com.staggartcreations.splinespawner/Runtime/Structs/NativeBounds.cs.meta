@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 02494a5350d5408bb388a04e65585171
+timeCreated: 1753710238
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Runtime/Structs/NativeBounds.cs
+  uploadId: 834056

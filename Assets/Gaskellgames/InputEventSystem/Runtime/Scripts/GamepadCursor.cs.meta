@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 21d740a07d398fc49bd17b369fedcf21
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 76333234355f90e499221542ff912c34, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Runtime/Scripts/GamepadCursor.cs
+  uploadId: 846358

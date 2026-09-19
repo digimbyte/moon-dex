@@ -1,0 +1,368 @@
+items:
+  - id: vehicles
+    label: Vehicles
+    weight: 4
+    children:
+      - id: rover
+        label: Rover
+        weight: 3
+        children:
+          - id: rover_light
+            label: Light Rover
+            description: ""
+            weight: 2
+          - id: rover_heavy
+            label: Heavy Rover
+            description: ""
+            weight: 1
+
+      - id: shuttle
+        label: Shuttle
+        weight: 2
+        children:
+          - id: shuttle_cargo
+            label: Cargo Shuttle
+            description: ""
+            weight: 2
+          - id: shuttle_scout
+            label: Scout Shuttle
+            description: ""
+            weight: 1
+
+      - id: bike
+        label: Bike
+        description: ""
+        weight: 1
+
+  - id: tools
+    label: Tools
+    weight: 3
+    children:
+      - id: mining
+        label: Mining
+        weight: 3
+        children:
+          - id: pickaxe
+            label: Pickaxe
+            description: ""
+            weight: 2
+          - id: drill
+            label: Drill
+            description: ""
+            weight: 1
+      - id: building
+        label: Building
+        weight: 2
+        children:
+          - id: welder
+            label: Welder
+            description: ""
+            weight: 2
+          - id: cutter
+            label: Cutter
+            description: ""
+            weight: 1
+      - id: utility
+        label: Utility
+        weight: 1
+        children:
+          - id: scanner
+            label: Scanner
+            description: ""
+            weight: 2
+          - id: beacon
+            label: Beacon
+            description: ""
+            weight: 1
+
+  - id: creatures
+    label: Creatures
+    weight: 5
+    children:
+      - id: herbivores
+        label: Herbivores
+        weight: 2
+        children:
+          - id: mche
+            label: Hector
+            description: "[example] A hippo-inspired grazer suited to life near water."
+            weight: 1
+          - id: mcr
+            label: Roz
+            description: "[example] A rabbit-inspired grazer with long ears."
+            weight: 1
+          - id: mcco
+            label: Cobie
+            description: "[example] A camel-inspired creature adapted to dry terrain."
+            weight: 1
+          - id: mcmo
+            label: Morfyn
+            description: "[example] A moose-inspired browser with long legs."
+            weight: 1
+          - id: mcbo
+            label: Boaz
+            description: "[example] A bovine-inspired grazer with a sturdy build."
+            weight: 1
+          - id: mcdr
+            label: Drucie
+            description: "[example] A deer-inspired browser with a light, agile build."
+            weight: 1
+          - id: mck
+            label: Keats
+            description: "[example] A kangaroo-inspired creature with powerful hind legs."
+            weight: 1
+          - id: mcem
+            label: Emyra
+            description: "[example] An elephant-inspired giant with a long trunk."
+            weight: 1
+          - id: mcri
+            label: Ridley
+            description: "[example] A rhino-inspired grazer with a heavy build."
+            weight: 1
+          - id: mcdar
+            label: Dart
+            description: "[example] A dodo-inspired flightless bird."
+            weight: 1
+          - id: mcgu
+            label: Gunder
+            description: "[example] A goat-inspired climber with sure-footed hooves."
+            weight: 1
+          - id: mcsp
+            label: Speed
+            description: "[example] A sloth-inspired tree dweller with a slow pace."
+            weight: 1
+          - id: mcz
+            label: Zandra
+            description: "[example] A zebra-inspired striped grazer."
+            weight: 1
+          - id: mcba
+            label: Baxlee
+            description: "[example] A beaver-inspired swimmer with strong teeth and a broad tail."
+            weight: 1
+          - id: mcg
+            label: Gideon
+            description: "[example] A gorilla-inspired creature with powerful arms."
+            weight: 1
+          - id: mcmi
+            label: Minerva
+            description: "[example] A mammoth-inspired giant with curved tusks."
+            weight: 1
+          - id: mcpo
+            label: Posey
+            description: "[example] A parrot-inspired bird with a curved beak."
+            weight: 1
+          - id: mcdj
+            label: Django
+            description: "[example] A giraffe-inspired browser with a long neck."
+            weight: 1
+
+      - id: predators
+        label: Predators
+        weight: 2
+        children:
+          - id: mcspe
+            label: Speers
+            description: "[example] A sabretooth-inspired hunter with long canine teeth."
+            weight: 1
+          - id: mce
+            label: Everett
+            description: "[example] An eagle-inspired hunter with broad wings."
+            weight: 1
+          - id: mcl
+            label: Lennox
+            description: "[example] A lion-inspired hunter with a powerful build."
+            weight: 1
+          - id: mcwy
+            label: Wynter
+            description: "[example] A wildcat-inspired hunter with an agile build."
+            weight: 1
+          - id: mcs
+            label: Sirius
+            description: "[example] A snake-inspired hunter with a flexible, limbless body."
+            weight: 1
+          - id: mcf
+            label: Fender
+            description: "[example] A frog-inspired creature with powerful jumping legs."
+            weight: 1
+          - id: mcc
+            label: Claxton
+            description: "[example] A crocodile-inspired ambush hunter with powerful jaws."
+            weight: 1
+          - id: mcdo
+            label: Dottie
+            description: "[example] A dolphin-inspired aquatic hunter with a streamlined body."
+            weight: 1
+          - id: mcsh
+            label: Sheldon
+            description: "[example] A shark-inspired aquatic hunter with a streamlined body."
+            weight: 1
+          - id: mcp
+            label: Piper
+            description: "[example] A penguin-inspired flightless bird built for swimming."
+            weight: 1
+          - id: mct
+            label: Tilden
+            description: "[example] A tiger-inspired striped hunter."
+            weight: 1
+          - id: mcj
+            label: Jupiter
+            description: "[example] A jellyfish-inspired drifter with trailing tentacles."
+            weight: 1
+          - id: mcov
+            label: Ova
+            description: "[example] An octopus-inspired creature with eight flexible arms."
+            weight: 1
+          - id: mcwa
+            label: Wai
+            description: "[example] A whale-inspired giant adapted to aquatic life."
+            weight: 1
+          - id: mcfu
+            label: Fulton
+            description: "[example] A falcon-inspired hunter with swift, precise flight."
+            weight: 1
+          - id: mch
+            label: Holden
+            description: "[example] A hawk-inspired hunter with sharp talons."
+            weight: 1
+          - id: mco
+            label: Orson
+            description: "[example] An owl-inspired hunter adapted to the night."
+            weight: 1
+          - id: mcch
+            label: Chantz
+            description: "[example] A cheetah-inspired hunter built for speed."
+            weight: 1
+          - id: mcw
+            label: Wila
+            description: "[example] A wolf-inspired hunter suited to travelling in a pack."
+            weight: 1
+
+      - id: omnivores
+        label: Omnivores
+        weight: 2
+        children:
+          - id: mclu
+            label: Ludvik
+            description: "[example] A lizard-inspired creature with a scaled body."
+            weight: 1
+          - id: mcm
+            label: Malaki
+            description: "[example] A monkey-inspired climber with grasping hands."
+            weight: 1
+          - id: mccha
+            label: Chalkly
+            description: "[example] A chicken-inspired ground bird that scratches for food."
+            weight: 1
+          - id: mcfo
+            label: Fortuna
+            description: "[example] A flamingo-inspired wading bird with long legs."
+            weight: 1
+          - id: mccl
+            label: Clause
+            description: "[example] A crab-inspired creature with a hard shell and pincers."
+            weight: 1
+          - id: mcfi
+            label: Fisk
+            description: "[example] A fish-inspired swimmer with fins and gills."
+            weight: 1
+          - id: mcbr
+            label: Bromley
+            description: "[example] A bear-inspired forager with a powerful build."
+            weight: 1
+          - id: mcpe
+            label: Pezi
+            description: "[example] A pig-inspired forager with a sensitive snout."
+            weight: 1
+          - id: mcb
+            label: Brynly
+            description: "[example] A badger-inspired forager with strong digging claws."
+            weight: 1
+          - id: mcd
+            label: Dalton
+            description: "[example] A duck-inspired waterbird with webbed feet."
+            weight: 1
+          - id: mcta
+            label: Tadeo
+            description: "[example] A turtle-inspired creature protected by a shell."
+            weight: 1
+          - id: mcsa
+            label: Saturn
+            description: "[example] A squirrel-inspired climber that gathers seeds and nuts."
+            weight: 1
+
+      - id: rares
+        label: Rares
+        weight: 1
+        children:
+          - id: mcda
+            label: Daxton
+            description: "[example] A dragon-inspired mythical creature."
+            weight: 1
+
+  - id: trainers
+    label: Trainers
+    weight: 2
+    children:
+      - id: roles
+        label: Roles
+        weight: 2
+        children:
+          - id: handler
+            label: Handler
+            description: ""
+            weight: 2
+          - id: medic
+            label: Medic
+            description: ""
+            weight: 1
+          - id: engineer
+            label: Engineer
+            description: ""
+            weight: 1
+
+      - id: perks
+        label: Perks
+        weight: 1
+        children:
+          - id: grit
+            label: Grit
+            description: ""
+            weight: 1
+          - id: wit
+            label: Wit
+            description: ""
+            weight: 1
+          - id: focus
+            label: Focus
+            description: ""
+            weight: 1
+
+  - id: food
+    label: Food
+    weight: 2
+    children:
+      - id: rations
+        label: Rations
+        weight: 2
+        children:
+          - id: ration_basic
+            label: Basic Ration
+            description: ""
+            weight: 2
+          - id: ration_premium
+            label: Premium Ration
+            description: ""
+            weight: 1
+
+      - id: fresh
+        label: Fresh
+        weight: 1
+        children:
+          - id: fruit
+            label: Fruit
+            description: ""
+            weight: 2
+          - id: veg
+            label: Veg
+            description: ""
+            weight: 2

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6c3f5bed575b84c4f938e57ca85b32a0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Prefabs/CastleTower.prefab
+  uploadId: 834056

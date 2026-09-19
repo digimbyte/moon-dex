@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1ff531e46e04b2f43bb0cce74e216c0a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Runtime/Prefabs/SelectionRect (Canvas).prefab
+  uploadId: 846358

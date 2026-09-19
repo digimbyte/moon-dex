@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: be74cf51baf815b48a22456eea8b9fe4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Runtime/Prefabs/InputSequencer.prefab
+  uploadId: 846358

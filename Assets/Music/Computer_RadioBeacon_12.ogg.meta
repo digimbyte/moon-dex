@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 6f338821b1865489583e8d899513acf5
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 8
+  defaultSettings:
+    serializedVersion: 2
+    loadType: 1
+    sampleRateSetting: 0
+    sampleRateOverride: 0
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+    preloadAudioData: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 10219
+  packageName: SciFi_SFX_BeyondTheNebula
+  packageVersion: 1
+  assetPath: Assets/SciFi_BeyondTheNebula/Computers/Computer_RadioBeacon_12.ogg
+  uploadId: 28653

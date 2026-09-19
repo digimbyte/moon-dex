@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 88a4fe8cdf65e1f41981f0b49d423c6e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Prefabs/PlankBroken2.prefab
+  uploadId: 834056

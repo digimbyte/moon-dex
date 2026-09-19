@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a8964d9b545040d4a980595d02158835
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Prefabs/ForestRock_B.prefab
+  uploadId: 834056

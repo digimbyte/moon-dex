@@ -1,0 +1,274 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2274272358151977135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5517686773672083742}
+  - component: {fileID: 2288729056952240036}
+  m_Layer: 0
+  m_Name: GMKInputController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5517686773672083742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2274272358151977135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2288729056952240036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2274272358151977135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e3b61d8fb360e47a6013e76f5327c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verboseLogs: 0
+  gizmosOnSelected: 0
+  south: {fileID: 8189822005563555557, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  east: {fileID: 5427397184129253289, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  west: {fileID: 3270896756169263049, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  north: {fileID: 4469023765756051132, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  leftShoulder: {fileID: -1292314290089454917, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  rightShoulder: {fileID: -980863073934824698, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  select: {fileID: 1910294113427811136, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  start: {fileID: 448970372207117837, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  leftStickPress: {fileID: 2270266672046532669, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  rightStickPress: {fileID: -2648580360739371434, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  touchpadPress: {fileID: -7010991551291885569, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  leftStick: {fileID: -869685184073472025, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  rightStick: {fileID: 6018395993947079248, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  dPad: {fileID: 8970165156896437215, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  leftTrigger: {fileID: 7093610687828805872, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  rightTrigger: {fileID: -1521051856176599421, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  onSouthStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On South State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onEastStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On East State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onWestStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On West State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onNorthStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On North State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLeftShoulderStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Left Shoulder State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onRightShoulderStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Right Shoulder State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onStartStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Start State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onSelectStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Select State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLeftStickPressStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Left Stick Press State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onRightStickPressStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Right Stick Press State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onTouchpadPressStateChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Touchpad Press State Changed<Bool>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLeftStickValueChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Left Stick Value Changed<Vector2>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onRightStickValueChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Right Stick Value Changed<Vector2>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onDPadValueChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On D Pad Value Changed<Vector2>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onLeftTriggerValueChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Left Trigger Value Changed<Float>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  onRightTriggerValueChanged:
+    verboseLogs: 0
+    logColor:
+      serializedVersion: 2
+      rgba: 4289967027
+    instanceName: On Right Trigger Value Changed<Float>
+    delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  inputs:
+    south:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    east:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    west:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    north:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    leftShoulder:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    rightShoulder:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    select:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    start:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    leftStickPress:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    rightStickPress:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    touchpadPress:
+      keydown: 0
+      keypressed: 0
+      keyreleased: 0
+    leftStick: {x: 0, y: 0}
+    rightStick: {x: 0, y: 0}
+    dPad: {x: 0, y: 0}
+    leftTrigger: 0
+    rightTrigger: 0

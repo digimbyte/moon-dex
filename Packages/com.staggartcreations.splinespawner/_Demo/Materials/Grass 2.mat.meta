@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 54433bf5a6187f34287101955c4ff3e5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Materials/Grass 2.mat
+  uploadId: 834056

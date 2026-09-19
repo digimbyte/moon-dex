@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d6538094017194e4c9c72597b8107aaf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Runtime/Prefabs/GamepadCursor (Canvas).prefab
+  uploadId: 846358

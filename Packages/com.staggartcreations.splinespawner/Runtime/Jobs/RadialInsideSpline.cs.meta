@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 969a8404489348578568bd05d9ef8e08
+timeCreated: 1745154825
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Runtime/Jobs/RadialInsideSpline.cs
+  uploadId: 834056

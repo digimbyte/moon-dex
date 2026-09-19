@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 44b71c1be1450fb4880eb29c2f9dbb70
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Runtime/sc.splines.spawning.runtime.asmdef
+  uploadId: 834056

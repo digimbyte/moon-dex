@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3626ed2af6be81342ab87746db53fe67
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Prefabs/Broadleaf2.prefab
+  uploadId: 834056

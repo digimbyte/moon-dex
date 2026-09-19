@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b174babeb9addbf4884e309246dc20a3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2655988077585873504
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Editor/Presets/XRInputController.preset
+  uploadId: 846358

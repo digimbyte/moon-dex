@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 24fc03109d6c85b439e187df4bb11d64
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2655988077585873504
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Editor/Presets/GMKInputController.preset
+  uploadId: 846358

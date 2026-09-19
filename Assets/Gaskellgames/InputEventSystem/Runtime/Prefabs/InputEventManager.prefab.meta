@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b29d7733ebc065c4c95fca3fc5d7e4f2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Runtime/Prefabs/InputEventManager.prefab
+  uploadId: 846358

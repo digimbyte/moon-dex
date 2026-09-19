@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 809179658d4e10846bdd19fd452a10ce
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Samples/Scenes/ExampleScene_InputEventAndGamepadCursor.unity
+  uploadId: 846358

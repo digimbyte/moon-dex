@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9627852b27580474f9d28b4435650ffd
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Samples/Scenes/ExampleScene_XRInputController.unity
+  uploadId: 846358

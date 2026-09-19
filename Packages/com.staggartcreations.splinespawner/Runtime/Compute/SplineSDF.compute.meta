@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 30a0bbe53b574e89839a3bcce718fb76
+timeCreated: 1745389672
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Runtime/Compute/SplineSDF.compute
+  uploadId: 834056

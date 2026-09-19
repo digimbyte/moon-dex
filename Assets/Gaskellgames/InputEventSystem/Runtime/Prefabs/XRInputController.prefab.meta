@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 27f62abf990119d40a143b1b6a5bfa3d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Runtime/Prefabs/XRInputController.prefab
+  uploadId: 846358

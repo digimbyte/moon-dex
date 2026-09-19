@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: cef79d0cc1cc48338629365b362fbe7b
+timeCreated: 1750922815
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Runtime/Modifiers/HeightFilter.cs
+  uploadId: 834056

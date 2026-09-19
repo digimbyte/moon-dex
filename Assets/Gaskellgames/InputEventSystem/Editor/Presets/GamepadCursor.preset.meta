@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 50f13968130521b4eaf702e6278a8bec
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2655988077585873504
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Editor/Presets/GamepadCursor.preset
+  uploadId: 846358

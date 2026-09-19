@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7109a24857527a34ba35b01c25b1a759
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Runtime/Prefabs/GMKVisualiser (UI).prefab
+  uploadId: 846358

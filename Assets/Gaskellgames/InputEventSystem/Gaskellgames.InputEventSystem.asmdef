@@ -1,0 +1,17 @@
+{
+    "name": "Gaskellgames.InputEventSystem",
+    "rootNamespace": "Gaskellgames.InputEventSystem",
+    "references": [
+        "GUID:344d6eb671e15a94aa369629b2973018",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

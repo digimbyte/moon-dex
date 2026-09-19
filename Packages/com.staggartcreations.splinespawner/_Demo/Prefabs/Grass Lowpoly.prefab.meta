@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e6c60c60e7e253341a2eb49f0cfd912e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Prefabs/Grass Lowpoly.prefab
+  uploadId: 834056

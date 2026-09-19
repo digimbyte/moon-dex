@@ -110,18 +110,63 @@ ls Assets -Recurse -Filter "*Tests*"
 
 ## Architecture Notes
 
-### Current State
-This is a fresh Unity project with minimal custom code. The main architecture is defined by:
-1. Core Registry system for asset management (external dependency)
-2. URP rendering pipeline
-3. Flexalon for UI layout
+### Core Systems
+
+**Registry Singleton Pattern:**
+- `RegistrySingleton` (Assets/data/RegistrySIngleton.cs) provides singleton access to all registries
+- Access via `RegistrySingleton.Instance`
+- Pre-configured registries: Icons, Prefabs, Materials, Meshes, Audio
+- Use `GetIcon(uid)` helper method for quick texture access
+- Singleton is persistent across scenes (DontDestroyOnLoad)
+
+**Radial Menu System (YAML-driven UI):**
+- `RadialMenuFromYaml` (Assets/data/RadialMenuFromYaml.cs) - Main component that builds 3D radial menus from YAML data
+- `RadialWedgeMeshTool` (Assets/UI/RadialWedgeMesh.cs) - Static tool for procedural wedge mesh generation
+- `IRadialMenuItemHost` interface - Implement this on prefabs to receive menu item data
+- Menu data stored in YAML format (Assets/data/database.yaml)
+- Supports hierarchical menus with weighted item sizing
+- Menu items are instantiated from a prefab root with procedurally generated wedge meshes
+- Navigation: `Open(node)` and `Back()` methods for menu traversal
+
+**Billboard System:**
+- `Billboard` (Assets/Scripts/Billboard.cs) - Camera-facing sprite/quad component
+- `BillboardRenderController` - Manages billboard rendering
+- Modes: ScreenAligned, ViewpointOriented, WorldUpLockedYaw, TrueScreenSpace
+- TrueScreenSpace mode provides perspective-corrected 2D appearance (eliminates distortion)
+
+**Animation System (Custom Tween):**
+- Located in Assets/Scripts/Animator/
+- `TweenDirector`, `TweenAsset`, `TweenBindings` - Core tween animation components
+- `Animate` helper for quick animations
+- `Typer` for text typing effects
+- Editor tools: TweenBoardWindow, TweenAssetInspector
+
+### YAML Menu Data Structure
+Menu items are defined in YAML with hierarchical structure:
+```yaml
+items:
+  - id: category_id
+    label: Display Name
+    weight: 4  # Relative size in radial menu
+    children:
+      - id: sub_item
+        label: Sub Item Name
+        weight: 2
+```
+
+### Third-Party Systems
+- **Flexalon** (Assets/Flexalon/) - UI layout system - DO NOT MODIFY
+- **Gaskellgames** (Assets/Gaskellgames/) - Camera system, Input events, Core utilities
+- **TotalJSON** (Assets/TotalJSON/) - JSON parsing library
+- **Nova** (if present) - Additional UI framework
 
 ### When Adding Custom Code
 - Create organized folder structure under `Assets/Scripts/`
-- Use namespaces matching folder structure
+- No namespace is used in current custom scripts (follow existing pattern)
 - Follow Unity component-based architecture (MonoBehaviour for game objects)
-- Use ScriptableObjects for data containers
-- Register assets through the Core Registry system
+- Use ScriptableObjects for data containers (see Assets/data/*.asset files)
+- For radial menu items, implement `IRadialMenuItemHost` interface
+- Register assets through the Core Registry system via RegistrySingleton
 
 ## Platform Notes
 

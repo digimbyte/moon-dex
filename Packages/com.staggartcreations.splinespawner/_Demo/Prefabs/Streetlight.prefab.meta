@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 16b4e2bd91b7e4946a84c5b4c472b5ac
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Prefabs/Streetlight.prefab
+  uploadId: 834056

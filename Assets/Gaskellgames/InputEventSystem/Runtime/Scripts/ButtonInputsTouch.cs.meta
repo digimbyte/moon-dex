@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 062c6c2af08c2f545ad484af65580d53
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: 3329e8f30875ed54c93f5daeba68bca9, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Runtime/Scripts/ButtonInputsTouch.cs
+  uploadId: 846358

@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: InputSequencer
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: ceb5bec3b18dbba43ba4361d98c49a65, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: verboseLogs
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gizmosOnSelected
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.size
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[0]
+    value: 
+    objectReference: {fileID: -485783037421813457, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[1]
+    value: 
+    objectReference: {fileID: -485783037421813457, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[2]
+    value: 
+    objectReference: {fileID: -7408178729318356745, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[3]
+    value: 
+    objectReference: {fileID: -7408178729318356745, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[4]
+    value: 
+    objectReference: {fileID: -5342498468217293864, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[5]
+    value: 
+    objectReference: {fileID: 3385438771789252348, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[6]
+    value: 
+    objectReference: {fileID: -5342498468217293864, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[7]
+    value: 
+    objectReference: {fileID: 3385438771789252348, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[8]
+    value: 
+    objectReference: {fileID: 71623849034043946, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputSequence.Array.data[9]
+    value: 
+    objectReference: {fileID: -265842180816239421, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: anyInput
+    value: 
+    objectReference: {fileID: -2501383258912165901, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: onSequenceProgressed.verboseLogs
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceProgressed.instanceName
+    value: On Sequence Progressed
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceProgressed.delay
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceProgressed.unityEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceComplete.verboseLogs
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceComplete.instanceName
+    value: On Sequence Complete
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceComplete.delay
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceComplete.unityEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceReset.verboseLogs
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceReset.instanceName
+    value: On Sequence Reset
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceReset.delay
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: onSequenceReset.unityEvent.m_PersistentCalls.m_Calls.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: index
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: sequenceComplete
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

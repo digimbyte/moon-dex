@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 322566fe92547da4b8dc29c8157db596
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Editor/Resources/TransformGizmo.shader
+  uploadId: 834056

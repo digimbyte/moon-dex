@@ -1,0 +1,263 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GMKInputController
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 03e3b61d8fb360e47a6013e76f5327c1, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: verboseLogs
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gizmosOnSelected
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: south
+    value: 
+    objectReference: {fileID: 8189822005563555557, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: east
+    value: 
+    objectReference: {fileID: 5427397184129253289, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: west
+    value: 
+    objectReference: {fileID: 3270896756169263049, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: north
+    value: 
+    objectReference: {fileID: 4469023765756051132, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: leftShoulder
+    value: 
+    objectReference: {fileID: -1292314290089454917, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: rightShoulder
+    value: 
+    objectReference: {fileID: -980863073934824698, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: select
+    value: 
+    objectReference: {fileID: 1910294113427811136, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: start
+    value: 
+    objectReference: {fileID: 448970372207117837, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: leftStickPress
+    value: 
+    objectReference: {fileID: 2270266672046532669, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: rightStickPress
+    value: 
+    objectReference: {fileID: -2648580360739371434, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: touchpadPress
+    value: 
+    objectReference: {fileID: -7010991551291885569, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: leftStick
+    value: 
+    objectReference: {fileID: -869685184073472025, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: rightStick
+    value: 
+    objectReference: {fileID: 6018395993947079248, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: dPad
+    value: 
+    objectReference: {fileID: 8970165156896437215, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: leftTrigger
+    value: 
+    objectReference: {fileID: 7093610687828805872, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: rightTrigger
+    value: 
+    objectReference: {fileID: -1521051856176599421, guid: 3cbb883ef1e586a4991387a291e7a14d, type: 3}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton0.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton0.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton0.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton1.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton1.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton1.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton2.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton2.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton2.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton3.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton3.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton3.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton4.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton4.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton4.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton5.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton5.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton5.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton6.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton6.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton6.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton7.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton7.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton7.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton8.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton8.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton8.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton9.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton9.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton9.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton10.keydown
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton10.keypressed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputButton10.keyreleased
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputAxisXY.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputAxisXY.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputAxis45.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputAxis45.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputAxis67.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputAxis67.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputAxis9
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: inputs.inputAxis10
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

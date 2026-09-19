@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7f3c2d66b1ca2f64a97a401141a1903f
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/_Demo/Spline Spawner.unity
+  uploadId: 834056

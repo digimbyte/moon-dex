@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e6dc4ed9775a4d0b83d82abd89daa47a
+timeCreated: 1751268170
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Runtime/Jobs/NativeCurve.cs
+  uploadId: 834056

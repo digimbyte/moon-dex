@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: b90ac9dc86a7441bb4e94e9197a068af
+timeCreated: 1733491028
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Editor/PropertyDrawers.cs
+  uploadId: 834056

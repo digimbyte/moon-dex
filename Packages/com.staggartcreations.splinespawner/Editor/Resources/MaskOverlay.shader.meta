@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dcb55c5a86c011a46aa43a7da8cb67aa
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305974
+  packageName: Spline Spawner
+  packageVersion: 1.1.5
+  assetPath: Packages/com.staggartcreations.splinespawner/Editor/Resources/MaskOverlay.shader
+  uploadId: 834056

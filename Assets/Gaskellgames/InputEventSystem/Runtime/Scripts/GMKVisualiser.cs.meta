@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4e1e1239fe1d38a44919a2860b50addc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: d2473ff3b46dd004a855c86749ef108e, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Runtime/Scripts/GMKVisualiser.cs
+  uploadId: 846358

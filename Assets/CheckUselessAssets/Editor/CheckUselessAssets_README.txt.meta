@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9f031d4cdb65f76439ae46738fe9c6c9
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 313908
+  packageName: Check Useless Assets
+  packageVersion: 1.0
+  assetPath: Assets/CheckUselessAssets/Editor/CheckUselessAssets_README.txt
+  uploadId: 741976

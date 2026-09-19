@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: e5226b077568b62479fe50fce8e28428
+AssetOrigin:
+  serializedVersion: 1
+  productId: 230509
+  packageName: 'Flexalon Pro: 3D & UI Layouts'
+  packageVersion: 4.4.0
+  assetPath: Assets/Flexalon/Documentation/images/favicon.svg
+  uploadId: 829764
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -51,10 +58,3 @@ ScriptedImporter:
       height: 0
     SpriteID: 
     PhysicsOutlines: []
-AssetOrigin:
-  serializedVersion: 1
-  productId: 230509
-  packageName: 'Flexalon Pro: 3D & UI Layouts'
-  packageVersion: 4.4.0
-  assetPath: Assets/Flexalon/Documentation/images/favicon.svg
-  uploadId: 829764

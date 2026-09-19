@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c5c468185d23c3c41bdf94148dfbf3c6
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305184
+  packageName: Input Event System - Gaskellgames
+  packageVersion: 1.4.0
+  assetPath: Assets/Gaskellgames/InputEventSystem/Editor/Documentation/Userguide
+    - Input Event System - v1.3.0.pdf
+  uploadId: 846358
