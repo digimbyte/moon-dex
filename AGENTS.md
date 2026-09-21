@@ -1,5 +1,13 @@
 # AGENTS.md
 
+## Mandatory Codex editing and revert rules
+
+- Make all agent-authored file creations, edits, and deletions through Codex's tracked `apply_patch` tool so changes remain reviewable through Codex. Never bypass it with PowerShell, Python, shell redirection, scripted replacements, or another filesystem writer.
+- If the tracked editing tool is unavailable or fails, stop and report the limitation. Do not silently use an untracked fallback or claim an edit succeeded without verifying the resulting file and diff.
+- Before any correction or revert, inspect the current file and diff. The user may already have reverted or edited it. Never repeat a revert based on stale state; preserve user changes and undo only the exact agent-authored delta that is still present.
+- Questions requesting explanations or diagnosis authorize read-only investigation, not implementation. Do not patch anything unless the user requests changes. Verify the actual script/package origin before attributing a defect or proposing a patch location.
+- Unity scene and asset modifications still require Unity Editor APIs with Undo support. Do not rewrite serialized scene or asset files through shell tools or raw patches. Explain any limitations in Codex review/revert support before making such changes.
+
 This file provides guidance to WARP (warp.dev) when working with code in this repository.
 
 ## Project Overview
@@ -109,6 +117,27 @@ ls Assets -Recurse -Filter "*Tests*"
 ```
 
 ## Architecture Notes
+
+### Moon Dex reference data and grouping
+
+- Use `Assets/data/reference/Moon Dex - *.csv` to guide database records. Gender is
+  an optional YAML property (`gender: male` or `gender: female`). Only assign it
+  when the source is unambiguous. Display its symbol ONLY in the inspector info
+  panel title, NEVER in menu name tags or the stored name/label. Do not infer a
+  gender from a name.
+- Duos belong under Nova.
+- Oclus is an alien mechanical race/faction. Its emblem is a mechanical eye,
+  visually inspired by Halo's Forerunner AI assistants. Do not treat Oclus as
+  a handheld device or an ordinary item category.
+- Creatures contains 50 unique creatures, each with its four evolutions beneath
+  it. Preserve Herbivores, Predators, Omnivores and all their animal subcategories,
+  including Aquatic. Numbered groups subdivide oversized existing categories;
+  they must never replace the taxonomy or flatten the 200 evolutions.
+- Give distinct category nodes their own icons. Do not reuse another category's
+  icon merely because the nodes have similar names or related subjects.
+- Large packs use plain numbered ranges such as `1-8` and `9-16`. Prefer eight
+  entries, balance the split evenly, and never exceed twelve entries per level.
+  Do not create explicit male/female categories to achieve the split.
 
 ### Core Systems
 

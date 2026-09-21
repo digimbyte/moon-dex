@@ -110,6 +110,35 @@ public static class ScreenPositionFollowerChecks
             Vector3 afterAxis = camera.WorldToViewportPoint(nested.position);
             Check(Mathf.Abs(afterAxis.x - beforeAxis.x) < 0.001f && Mathf.Abs(afterAxis.y - 0.7f) < 0.001f
                 && Mathf.Abs(afterAxis.z - beforeAxis.z) < 0.001f, "Camera axes preserve horizontal and depth");
+            // Rings may sit on a tilted/scaled hierarchy but only translate screen-left/right.
+            parent.transform.SetPositionAndRotation(new Vector3(2, -1, 3), Quaternion.Euler(20, 35, 15));
+            parent.transform.localScale = new Vector3(0.7f, 1.4f, 0.9f);
+            root.position = camera.ViewportToWorldPoint(new Vector3(0.2f, 0.4f, 15f));
+            follower.SetAlignmentAnchor(root);
+            follower.CaptureOrigin();
+            follower.moveX = true;
+            follower.moveY = follower.moveZ = false;
+            pivot.position = camera.ViewportToWorldPoint(new Vector3(0.8f, 0.7f, 5f));
+            var ringBefore = camera.WorldToViewportPoint(root.position);
+            Check(follower.Evaluate(), "Tangent ring lateral alignment");
+            var ringAfter = camera.WorldToViewportPoint(root.position);
+            Check(Mathf.Abs(ringAfter.x - 0.8f) < 0.001f
+                && Mathf.Abs(ringAfter.y - ringBefore.y) < 0.001f
+                && Mathf.Abs(ringAfter.z - ringBefore.z) < 0.001f,
+                "Ring aligns horizontally without changing screen height or camera depth");
+            var alignedPosition = root.position;
+            for (int i = 0; i < 10; i++) Check(follower.Evaluate(), "Repeated ring alignment");
+            Check(Vector3.Distance(root.position, alignedPosition) < 0.0001f, "Ring alignment does not drift");
+            foreach (float percent in new[] { 0f, 55f, 100f, 55f, 0f })
+            {
+                follower.elasticPercent = percent;
+                for (int i = 0; i < 10; i++) Check(follower.Evaluate(), "Elastic alignment");
+                var elasticPosition = camera.WorldToViewportPoint(root.position);
+                Check(Mathf.Abs(elasticPosition.x - Mathf.Lerp(ringBefore.x, 0.8f, percent * 0.01f)) < 0.001f
+                    && Mathf.Abs(elasticPosition.y - ringBefore.y) < 0.001f
+                    && Mathf.Abs(elasticPosition.z - ringBefore.z) < 0.001f,
+                    "Elastic percentage holds its position without drift or movement on locked axes");
+            }
             Debug.Log("Screen follower checks passed; invalid-reference checks log expected warnings.");
         }
         finally

@@ -70,9 +70,89 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	private Vector3[] _displacedVerts;
 	private bool _vertsInitialized = false;
 	private bool _retired;
+	private Nova.SortGroup _hoverLabelSort;
+	private bool _labelSortEnabled;
+	private bool _labelRenderOverOpaque;
+	private int _labelSortingOrder;
+	private int _labelRenderQueue;
+	private Material _restingWedgeMaterial;
+	private Material _hoverWedgeMaterial;
+	private float _hoverFrontTime = -1f;
+
+	void SetWedgeInFront(bool hovered)
+	{
+		if (hovered)
+		{
+			if (_hoverWedgeMaterial != null || _meshRenderer == null) return;
+			var material = _meshRenderer.sharedMaterial;
+			if (material == null || material.shader.name != "hologram") return;
+			_restingWedgeMaterial = material;
+			_hoverWedgeMaterial = new Material(material);
+			// Draw after the other rings, immediately before the hovered label.
+			_hoverWedgeMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Overlay - 1;
+			_hoverWedgeMaterial.SetInt("_ZTest", (int)UnityEngine.Rendering.CompareFunction.Always);
+			_hoverWedgeMaterial.SetInt("_ZWrite", 0);
+			_meshRenderer.sharedMaterial = _hoverWedgeMaterial;
+		}
+		else if (_hoverWedgeMaterial != null)
+		{
+			if (_meshRenderer != null) _meshRenderer.sharedMaterial = _restingWedgeMaterial;
+			Destroy(_hoverWedgeMaterial);
+			_hoverWedgeMaterial = null;
+			_restingWedgeMaterial = null;
+		}
+	}
+
+	void SetLabelInFront(bool hovered)
+	{
+		if (hovered)
+		{
+			if (_hoverLabelSort != null) return;
+			var text = GetComponentInChildren<Nova.TextBlock>(true);
+			if (text == null) return;
+			// The icon block is the label's parent, so both share hover priority.
+			var icon = text.transform.parent != null
+				? text.transform.parent.GetComponent<Nova.UIBlock2D>() : null;
+			var content = icon != null ? icon.gameObject : text.gameObject;
+			_hoverLabelSort = content.GetComponent<Nova.SortGroup>();
+			if (_hoverLabelSort == null)
+			{
+				_hoverLabelSort = content.AddComponent<Nova.SortGroup>();
+				_hoverLabelSort.enabled = false;
+			}
+			_labelSortEnabled = _hoverLabelSort.enabled;
+			_labelRenderOverOpaque = _hoverLabelSort.RenderOverOpaqueGeometry;
+			_labelSortingOrder = _hoverLabelSort.SortingOrder;
+			_labelRenderQueue = _hoverLabelSort.RenderQueue;
+			// Only the hovered item's icon and text bypass mesh depth.
+			_hoverLabelSort.RenderOverOpaqueGeometry = true;
+			_hoverLabelSort.SortingOrder = short.MaxValue - 1;
+			_hoverLabelSort.RenderQueue = (int)UnityEngine.Rendering.RenderQueue.Overlay;
+			_hoverLabelSort.enabled = true;
+		}
+		else if (_hoverLabelSort != null)
+		{
+			_hoverLabelSort.enabled = _labelSortEnabled;
+			_hoverLabelSort.RenderOverOpaqueGeometry = _labelRenderOverOpaque;
+			_hoverLabelSort.SortingOrder = _labelSortingOrder;
+			_hoverLabelSort.RenderQueue = _labelRenderQueue;
+			_hoverLabelSort = null;
+		}
+	}
+
+	void OnDisable()
+	{
+		_hoverFrontTime = -1f;
+		SetWedgeInFront(false);
+		SetLabelInFront(false);
+		IsHovered = false;
+	}
 
 	internal void Retire()
 	{
+		_hoverFrontTime = -1f;
+		SetWedgeInFront(false);
+		SetLabelInFront(false);
 		_retired = true;
 		StopAllCoroutines();
 		_clickResetCo = null;
@@ -176,6 +256,13 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	private void LateUpdate()
 	{
 		if (!_visualsInitialized || MeshChild == null) return;
+		if (IsHovered && _hoverFrontTime >= 0f &&
+			(Time.unscaledTime >= _hoverFrontTime || (Owner != null && ParentDepth == Owner.ActiveRingDepth)))
+		{
+			_hoverFrontTime = -1f;
+			SetWedgeInFront(true);
+			SetLabelInFront(true);
+		}
 		float t = Mathf.Clamp01(hoverLerpSpeed * Time.deltaTime);
 		MeshChild.localScale = Vector3.Lerp(MeshChild.localScale, _meshTargetScale, t);
 		MeshChild.localPosition = Vector3.Lerp(MeshChild.localPosition, _meshTargetLocalPos, t);
@@ -204,6 +291,7 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	public void OnMeshClicked(RadialMenuMeshEvents source)
 	{
 		if (_retired || !isActiveAndEnabled) return;
+		if (Application.isPlaying && Owner != null && Owner.RingInputConsumed) return;
 		if (debugLog) Debug.Log($"[MenuButtonBase] OnMeshClicked id='{NodeId}'", this);
 		Owner?.HandleItemClicked(this);
 		if (_retired || !isActiveAndEnabled) return;
@@ -213,9 +301,16 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	// Called by RadialMenuMeshEvents
 	public void OnMeshHoverEnter(RadialMenuMeshEvents source)
 	{
-		if (_retired || !isActiveAndEnabled) return;
+		if (_retired || !isActiveAndEnabled || IsHovered) return;
 		if (debugLog) Debug.Log($"[MenuButtonBase] OnMeshHoverEnter id='{NodeId}'", this);
 		IsHovered = true;
+		if (Owner != null && ParentDepth != Owner.ActiveRingDepth)
+			_hoverFrontTime = Time.unscaledTime + 1f;
+		else
+		{
+			SetWedgeInFront(true);
+			SetLabelInFront(true);
+		}
 		OnHoverEnterLocal();
 	}
 
@@ -226,6 +321,9 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 		if (debugLog) Debug.Log($"[MenuButtonBase] OnMeshHoverExit id='{NodeId}'", this);
 		IsHovered = false;
 		OnHoverExitLocal();
+		_hoverFrontTime = -1f;
+		SetWedgeInFront(false);
+		SetLabelInFront(false);
 	}
 
 	// State (set by RadialMenuFromYaml)

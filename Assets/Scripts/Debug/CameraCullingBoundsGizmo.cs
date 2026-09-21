@@ -85,7 +85,10 @@ public class CameraCullingBoundsGizmo : MonoBehaviour
 
 	void RefreshRenderers(bool force)
 	{
-		float now = Application.isPlaying ? Time.time : (float)UnityEditor.EditorApplication.timeSinceStartup;
+		float now = Time.time;
+#if UNITY_EDITOR
+		if (!Application.isPlaying) now = (float)UnityEditor.EditorApplication.timeSinceStartup;
+#endif
 		if (!force && now < _nextRefreshTime) return;
 		_nextRefreshTime = now + Mathf.Max(0.05f, refreshIntervalSeconds);
 

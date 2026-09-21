@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -16,6 +18,43 @@ public class RadialMenuFromYaml : MonoBehaviour
 	public GameObject leafInfoPanel;
 	public Nova.TextBlock leafTitle;
 	public Nova.TextBlock leafBody;
+	public Core.Animator.Animate leafPanelIn;
+	public Core.Animator.Animate leafPanelOut;
+	bool _leafPanelVisible;
+	GameObject _backButton;
+	readonly List<Nova.UIBlockHit> _pointerUiHits = new List<Nova.UIBlockHit>();
+	int _uiConsumedFrame = -1;
+	internal bool RingInputConsumed => _uiConsumedFrame == Time.frameCount;
+
+	internal bool BlocksRingInput(Ray ray)
+	{
+		if (RingInputConsumed) return true;
+		Nova.Interaction.RaycastAll(ray, _pointerUiHits);
+		foreach (var hit in _pointerUiHits)
+		{
+			var block = hit.UIBlock;
+			if (block == null) continue;
+			if ((leafInfoPanel != null && block.transform.IsChildOf(leafInfoPanel.transform))
+				|| block.GetComponentInParent<NovaSamples.UIControls.Button>() != null)
+			{
+				_uiConsumedFrame = Time.frameCount;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	[Header("Wiki Images")]
+	[Tooltip("Optional CDN folder mirroring the YAML category paths. Leave empty to use each entry's image URL.")]
+	public string imageCdnBaseUrl;
+	public bool useLocalImages;
+	[Tooltip("Folder mirroring the YAML category paths for local testing. Relative paths start at the project/build folder.")]
+	public string localImageDirectory = "remote_assets";
+	Nova.UIBlock2D _leafImage;
+	Coroutine _imageLoad;
+	UnityWebRequest _imageRequest;
+	Texture2D _loadedImage;
+	string _imageUrl;
 
 	[Header("Fallback Input")]
 	[Tooltip("If true, the builder will attach a fallback physics-raycast input forwarder when playing. Useful when UI elements intercept EventSystem raycasts.")]
@@ -115,6 +154,10 @@ public class RadialMenuFromYaml : MonoBehaviour
 	readonly Stack<MenuNode> _navStack = new Stack<MenuNode>();
 	readonly List<MenuButtonBase> _menuItems = new List<MenuButtonBase>();
 	readonly List<Transform> _ringRoots = new List<Transform>();
+	Transform _ringAlignmentPivot;
+	readonly Dictionary<Transform, Material> _ringMaterials = new Dictionary<Transform, Material>();
+	public int ActiveRingDepth { get; private set; } = -1;
+	MaterialPropertyBlock _wedgeProperties;
 
 	bool _building;
 	SplineSync _depthTracks;
@@ -153,6 +196,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 		if (!Application.isPlaying && !previewInEditor) return;
 		if (rebuildOnEnable) Rebuild();
 		StartAutoRebuildPollIfNeeded();
+		if (Application.isPlaying) UpdateSelectionStates();
 
 		// Attach input forwarder if requested so clicks still work when UI blocks EventSystem raycasts.
 		if (Application.isPlaying && enableFallbackPhysicsInput)
@@ -165,11 +209,16 @@ public class RadialMenuFromYaml : MonoBehaviour
 	void OnDisable()
 	{
 		StopAutoRebuildPoll();
+		ClearLeafImage();
 	}
 
 	void OnDestroy()
 	{
-		ClearRingsFromDepth(0);
+		ClearLeafImage();
+		ClearRingsFromDepth(0, false);
+		// Closing rings have already left _ringRoots but still own their meshes/materials.
+		foreach (var ring in new List<Transform>(_ringMaterials.Keys))
+			if (ring != null) DestroyGO(ring.gameObject);
 		foreach (var mesh in _ownedMeshes)
 		{
 			if (mesh == null) continue;
@@ -292,6 +341,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 	[ContextMenu("Back")]
 	public void Back()
 	{
+		_uiConsumedFrame = Time.frameCount;
 		if (_building || _navStack.Count <= 1) return;
 		_building = true;
 		try
@@ -316,9 +366,12 @@ public class RadialMenuFromYaml : MonoBehaviour
 
 	public void HandleItemClicked(MenuButtonBase item)
 	{
+		if (Application.isPlaying && RingInputConsumed) return;
 		if (_building || item == null || !item.isActiveAndEnabled || item.Owner != this || !_menuItems.Contains(item)) return;
-		if (item.Node == null || string.IsNullOrWhiteSpace(item.Node.id) || item.ParentDepth < 0) return;
-		Navigate(item.Node, item.ParentDepth);
+        if (item.Node == null || string.IsNullOrWhiteSpace(item.Node.id) || item.ParentDepth < 0) return;
+        Navigate(item.Node, item.ParentDepth);
+        if (item.IsLeaf && ActiveNodeId == item.NodeId)
+            item.GetComponentInParent<RadialRingRotation>()?.FaceCamera(item.CenterAnchor, Camera.main);
 	}
 
 	void Navigate(MenuNode node, int parentDepth)
@@ -368,27 +421,91 @@ public class RadialMenuFromYaml : MonoBehaviour
 		ClearRingsFromDepth(useRings ? depth : 0);
 		while (_ringRoots.Count <= depth) _ringRoots.Add(null);
 		_ringRoots[depth] = pending;
+		if (Application.isPlaying && depth == 0)
+		{
+			_ringAlignmentPivot = pending.GetComponentInChildren<ScreenPositionFollower>(true).pivotReference;
+			foreach (var follower in FindObjectsByType<ScreenPositionFollower>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+			{
+				if (follower.gameObject.scene != gameObject.scene || follower.name != "MoonViewSetup") continue;
+				follower.SetPivot(pending);
+				break;
+			}
+		}
 		_menuItems.AddRange(pendingItems);
+		pending.GetComponentInChildren<RadialRingRotation>(true).GrowWedges();
 		return true;
 	}
 
 	void UpdateSelectionStates()
 	{
+		if (Application.isPlaying)
+		{
+			if (_backButton == null)
+			{
+				foreach (var root in gameObject.scene.GetRootGameObjects())
+				foreach (var button in root.GetComponentsInChildren<NovaSamples.UIControls.Button>(true))
+				{
+					if (button.name != "Back" || button.OnClicked == null) continue;
+					for (int i = 0; i < button.OnClicked.GetPersistentEventCount(); i++)
+						if (button.OnClicked.GetPersistentTarget(i) == this && button.OnClicked.GetPersistentMethodName(i) == nameof(Back))
+							_backButton = button.gameObject;
+				}
+			}
+			if (_backButton != null) _backButton.SetActive(_navStack.Count > 1);
+		}
 		var selectedNode = _navStack.Count > 1 ? _navStack.Peek() : null;
 		bool showInfo = selectedNode != null && (selectedNode.children == null || selectedNode.children.Count == 0);
-		if (leafTitle != null) leafTitle.Text = showInfo ? selectedNode.label : string.Empty;
-		if (leafBody != null) leafBody.Text = showInfo ? selectedNode.description ?? string.Empty : string.Empty;
-		if (leafInfoPanel != null) leafInfoPanel.SetActive(showInfo);
+		if (Application.isPlaying) UpdateLeafImage(showInfo ? selectedNode : null);
+		if (showInfo)
+		{
+			if (Application.isPlaying && leafInfoPanel != null)
+			{
+				var panelSort = leafInfoPanel.GetComponent<Nova.SortGroup>();
+				if (panelSort == null) panelSort = leafInfoPanel.AddComponent<Nova.SortGroup>();
+				panelSort.RenderOverOpaqueGeometry = true;
+				panelSort.RenderQueue = (int)RenderQueue.Overlay + 1;
+				panelSort.SortingOrder = short.MaxValue;
+				panelSort.enabled = true;
+			}
+			if (leafTitle != null) leafTitle.Text = selectedNode.DisplayLabel;
+			if (leafBody != null) leafBody.Text = selectedNode.description ?? string.Empty;
+		}
+		if (leafInfoPanel != null && showInfo != _leafPanelVisible)
+		{
+			_leafPanelVisible = showInfo;
+			if (leafPanelIn != null) leafPanelIn.StopAllTweens();
+			if (leafPanelOut != null) leafPanelOut.StopAllTweens();
+			if (showInfo)
+			{
+				leafInfoPanel.SetActive(true);
+				if (leafPanelIn != null) leafPanelIn.PlayByName("IN");
+			}
+			else if (leafPanelOut != null)
+				leafPanelOut.PlayByName("OUT");
+			else leafInfoPanel.SetActive(false);
+		}
 		// A leaf adds no ring: anchor the deepest existing ring, not stack count.
 		int activeRingDepth = -1;
 		for (int i = _ringRoots.Count - 1; i >= 0; i--)
 			if (_ringRoots[i] != null) { activeRingDepth = i; break; }
+		ActiveRingDepth = activeRingDepth;
 		for (int i = 0; i <= activeRingDepth; i++)
 		{
 			if (_ringRoots[i] == null) continue;
+			_ringRoots[i].GetComponentInChildren<RadialRingRotation>(true).SetScale(Vector3.one * Mathf.Pow(0.5f, activeRingDepth - i));
 			_ringRoots[i].localPosition = useRings
 				? transform.InverseTransformVector(ringOffsetPerDepth * (i - activeRingDepth))
 				: Vector3.zero;
+		}
+		if (_wedgeProperties == null) _wedgeProperties = new MaterialPropertyBlock();
+		foreach (var item in _menuItems)
+		{
+			if (item == null || item.MeshChild == null) continue;
+			var renderer = item.MeshChild.GetComponent<MeshRenderer>();
+			if (renderer == null) continue;
+			renderer.GetPropertyBlock(_wedgeProperties);
+			_wedgeProperties.SetFloat("_RingActive", item.ParentDepth == activeRingDepth ? 1f : 0f);
+			renderer.SetPropertyBlock(_wedgeProperties);
 		}
 		if (_depthTracks == null) _depthTracks = GetComponentInParent<SplineSync>();
 		if (_depthTracks != null && _navStack.Count > 0)
@@ -431,6 +548,88 @@ public class RadialMenuFromYaml : MonoBehaviour
 		}
 	}
 
+	void UpdateLeafImage(MenuNode node)
+	{
+		if (_leafImage == null && leafInfoPanel != null)
+			_leafImage = leafInfoPanel.transform.Find("Image")?.GetComponent<Nova.UIBlock2D>();
+		if (_leafImage == null) return;
+		string url = null;
+		try { url = ResolveImageUrl(node); }
+		catch (Exception error) { Debug.LogWarning($"Invalid wiki image location: {error.Message}", this); }
+		if (url != null && url == _imageUrl) return;
+		ClearLeafImage();
+		if (string.IsNullOrEmpty(url) || !isActiveAndEnabled) return;
+		_imageUrl = url;
+		_imageLoad = StartCoroutine(LoadLeafImage(url));
+	}
+
+	string ResolveImageUrl(MenuNode node)
+	{
+		if (node == null || string.IsNullOrWhiteSpace(node.id)) return null;
+		string relativePath = node.ImagePath ?? node.id + ".png";
+		foreach (string segment in relativePath.Split('/'))
+			if (string.IsNullOrWhiteSpace(segment) || segment == "." || segment == ".." || segment.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 || segment.Contains("\\"))
+				throw new ArgumentException("Image path must contain valid entry IDs.");
+		if (useLocalImages)
+		{
+			if (string.IsNullOrWhiteSpace(localImageDirectory)) return null;
+			if (node.id.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0 || node.id.Contains("/") || node.id.Contains("\\"))
+				throw new ArgumentException("Entry ID must be a file name.");
+			string folder = Path.IsPathRooted(localImageDirectory) ? localImageDirectory
+				: Path.Combine(Application.dataPath, "..", localImageDirectory);
+			return new Uri(Path.GetFullPath(Path.Combine(folder, relativePath))).AbsoluteUri;
+		}
+		string url = string.IsNullOrWhiteSpace(imageCdnBaseUrl) ? node.image
+			: imageCdnBaseUrl.TrimEnd('/') + "/" + string.Join("/", Array.ConvertAll(relativePath.Split('/'), Uri.EscapeDataString));
+		if (string.IsNullOrWhiteSpace(url)) return null;
+		if (!Uri.TryCreate(url, UriKind.Absolute, out var uri) || (uri.Scheme != "https" && uri.Scheme != "http"))
+			throw new ArgumentException("CDN images require an HTTP or HTTPS URL.");
+		return uri.AbsoluteUri;
+	}
+
+	System.Collections.IEnumerator LoadLeafImage(string url)
+	{
+		using (var request = UnityWebRequestTexture.GetTexture(url))
+		{
+			_imageRequest = request;
+			try
+			{
+				request.timeout = 30;
+				yield return request.SendWebRequest();
+				if (request.result != UnityWebRequest.Result.Success)
+					Debug.LogWarning($"Could not load wiki image '{url}': {request.error}", this);
+				else if (_leafImage != null && _imageUrl == url)
+				{
+					_loadedImage = DownloadHandlerTexture.GetContent(request);
+					_leafImage.SetImage(_loadedImage);
+					_leafImage.BodyEnabled = true;
+				}
+			}
+			finally { _imageRequest = null; }
+		}
+		_imageLoad = null;
+	}
+
+	void ClearLeafImage()
+	{
+		if (_imageLoad != null) StopCoroutine(_imageLoad);
+		_imageLoad = null;
+		if (_imageRequest != null)
+		{
+			_imageRequest.Abort();
+			_imageRequest.Dispose();
+			_imageRequest = null;
+		}
+		_imageUrl = null;
+		if (_leafImage != null)
+		{
+			_leafImage.ClearImage();
+			_leafImage.BodyEnabled = false;
+		}
+		if (_loadedImage != null) Destroy(_loadedImage);
+		_loadedImage = null;
+	}
+
 	void BuildLevel(MenuNode parent, int ringDepth, Transform ringRoot, List<MenuButtonBase> pendingItems, List<Action> layoutActions)
 	{
 
@@ -451,6 +650,11 @@ public class RadialMenuFromYaml : MonoBehaviour
 			totalWeight += Mathf.Max(0.0001f, items[i].weight);
 
 		float cursor = startAngleDegrees;
+		// Interleave each ring's wedges and labels, leaving hover priority above all rings.
+		int ringQueue = (int)RenderQueue.Transparent + ringDepth * 2;
+		var ringMaterial = new Material(wedgeMaterial) { renderQueue = ringQueue };
+		_ringMaterials.Add(ringRoot, ringMaterial);
+		var contents = ringRoot.GetComponentInChildren<RadialRingRotation>(true).transform;
 
 
 
@@ -461,7 +665,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 			float wedgeDeg = (w / totalWeight) * 360f;
 
 			// 1) Instantiate the behavior root prefab
-			var rootGO = Instantiate(itemRootPrefab, ringRoot);
+			var rootGO = Instantiate(itemRootPrefab, contents);
 
 			rootGO.name = $"MenuItem_{i:00}_{node.id}";
 			rootGO.transform.localPosition = Vector3.zero;
@@ -481,7 +685,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 			var mr = meshChild.GetComponent<MeshRenderer>();
 			if (mr == null) mr = meshChild.gameObject.AddComponent<MeshRenderer>();
 
-			mr.sharedMaterial = wedgeMaterial;
+			mr.sharedMaterial = ringMaterial;
 			mr.shadowCastingMode = shadowCastingMode;
 			mr.receiveShadows = receiveShadows;
 
@@ -511,6 +715,12 @@ public class RadialMenuFromYaml : MonoBehaviour
 			p.recalcBounds = true;
 
 			RadialWedgeMeshTool.BuildInto(mesh, p);
+			float halfArc = Mathf.Clamp(p.wedgeDegrees - p.neighborGapDegrees, 0.001f, 360f) * Mathf.Deg2Rad * 0.5f;
+			if (_wedgeProperties == null) _wedgeProperties = new MaterialPropertyBlock();
+			mr.GetPropertyBlock(_wedgeProperties);
+			_wedgeProperties.SetVector("_WedgeShape", new Vector4(p.innerDiameter * 0.5f, p.radialThickness, p.extrusionDepth, halfArc));
+			_wedgeProperties.SetFloat("_WedgeCenter", (p.offsetDegrees + p.wedgeDegrees * 0.5f) * Mathf.Deg2Rad);
+			mr.SetPropertyBlock(_wedgeProperties);
 			var triangles = mesh.triangles;
 			for (int triangle = 0; triangle < triangles.Length; triangle += 3)
 			{
@@ -577,13 +787,33 @@ public class RadialMenuFromYaml : MonoBehaviour
 					var block = uiBlock.GetComponent<Nova.UIBlock2D>();
 					float midRadius = p.innerDiameter * 0.5f + p.radialThickness * 0.5f;
 					float labelWidth = Mathf.Max(0.001f, midRadius * Mathf.Max(0.001f, p.wedgeDegrees - p.neighborGapDegrees) * Mathf.Deg2Rad * 0.9f);
+					bool isLeaf = node.children == null || node.children.Count == 0;
 					float labelHeight = p.radialThickness * 0.8f;
+					if (isLeaf)
+					{
+						// A straight billboard must fit the wedge's chord, not its longer arc.
+						float halfAngle = Mathf.Min(180f, Mathf.Max(0.001f, p.wedgeDegrees - p.neighborGapDegrees)) * Mathf.Deg2Rad * 0.5f;
+						labelWidth = Mathf.Max(0.001f, 2f * midRadius * Mathf.Sin(halfAngle) * 0.9f);
+						labelWidth = Mathf.Min(labelWidth, p.radialThickness * 0.8f);
+						labelHeight = Mathf.Min(labelHeight, labelWidth);
+					}
 					var tracker = uiBlock.GetComponent<TrackCamera>();
 					if (tracker == null) tracker = uiBlock.gameObject.AddComponent<TrackCamera>();
 					tracker.enabled = true;
+					tracker.LockScreenAxes = isLeaf;
+					tracker.LeafHitMesh = isLeaf ? hitArea.GetComponent<MeshFilter>() : null;
 					uiBlock.localRotation = Quaternion.Inverse(center.localRotation);
 					if (block != null)
 					{
+						Texture2D icon = null;
+						if (!string.IsNullOrWhiteSpace(node.icon))
+						{
+							var registry = RegistrySingleton.Instance;
+							if (registry != null) icon = registry.GetIcon(node.icon);
+						}
+						block.ClearImage();
+						block.BodyEnabled = icon != null;
+						if (icon != null) block.SetImage(icon);
 						block.Size.X = labelWidth;
 						block.Size.Y = labelHeight;
 						layoutActions.Add(() => block.TrySetLocalPosition(labelLocalPosition));
@@ -595,22 +825,45 @@ public class RadialMenuFromYaml : MonoBehaviour
 					if (text != null)
 					{
 						text.Text = node.label;
-						text.Size.X = labelWidth;
-						text.Size.Y = labelHeight;
+						// Share the label/icon sort group with the existing delayed hover override.
+						var textSort = uiBlock.GetComponent<Nova.SortGroup>();
+						if (textSort == null) textSort = uiBlock.gameObject.AddComponent<Nova.SortGroup>();
+						textSort.RenderOverOpaqueGeometry = true;
+						textSort.RenderQueue = ringQueue + 1;
+						textSort.SortingOrder = ringDepth;
+						textSort.enabled = true;
+						// Nova passes its capped layout size to TMP as the available text bounds.
+						float textWidth = labelWidth / Mathf.Max(0.0001f, Mathf.Abs(text.transform.localScale.x));
+						float textHeight = labelHeight / Mathf.Max(0.0001f, Mathf.Abs(text.transform.localScale.y));
+						text.Size.X = textWidth;
+						text.Size.Y = textHeight;
+						text.SizeMinMax.X.Min = 0f;
+						text.SizeMinMax.X.Max = textWidth;
+						text.SizeMinMax.Y.Min = 0f;
+						text.SizeMinMax.Y.Max = textHeight;
 						text.TMP.fontSize *= 10f;
 						text.TMP.fontSizeMax = text.TMP.fontSize;
-						text.TMP.fontSizeMin = 1f;
+						text.TMP.fontSizeMin = 0.01f;
 						text.TMP.enableAutoSizing = true;
 						text.TMP.textWrappingMode = TMPro.TextWrappingModes.NoWrap;
 						text.TMP.overflowMode = TMPro.TextOverflowModes.Truncate;
-						text.TMP.margin = Vector4.zero;
-						text.AutoSize.X = Nova.AutoSize.None;
-						text.AutoSize.Y = Nova.AutoSize.None;
+						text.AutoSize.X = Nova.AutoSize.Shrink;
+						text.AutoSize.Y = Nova.AutoSize.Shrink;
 						text.TMP.alignment = TMPro.TextAlignmentOptions.Center;
 						text.Alignment.X = 0;
 						text.Alignment.Y = 0;
-						var curved = text.gameObject.AddComponent<CurvedMenuText>();
-						curved.Configure(text.TMP, rootGO.transform, midRadius, p.offsetDegrees + p.wedgeDegrees * 0.5f, faceZ);
+						if (isLeaf)
+						{
+							text.transform.localRotation = Quaternion.identity;
+							tracker.LeafText = text;
+							// CenterAnchor axes are tangent, extrusion, and radial respectively.
+							tracker.LeafLabelBounds = new Vector3(labelWidth, p.extrusionDepth * 0.8f, p.radialThickness * 0.8f);
+						}
+						else
+						{
+							var curved = text.gameObject.AddComponent<CurvedMenuText>();
+							curved.Configure(text.TMP, rootGO.transform, midRadius, p.offsetDegrees + p.wedgeDegrees * 0.5f, faceZ);
+						}
 						layoutActions.Add(() =>
 						{
 							text.TrySetLocalPosition(Vector3.zero);
@@ -800,21 +1053,59 @@ public class RadialMenuFromYaml : MonoBehaviour
 		var go = new GameObject(string.IsNullOrEmpty(ringRootNamePrefix) ? $"Ring_{depth}" : ringRootNamePrefix + depth);
 		go.SetActive(false);
 		go.transform.SetParent(transform, false);
-		go.AddComponent<RadialRingRotation>().Initialize(this);
 		go.transform.localPosition = useRings
 			? transform.InverseTransformPoint(transform.position + ringOffsetBase + ringOffsetPerDepth * depth)
 			: Vector3.zero;
+		var gimbal = new GameObject("Gimbal").transform;
+		gimbal.SetParent(go.transform, false);
+		// Keep the lateral correction outside the ring's rotation and depth scaling.
+		var contents = new GameObject("Contents").transform;
+		contents.SetParent(gimbal, false);
+		contents.gameObject.AddComponent<RadialRingRotation>().Initialize(this);
+		var follower = gimbal.gameObject.AddComponent<ScreenPositionFollower>();
+		follower.sourceCamera = Camera.main;
+		follower.pivotReference = transform;
+		foreach (var source in FindObjectsByType<ScreenPositionFollower>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+		{
+			if (source.gameObject.scene != gameObject.scene || source.name != "MoonViewSetup") continue;
+			follower.sourceCamera = source.sourceCamera;
+			// The moon follows Ring_0; rings retain their original alignment target.
+			follower.pivotReference = _ringAlignmentPivot != null ? _ringAlignmentPivot : source.pivotReference;
+			follower.pixelOffset = source.pixelOffset;
+			follower.boundsPercentOffset = source.boundsPercentOffset;
+			follower.limitBox = source.limitBox;
+			follower.boxSize = source.boxSize;
+			follower.limitDistance = source.limitDistance;
+			follower.maximumDisplacement = source.maximumDisplacement;
+			break;
+		}
+		follower.alignmentAnchor = gimbal;
+		follower.placement = ScreenPositionFollower.PlacementMode.OriginDepthPlane;
+		follower.elasticPercent = 25f;
+		follower.moveX = true;
+		follower.moveY = false;
+		follower.moveZ = false;
+		follower.CaptureOrigin();
 		return go.transform;
 	}
 
-	void ClearRingsFromDepth(int depth)
+	void ClearRingsFromDepth(int depth, bool animate = true)
 	{
 		depth = Mathf.Max(0, depth);
 
 		for (int i = _ringRoots.Count - 1; i >= depth; i--)
 		{
 			var t = _ringRoots[i];
-			if (t != null) DestroyGO(t.gameObject);
+			if (t != null)
+			{
+				if (animate && Application.isPlaying && t.gameObject.activeInHierarchy)
+				{
+					foreach (var button in t.GetComponentsInChildren<MenuButtonBase>(true)) button.Retire();
+					foreach (var collider in t.GetComponentsInChildren<Collider>(true)) collider.enabled = false;
+					t.GetComponentInChildren<RadialRingRotation>(true).Collapse(() => DestroyGO(t.gameObject));
+				}
+				else DestroyGO(t.gameObject);
+			}
 			_ringRoots[i] = null;
 		}
 
@@ -827,6 +1118,12 @@ public class RadialMenuFromYaml : MonoBehaviour
 		if (!go) return;
 		go.SetActive(false);
 		foreach (var button in go.GetComponentsInChildren<MenuButtonBase>(true)) button.Retire();
+		if (_ringMaterials.TryGetValue(go.transform, out var ringMaterial))
+		{
+			_ringMaterials.Remove(go.transform);
+			if (Application.isPlaying) Destroy(ringMaterial);
+			else DestroyImmediate(ringMaterial);
+		}
 		var released = new HashSet<Mesh>();
 		foreach (var collider in go.GetComponentsInChildren<MeshCollider>(true))
 		{
@@ -863,6 +1160,24 @@ public class RadialMenuFromYaml : MonoBehaviour
 		public string id;
 		public string label;
 		public string description;
+		public string gender;
+		public string DisplayLabel
+		{
+			get
+			{
+				if (string.IsNullOrWhiteSpace(gender)) return label;
+				string symbols = string.Empty;
+				foreach (string value in gender.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
+				{
+					if (string.Equals(value, "male", StringComparison.OrdinalIgnoreCase)) symbols += "\u2642";
+					else if (string.Equals(value, "female", StringComparison.OrdinalIgnoreCase)) symbols += "\u2640";
+				}
+				return symbols.Length == 0 ? label : label + " " + symbols;
+			}
+		}
+		public string image;
+		internal string ImagePath;
+		public string icon;
 		public float weight = 1f;
 		public List<MenuNode> children = new List<MenuNode>();
 	}
@@ -937,7 +1252,49 @@ public class RadialMenuFromYaml : MonoBehaviour
 			}
 
 			root.children = children;
+			AssignImagePaths(root, string.Empty);
+			GroupLargePacks(root);
 			return true;
+		}
+
+		static void GroupLargePacks(MenuNode parent)
+		{
+			foreach (var child in parent.children) GroupLargePacks(child);
+			parent.children = GroupRange(parent.children, 0, parent.children.Count, parent.id, parent.icon);
+		}
+
+		static List<MenuNode> GroupRange(List<MenuNode> entries, int start, int count, string parentId, string icon)
+		{
+			if (count <= 12) return entries.GetRange(start, count);
+			int groups = Math.Min(8, Math.Max(2, (count + 4) / 8));
+			int size = count / groups;
+			int extra = count % groups;
+			var result = new List<MenuNode>(groups);
+			int offset = start;
+			for (int i = 0; i < groups; i++)
+			{
+				int length = size + (i < extra ? 1 : 0);
+				int end = offset + length;
+				result.Add(new MenuNode
+				{
+					id = parentId + "_range_" + (offset + 1) + "_" + end,
+					label = (offset + 1) + "-" + end,
+					icon = icon,
+					children = GroupRange(entries, offset, length, parentId, icon)
+				});
+				offset = end;
+			}
+			return result;
+		}
+
+		static void AssignImagePaths(MenuNode parent, string prefix)
+		{
+			foreach (var node in parent.children)
+			{
+				string path = prefix + node.id;
+				node.ImagePath = path + ".png";
+				AssignImagePaths(node, path + "/");
+			}
 		}
 
 		static bool TryParseNode(List<Line> lines, ref int idx, out MenuNode node, out string error)
@@ -1049,11 +1406,27 @@ public class RadialMenuFromYaml : MonoBehaviour
 					return true;
 
 				case "label":
-					node.label = Unquote(value);
+					node.label = Unquote(value).Replace("/n", "\n");
 					return true;
 
 				case "description":
 					node.description = Unquote(value);
+					return true;
+				case "Gender":
+				case "gender":
+					node.gender = value == "~" || string.Equals(value, "null", StringComparison.OrdinalIgnoreCase)
+						? null : Unquote(value);
+					return true;
+				case "image":
+					node.image = value == "~" || string.Equals(value, "null", StringComparison.OrdinalIgnoreCase)
+						? null : Unquote(value);
+					return true;
+
+				case "icon":
+					// YAML refers directly to an entry UID in the assigned Icons registry.
+					var iconValue = value == "~" || string.Equals(value, "null", StringComparison.OrdinalIgnoreCase)
+						? string.Empty : Unquote(value).Trim();
+					node.icon = iconValue.ToLowerInvariant();
 					return true;
 
 				case "weight":
@@ -1099,7 +1472,9 @@ public class RadialMenuFromYaml : MonoBehaviour
 		{
 			if (string.IsNullOrEmpty(s)) return s;
 			s = s.Trim();
-			if ((s.StartsWith("\"") && s.EndsWith("\"")) || (s.StartsWith("'") && s.EndsWith("'")))
+			if (s.StartsWith("'") && s.EndsWith("'"))
+				return s.Substring(1, s.Length - 2).Replace("''", "'");
+			if (s.StartsWith("\"") && s.EndsWith("\""))
 				return s.Substring(1, s.Length - 2);
 			return s;
 		}

@@ -69,6 +69,11 @@ public sealed class RadialMenuMeshEvents : MonoBehaviour, IPointerEnterHandler, 
 	void OnMouseDown()
 	{
 		if (UsesFallbackInput) return;
+#if ENABLE_LEGACY_INPUT_MANAGER
+		if (BlocksPointer(Input.mousePosition)) return;
+#elif ENABLE_INPUT_SYSTEM
+		if (UnityEngine.InputSystem.Mouse.current != null && BlocksPointer(UnityEngine.InputSystem.Mouse.current.position.ReadValue())) return;
+#endif
 		Debug.Log($"[RadialMenuMeshEvents] OnMouseDown on '{gameObject.name}' -> menu='{menu?.NodeId}'", menu);
 		menu?.OnMeshClicked(this);
 	}
@@ -91,6 +96,7 @@ public sealed class RadialMenuMeshEvents : MonoBehaviour, IPointerEnterHandler, 
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		if (UsesFallbackInput) return;
+		if (BlocksPointer(eventData.position)) return;
 		Debug.Log($"[RadialMenuMeshEvents] OnPointerClick on '{gameObject.name}' -> menu='{menu?.NodeId}'", menu);
 		menu?.OnMeshClicked(this);
 	}
@@ -99,5 +105,12 @@ public sealed class RadialMenuMeshEvents : MonoBehaviour, IPointerEnterHandler, 
 	{
 		if (UsesFallbackInput || Button == null) return;
 		menu.GetComponentInParent<RadialRingRotation>()?.Scroll(eventData.scrollDelta.y);
+	}
+
+	bool BlocksPointer(Vector2 position)
+	{
+		var camera = Camera.main;
+		return menu != null && menu.Owner != null && camera != null
+			&& menu.Owner.BlocksRingInput(camera.ScreenPointToRay(position));
 	}
 }

@@ -72,4 +72,376 @@ MonoBehaviour:
     metadata:
       keys: []
       values: []
+  - uid: 9slice_flat_test
+    asset: {fileID: 2800000, guid: b5eb128e722b9584bae231400ef13950, type: 3}
+    tags: []
+    description: Imported from Assets/ArtAssets/Textures/icons/9slice_flat_test.psd
+    metadata:
+      keys: []
+      values: []
+  - uid: guardian
+    asset: {fileID: 2800000, guid: e09797b1dfd799942898aa804b26dc67, type: 3}
+    tags: []
+    description: Imported from Assets/ArtAssets/Textures/icons/guardians.png
+    metadata:
+      keys: []
+      values: []
+  - uid: cryptonaut
+    asset: {fileID: 2800000, guid: decccd90d9e79d6419f842c3364355ae, type: 3}
+    tags: []
+    description: Imported from Assets/ArtAssets/Textures/icons/cryptonaut.png
+    metadata:
+      keys: []
+      values: []
+  - uid: earth
+    asset: {fileID: 2800000, guid: 36bda1fb79d40ff4f90d63ca48e9f235, type: 3}
+    tags: []
+    description: Imported from Assets/ArtAssets/Textures/icons/earth.png
+    metadata:
+      keys: []
+      values: []
+  - uid: category_building
+    asset: {fileID: 2800000, guid: 313e68e1e840a704587dddf47ee7fa59, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_buildings
+    asset: {fileID: 2800000, guid: 3b0be778623ac944ba20793f7c2cf0e2, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_entry
+    asset: {fileID: 2800000, guid: 20aca77582a81a0428c7cfa75050d390, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_fresh
+    asset: {fileID: 2800000, guid: 8819a7f693b33aa408395b42fa0e4240, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_guardian_items
+    asset: {fileID: 2800000, guid: b327aa47cafb0334b88c933db165636a, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_herbivores
+    asset: {fileID: 2800000, guid: 60937fc06ee00384f85657eeb50c1847, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_hovercraft_parts
+    asset: {fileID: 2800000, guid: 7fefbf69c14445a4b8da21f59b663eb7, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_items
+    asset: {fileID: 2800000, guid: 340e5d62db60d1a43a3293d7c5adacee, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_locations
+    asset: {fileID: 2800000, guid: 517311238726e9c469c5c7d444f81303, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_mining
+    asset: {fileID: 2800000, guid: 9da0c33587da6cd45856c8e818c5aceb, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_moon_plots
+    asset: {fileID: 2800000, guid: 100adff96381c924aace265e41488180, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_moon_seeds
+    asset: {fileID: 2800000, guid: d6e3584f8cfd0e84480a7b3948c61ddb, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_moon_tower
+    asset: {fileID: 2800000, guid: da5a3f669c3055c4ab089f5c247ad8f7, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_oclus
+    asset: {fileID: 2800000, guid: 3ce2cfec29ff36045abba093f7a5a8f7, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_omnivores
+    asset: {fileID: 2800000, guid: b05ed5340725f4b4a8d7084474d44112, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_predators
+    asset: {fileID: 2800000, guid: a8a75ff38ae47a54eaffe3a4eec2c4bf, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_race_car_parts
+    asset: {fileID: 2800000, guid: 4d477eb41e409cf4cba8d038a64789e8, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_rations
+    asset: {fileID: 2800000, guid: 08a46ffbce073f84380c9bd41490f9f0, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_resources
+    asset: {fileID: 2800000, guid: 878d84081e08c2b4c95bc14e0262b74f, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_rover
+    asset: {fileID: 2800000, guid: 6f37d7c7c64483c47ac8f8b783a0a96e, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_shuttle
+    asset: {fileID: 2800000, guid: 29a784defed5ef34ebbfcadab77f03a3, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_special_food
+    asset: {fileID: 2800000, guid: a7b2f2e91b691824085a157f391d6fb1, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_special_moon_seeds
+    asset: {fileID: 2800000, guid: e3a9788838489114495faac393c12ad1, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_storage
+    asset: {fileID: 2800000, guid: 981bf50a090323641b1f5c8ac60f61d7, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_suits
+    asset: {fileID: 2800000, guid: 6309d8ba5df5bfc43b6d747da956aac4, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_transport
+    asset: {fileID: 2800000, guid: 05a24eca9fb5e214b8af7f92912f60f4, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_utility
+    asset: {fileID: 2800000, guid: b3967abed0286e64bb1adc3834774f1c, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_vehicle_parts
+    asset: {fileID: 2800000, guid: f2f436b034a6df2489a63462d395018b, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_void
+    asset: {fileID: 2800000, guid: 525475b0989d9104ca63647ed492318c, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_water
+    asset: {fileID: 2800000, guid: 6cdaf281f2cf6c14ca2c85ac5976a484, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_weapons
+    asset: {fileID: 2800000, guid: 4d3a6fdc694c2174dab789f958a8eab3, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_world
+    asset: {fileID: 2800000, guid: 0f54dd19192496e4aa9f0d3a61a6fe39, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_aquatic
+    asset: {fileID: 2800000, guid: 30183713bcb111740b8cb6bc37f009ab, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_birds
+    asset: {fileID: 2800000, guid: 9e4a1ed106bc4044fa46bf8c803370b5, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_large_animals
+    asset: {fileID: 2800000, guid: 5b04f3bd5604061418c17cdee05ccd21, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_mammals
+    asset: {fileID: 2800000, guid: af26334a9b0f0ee42b16a2a9862e793a, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_reptiles
+    asset: {fileID: 2800000, guid: 17e86c32077c1bb47b32d95b87127878, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_small_animals
+    asset: {fileID: 2800000, guid: 61470a28ba922654ca448eed4ad59378, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_buildings_earthcorp
+    asset: {fileID: 2800000, guid: b604b4c8c53168f4b8d0868c62b4b6de, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_buildings_juroka
+    asset: {fileID: 2800000, guid: 2f6502e7aeb422942ad04f4f1dea0748, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_building_utilities
+    asset: {fileID: 2800000, guid: d5a6d778dc63bdf4eb9657bb2492a1ba, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_cryptonaut_characters
+    asset: {fileID: 2800000, guid: d4e099c347c6cee4f9d8a42aa2f9e8c1, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_duos
+    asset: {fileID: 2800000, guid: 7b90ab9cb8760034bb2d12adb6e33e54, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_earthcorp_vehicles
+    asset: {fileID: 2800000, guid: b4aae8c6c77d50b46a44127b1508abcd, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_juroka_creatures
+    asset: {fileID: 2800000, guid: 428c17f7abbea2c46a586105997e5e3d, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_locations_moon
+    asset: {fileID: 2800000, guid: ffbfe19d68ba4904c93c7f9db0a873c1, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_vehicles_combat
+    asset: {fileID: 2800000, guid: e1ad2fb80fa8c6741b8371ce35fe066b, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_vehicles_construction
+    asset: {fileID: 2800000, guid: cc918d82892e01d43ba77c695f243e3f, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
+  - uid: category_vehicles_travel
+    asset: {fileID: 2800000, guid: 1a6fb7eb7de177046af61e3142e1f612, type: 3}
+    tags: []
+    description: MoonDex category icon
+    metadata:
+      keys: []
+      values: []
   enableLogging: 0
+  debugQueryResults: 0

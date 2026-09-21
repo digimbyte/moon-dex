@@ -39,20 +39,67 @@ public static class LeafInfoPanelSetup
                 panel = candidate;
             }
         }
-        if (menu == null || panel == null || menu.leafInfoPanel != null) return;
+        if (menu == null || panel == null) return;
         var title = panel.Find("Text Title")?.GetComponent<Nova.TextBlock>();
         var body = panel.Find("Text Body")?.GetComponent<Nova.TextBlock>();
         if (title == null || body == null) { Debug.LogError("Info_Panel requires Text Title and Text Body."); return; }
+        bool needsSetup = menu.leafPanelIn == null || menu.leafPanelOut == null;
         bool wasDirty = scene.isDirty;
+        // The authored endpoints are vectors. Position.X is a Length, whereas
+        // Position.Raw is the vector binding supported by Core Animate.
+        foreach (var animation in panel.GetComponents<Core.Animator.Animate>())
+        {
+            var data = new SerializedObject(animation);
+            var entries = data.FindProperty("configuredTweens");
+            for (int i = 0; i < entries.arraySize; i++)
+            {
+                var entry = entries.GetArrayElementAtIndex(i);
+                string name = entry.FindPropertyRelative("name").stringValue;
+                if (name != "IN" && name != "OUT") continue;
+                if (entry.FindPropertyRelative("propertyName").stringValue != "Position.X") continue;
+                if (entry.FindPropertyRelative("targetComponent").objectReferenceValue != panel.GetComponent<Nova.UIBlock2D>()) continue;
+                Undo.RegisterCompleteObjectUndo(animation, "Correct panel Nova position binding");
+                entry.FindPropertyRelative("propertyName").stringValue = "Position.Raw";
+                entry.FindPropertyRelative("detectedPropertyType").stringValue = "Vector3";
+                entry.FindPropertyRelative("vectorMask").intValue = 1; // X only; preserve Y/Z.
+                data.ApplyModifiedProperties();
+                EditorUtility.SetDirty(animation);
+                needsSetup = true;
+            }
+        }
+        foreach (var root in scene.GetRootGameObjects())
+        foreach (var button in root.GetComponentsInChildren<NovaSamples.UIControls.Button>(true))
+        {
+            if (button.name != "Back") continue;
+            button.OnClicked ??= new UnityEngine.Events.UnityEvent();
+            bool wired = false;
+            for (int i = 0; i < button.OnClicked.GetPersistentEventCount(); i++)
+                wired |= button.OnClicked.GetPersistentTarget(i) == menu && button.OnClicked.GetPersistentMethodName(i) == "Back";
+            if (wired) continue;
+            Undo.RecordObject(button, "Connect menu Back button");
+            UnityEditor.Events.UnityEventTools.AddPersistentListener(button.OnClicked, menu.Back);
+            EditorUtility.SetDirty(button);
+            needsSetup = true;
+        }
+        if (!needsSetup) return;
         Undo.RecordObject(menu, "Assign leaf information panel");
         menu.leafInfoPanel = panel.gameObject;
         menu.leafTitle = title;
         menu.leafBody = body;
         // Navigation owns visibility; do not start the authored IN and OUT simultaneously.
-        foreach (var animation in panel.GetComponents<Animator.Animate>())
+        foreach (var animation in panel.GetComponents<Core.Animator.Animate>())
         {
             Undo.RecordObject(animation, "Disable panel startup playback");
             animation.playAllOnStart = false;
+            var serialized = new SerializedObject(animation);
+            var entries = serialized.FindProperty("configuredTweens");
+            for (int i = 0; i < entries.arraySize; i++)
+            {
+                var entry = entries.GetArrayElementAtIndex(i);
+                string name = entry.FindPropertyRelative("name").stringValue;
+                if (name == "IN") menu.leafPanelIn = animation;
+                if (name == "OUT") menu.leafPanelOut = animation;
+            }
             EditorUtility.SetDirty(animation);
         }
         Undo.RecordObject(panel.gameObject, "Hide leaf panel until selection");

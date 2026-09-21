@@ -16,6 +16,8 @@ public sealed class ScreenPositionFollower : MonoBehaviour
     public Vector2 boundsPercentOffset;
     [Header("Placement")]
     public PlacementMode placement;
+    [Tooltip("Position between the captured origin (0%) and alignment target (100%).")]
+    [Range(0f, 100f)] public float elasticPercent = 100f;
     [Min(0f)] public float rayLength = 100f;
     public LayerMask surfaceLayers = ~0;
     [Header("Camera-space movement axes (X right, Y up, Z forward)")]
@@ -98,13 +100,13 @@ public sealed class ScreenPositionFollower : MonoBehaviour
         if (!Finite(pixel)) return Fail("Screen target is invalid.");
         lastRay = cam.ScreenPointToRay(pixel);
         hasRay = true;
+        Vector3 originWorld = root.parent != null ? root.parent.TransformPoint(origin) : origin;
+        Vector3 anchorOrigin = originWorld + (anchor.position - root.position);
         Vector3 target;
         if (placement == PlacementMode.OriginDepthPlane)
         {
             // Follow the pivot's screen position at the follower's own depth.
-            Vector3 originWorld = root.parent != null ? root.parent.TransformPoint(origin) : origin;
-            Vector3 pivot = originWorld + (anchor.position - root.position);
-            var plane = new Plane(cam.transform.forward, pivot);
+            var plane = new Plane(cam.transform.forward, anchorOrigin);
             if (!plane.Raycast(lastRay, out float distance) || distance < 0f) return Fail("Depth plane does not intersect the forward screen ray.");
             target = lastRay.GetPoint(distance);
         }
@@ -125,6 +127,7 @@ public sealed class ScreenPositionFollower : MonoBehaviour
             target = lastRay.GetPoint(distance);
         }
         if (!Finite(target)) return Fail("Ray intersection is invalid.");
+        target = Vector3.Lerp(anchorOrigin, target, Mathf.Clamp01(elasticPercent * 0.01f));
         lastIntersection = target;
         hasIntersection = true;
         Vector3 worldDelta = target - anchor.position;

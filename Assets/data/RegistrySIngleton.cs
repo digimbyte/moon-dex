@@ -53,7 +53,7 @@ public class RegistrySingleton : MonoBehaviour
     /// <summary>
     /// Gets a texture from the Icons registry by UID.
     /// </summary>
-    /// <param name="uid">The unique identifier of the icon (e.g., "creature", "equipment")</param>
+    /// <param name="uid">The icon registry UID, e.g. "creature".</param>
     /// <returns>The Texture2D icon, or null if not found</returns>
     public Texture2D GetIcon(string uid)
     {

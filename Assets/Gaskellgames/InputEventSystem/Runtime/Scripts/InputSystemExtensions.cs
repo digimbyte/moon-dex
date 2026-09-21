@@ -1,4 +1,3 @@
-#if GASKELLGAMES
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -197,4 +196,3 @@ namespace Gaskellgames.InputEventSystem
 		
     } // class end
 }
-#endif

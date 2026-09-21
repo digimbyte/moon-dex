@@ -38,6 +38,7 @@ public static class RadialMenuLifecycleChecks
             var leaf = new RadialMenuFromYaml.MenuNode { id = "leaf", label = "Leaf" };
             var mining = new RadialMenuFromYaml.MenuNode { id = "mining", label = "Mining" };
             mining.children.Add(leaf);
+            mining.children.Add(new RadialMenuFromYaml.MenuNode { id = "second_leaf", label = "Second Leaf" });
             var tools = new RadialMenuFromYaml.MenuNode { id = "tools", label = "Tools" };
             tools.children.Add(mining);
             var vehicles = new RadialMenuFromYaml.MenuNode { id = "vehicles", label = "Vehicles" };
@@ -50,7 +51,11 @@ public static class RadialMenuLifecycleChecks
             prefab.SetActive(true);
             menu.Open(root);
             var rootRing = host.transform.Find("Ring_0");
-            Check(rootRing != null && rootRing.childCount == 2, "Complete root ring");
+            Check(rootRing != null && rootRing.Find("Gimbal/Contents").childCount == 2, "Complete root ring inside gimbal");
+            var ringFollower = rootRing.Find("Gimbal").GetComponent<ScreenPositionFollower>();
+            Check(ringFollower != null && ringFollower.moveX && !ringFollower.moveY && !ringFollower.moveZ
+                && ringFollower.placement == ScreenPositionFollower.PlacementMode.OriginDepthPlane,
+                "Ring gimbal moves only screen left/right at its own depth");
             Check(Mathf.Approximately(tracks.Percentage, 0f), "Root track position");
             for (int i = 0; i < 5; i++)
             {
@@ -83,7 +88,10 @@ public static class RadialMenuLifecycleChecks
                 Check(menu.ActiveNodeId == "leaf", "Stationary collider selects leaf");
                 Check(infoPanel.activeSelf, "Leaf shows information panel");
                 Check(Mathf.Approximately(tracks.Percentage, 1f), "Leaf track endpoint");
+                Find(menu, "second_leaf").OnMeshClicked(null);
+                Check(menu.ActiveNodeId == "second_leaf" && infoPanel.activeSelf, "Leaf-to-leaf replaces selection and keeps panel open");
                 menu.Back();
+                Check(menu.ActiveNodeId == "mining", "Back after switching leaves returns to branch, not previous leaf");
                 Check(!infoPanel.activeSelf, "Back hides information panel");
                 leafButton.OnMeshHoverExit(null);
                 leafButton.OnMeshClicked(null);
@@ -96,7 +104,7 @@ public static class RadialMenuLifecycleChecks
                 Check(Mathf.Approximately(tracks.Percentage, 0.5f), "Shorter branch track position");
                 retired.OnMeshHoverExit(null);
                 Check(host.transform.Find("Ring_0") == rootRing, "Ancestor retained");
-                Check(host.transform.Find("Ring_1").childCount == 1 && Find(menu, "rover") != null, "Complete replacement");
+                Check(host.transform.Find("Ring_1/Gimbal/Contents").childCount == 1 && Find(menu, "rover") != null, "Complete replacement");
                 menu.Back();
             }
             Check(foreign != null && foreign.vertexCount == 3, "Foreign mesh untouched");

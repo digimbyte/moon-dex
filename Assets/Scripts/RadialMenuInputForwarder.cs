@@ -69,6 +69,16 @@ public class RadialMenuInputForwarder : MonoBehaviour
 
         var ray = _cam.ScreenPointToRay(pointerPos);
 
+        // Nova controls and the information panel own their pointer hit. Do not
+        // also select a physics wedge behind them on the same mouse press.
+        var owner = GetComponent<RadialMenuFromYaml>();
+        if (owner != null && owner.BlocksRingInput(ray))
+        {
+            if (_hovered != null) _hovered.OnMeshHoverExit(null);
+            _hovered = null;
+            return;
+        }
+
         if (Physics.Raycast(ray, out var hit, maxDistance, ~0, QueryTriggerInteraction.Ignore))
         {
             var events = hit.collider == null ? null : hit.collider.GetComponent<RadialMenuMeshEvents>();
