@@ -4,6 +4,9 @@ public sealed class RadialRingRotation : MonoBehaviour
 {
     Quaternion _target;
     RadialMenuFromYaml _owner;
+    SfxRatchet _ratchet;
+    float _velocity;
+    bool _scrollDriven;
     Quaternion _selectionStart;
     float _selectionElapsed;
     bool _rotatingToSelection;
@@ -21,6 +24,7 @@ public sealed class RadialRingRotation : MonoBehaviour
 
     internal void Collapse(System.Action onComplete)
     {
+        StopMomentum();
         _collapsing = true;
         _animatingWedges = true;
         _entranceElapsed = 0f;
@@ -69,21 +73,39 @@ public sealed class RadialRingRotation : MonoBehaviour
         }
     }
 
-    internal void Initialize(RadialMenuFromYaml owner) => _owner = owner;
+    internal void Initialize(RadialMenuFromYaml owner)
+    {
+        _owner = owner;
+        _ratchet = GetComponentInParent<SfxRatchet>(true);
+        StopMomentum();
+    }
+
+    internal void StopMomentum()
+    {
+        _velocity = 0f;
+        _scrollDriven = false;
+        if (_ratchet != null) _ratchet.ResetPlayback();
+    }
+
+    void OnDisable() => StopMomentum();
 
     void Awake() => _target = transform.localRotation;
 
     internal void Scroll(float steps)
     {
-        if (_owner == null) return;
-        if (_rotatingToSelection) _target = transform.localRotation;
+        if (_owner == null || !_owner.isActiveAndEnabled || _collapsing || !float.IsFinite(steps) || steps == 0f) return;
         _rotatingToSelection = false;
-        _target *= Quaternion.AngleAxis(steps * _owner.wheelRotationDegrees, Vector3.forward);
+        float limit = Mathf.Max(1f, _owner.wheelMaximumSpeed);
+        if (!float.IsFinite(limit) || !float.IsFinite(_owner.wheelImpulse)) return;
+        double requested = _velocity + (double)steps * _owner.wheelImpulse;
+        _velocity = (float)System.Math.Clamp(requested, -limit, limit);
+        _scrollDriven = true;
     }
 
     internal void FaceCamera(Transform leafCenter, Camera camera)
     {
         if (leafCenter == null || camera == null) return;
+        StopMomentum();
         Vector3 leafDirection = transform.InverseTransformPoint(leafCenter.position);
         Vector3 cameraDirection = transform.InverseTransformPoint(camera.transform.position);
         leafDirection.z = cameraDirection.z = 0f;
@@ -137,7 +159,11 @@ public sealed class RadialRingRotation : MonoBehaviour
                 }
             }
         }
-        if (_owner == null) return;
+        if (_owner == null || !_owner.isActiveAndEnabled || _collapsing)
+        {
+            StopMomentum();
+            return;
+        }
         if (_rotatingToSelection)
         {
             _selectionElapsed += Time.unscaledDeltaTime;
@@ -146,7 +172,15 @@ public sealed class RadialRingRotation : MonoBehaviour
             if (progress >= 1f) _rotatingToSelection = false;
             return;
         }
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, _target,
-            1f - Mathf.Exp(-Mathf.Max(0.01f, _owner.wheelRotationResponse) * Time.deltaTime));
+        float friction = float.IsFinite(_owner.wheelFriction) ? Mathf.Max(0.01f, _owner.wheelFriction) : 4f;
+        float limit = float.IsFinite(_owner.wheelMaximumSpeed) ? Mathf.Max(1f, _owner.wheelMaximumSpeed) : 720f;
+        _velocity = Mathf.Clamp(_velocity, -limit, limit);
+        float dt = Time.unscaledDeltaTime;
+        float decay = Mathf.Exp(-friction * dt);
+        float deltaDegrees = _velocity * (1f - decay) / friction;
+        transform.localRotation *= Quaternion.AngleAxis(deltaDegrees, Vector3.forward);
+        _velocity *= decay;
+        if (Mathf.Abs(_velocity) < 1f) _velocity = 0f;
+        if (_ratchet != null) _ratchet.AdvanceRotation(_scrollDriven ? deltaDegrees : 0f, _velocity, limit);
     }
 }

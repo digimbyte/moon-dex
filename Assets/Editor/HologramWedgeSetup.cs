@@ -24,10 +24,10 @@ public static class HologramWedgeSetup
         var material = AssetDatabase.LoadAssetAtPath<Material>(MaterialPath);
         if (material == null) return;
         Undo.RecordObject(material, "Brighten hologram wedge palette");
-        material.SetColor("_ActiveFill", new Color(0.08f, 0.62f, 0.88f, 1f));
-        material.SetColor("_ActiveEdge", new Color(0.65f, 1f, 1f, 1f));
-        material.SetColor("_InactiveFill", new Color(0.38f, 0.40f, 0.72f, 1f));
-        material.SetColor("_InactiveEdge", new Color(0.78f, 0.76f, 1f, 1f));
+        material.SetColor("_ActiveFill", new Color(0.025f, 0.085f, 0.14f, 1f));
+        material.SetColor("_ActiveEdge", new Color(0.28f, 0.82f, 0.94f, 1f));
+        material.SetColor("_InactiveFill", new Color(0.008f, 0.018f, 0.035f, 1f));
+        material.SetColor("_InactiveEdge", new Color(0.08f, 0.25f, 0.34f, 1f));
         EditorUtility.SetDirty(material);
         AssetDatabase.SaveAssetIfDirty(material);
         SessionState.SetBool(paletteKey, true);

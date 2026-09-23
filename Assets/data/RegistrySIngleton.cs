@@ -8,7 +8,6 @@ using Core.Registry;
 public class RegistrySingleton : MonoBehaviour
 {
     private static RegistrySingleton _instance;
-    
     [SerializeField] private RegistryManager _registryManager;
     
     [Header("Registry References")]
@@ -54,7 +53,7 @@ public class RegistrySingleton : MonoBehaviour
     /// Gets a texture from the Icons registry by UID.
     /// </summary>
     /// <param name="uid">The icon registry UID, e.g. "creature".</param>
-    /// <returns>The Texture2D icon, or null if not found</returns>
+    /// <returns>The Texture2D icon, or the Icons registry default asset if not found</returns>
     public Texture2D GetIcon(string uid)
     {
         if (iconsRegistry == null)
@@ -63,14 +62,7 @@ public class RegistrySingleton : MonoBehaviour
             return null;
         }
 
-        var item = iconsRegistry.GetItemByUID(uid);
-        if (item == null)
-        {
-            Debug.LogWarning($"[RegistrySingleton] Icon UID '{uid}' not found in Icons registry.");
-            return null;
-        }
-
-        return item.asset as Texture2D;
+        return iconsRegistry.GetTextureByUID(uid) as Texture2D;
     }
 
     void Awake()

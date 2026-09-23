@@ -16,8 +16,8 @@
   <Project Path="Unity.RenderPipelines.Universal.Editor.csproj" />
   <Project Path="Unity.PerformanceTesting.Editor.csproj" />
   <Project Path="UnityEngine.TestRunner.csproj" />
-  <Project Path="Gaskellgames.csproj" />
   <Project Path="YamlDotNet.csproj" />
+  <Project Path="Gaskellgames.csproj" />
   <Project Path="Flexalon.csproj" />
   <Project Path="AssetCleaner.csproj" />
   <Project Path="RelationsInspector.Editor.csproj" />
@@ -31,6 +31,7 @@
   <Project Path="Crosstales.Radio.Runtime.csproj" />
   <Project Path="Flexalon.Samples.csproj" />
   <Project Path="Unity.PerformanceTesting.csproj" />
+  <Project Path="Core.Registry.csproj" />
   <Project Path="Animator.Editor.csproj" />
   <Project Path="Unity.Multiplayer.Center.Editor.csproj" />
   <Project Path="Unity.TextMeshPro.csproj" />
@@ -63,7 +64,6 @@
   <Project Path="Crosstales.Radio.Editor.csproj" />
   <Project Path="Unity.ShaderGraph.Utilities.csproj" />
   <Project Path="Core.Framework.Editor.csproj" />
-  <Project Path="Core.Registry.csproj" />
   <Project Path="YamlDotNet.Examples.csproj" />
   <Project Path="Core.Data.Editor.csproj" />
   <Project Path="Unity.SurfaceCache.Runtime.csproj" />

@@ -27,14 +27,20 @@ Material:
     m_Floats:
     - _RingActive: 1
     - _WedgeCenter: 0
+    - _WedgeHovered: 0
+    - _WedgeSelected: 0
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
-    - _ActiveEdge: {r: 0.65, g: 1, b: 1, a: 1}
-    - _ActiveFill: {r: 0.08, g: 0.62, b: 0.88, a: 1}
+    - _ActiveEdge: {r: 0.28, g: 0.82, b: 0.94, a: 1}
+    - _ActiveFill: {r: 0.025, g: 0.085, b: 0.14, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _InactiveEdge: {r: 0.78, g: 0.76, b: 1, a: 1}
-    - _InactiveFill: {r: 0.38, g: 0.4, b: 0.72, a: 1}
+    - _HoverEdge: {r: 0.52, g: 0.96, b: 1, a: 1}
+    - _HoverFill: {r: 0.08, g: 0.24, b: 0.34, a: 1}
+    - _InactiveEdge: {r: 0.08, g: 0.25, b: 0.34, a: 1}
+    - _InactiveFill: {r: 0.008, g: 0.018, b: 0.035, a: 1}
+    - _SelectedEdge: {r: 1, g: 0.62, b: 0.18, a: 1}
+    - _SelectedFill: {r: 0.52, g: 0.16, b: 0.035, a: 1}
     - _WedgeShape: {r: 0.25, g: 0.15, b: 0.02, a: 0.3927}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -1,0 +1,28 @@
+:root { color-scheme: dark; font-family: "Segoe UI", Arial, sans-serif; }
+body { padding: 0; margin: 0; min-height: 100vh; color: #b7c6cc; background: radial-gradient(ellipse at 50% 35%, #12202a 0, #080e15 45%, #030508 100%); }
+#unity-container { position: absolute }
+#unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
+#unity-container.unity-mobile { position: fixed; width: 100%; height: 100% }
+.unity-mobile #unity-fullscreen-container { width: 100%; height: 100% }
+#unity-fullscreen-container { position: relative; background: #05080c; }
+.unity-desktop #unity-fullscreen-container { max-width: calc(100vw - 32px); max-height: calc((100vw - 32px) * 9 / 16); outline: 1px solid #263942; box-shadow: 0 24px 100px #000c; }
+#unity-fullscreen-container:fullscreen { width: 100% !important; height: 100% !important; max-width: none; max-height: none; outline: none; }
+#unity-canvas { position: absolute; width: 100%; height: 100%; background: #05080c; }
+#unity-loading-container { position: absolute; width: 100%; height: 100%; background: #05080cf5; display: none; }
+#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 240px; text-align: center; }
+#unity-logo { width: 72px; height: 72px; margin: 0 auto 28px; border-radius: 50%; background: radial-gradient(circle at 72% 35%, #05080c 50%, #1d303b 67%, #718b96 94%); box-shadow: 0 0 38px #76b4c312; }
+.loading-title { font-size: 18px; letter-spacing: .3em; padding-left: .3em; color: #c0d0d5; }
+.loading-caption { margin-top: 12px; font-size: 11px; letter-spacing: .08em; color: #7d969f; }
+#unity-progress-bar-empty { height: 2px; margin-top: 28px; background: #1b2a32; }
+#unity-progress-bar-full { width: 0%; height: 100%; background: #779fa9; }
+#unity-footer { position: relative; height: 46px; padding: 0 12px; background: #080e14; border: 1px solid #263942; border-top: 0; }
+.unity-mobile #unity-footer { display: none }
+#unity-logo-title-footer { float: left; line-height: 46px; font-size: 10px; letter-spacing: .2em; color: #8298a3; }
+#unity-build-title { float: right; margin-right: 16px; line-height: 46px; font-size: 12px; letter-spacing: .12em; color: #a9bbc3; }
+#unity-fullscreen-button { cursor: pointer; float: right; width: 38px; height: 45px; padding: 0; border: 0; background: transparent; color: #a9bbc3; font-size: 25px; }
+#unity-fullscreen-button:hover { color: #def5fc; }
+#unity-fullscreen-button:focus-visible { outline: 1px solid #a9bbc3; outline-offset: -5px; }
+#unity-warning { position: absolute; z-index: 2; left: 50%; top: 5%; transform: translateX(-50%); width: min(90%, 640px); background: #10171e; color: #d0d9df; border: 1px solid #495b67; padding: 10px; display: none; font-size: 13px; }
+#unity-warning > div { padding: 10px; }
+.banner-error { background: #32171c; color: #f2c2c8; }
+.banner-warning { background: #30291b; color: #e5d6ad; }

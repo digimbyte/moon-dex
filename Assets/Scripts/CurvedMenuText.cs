@@ -92,9 +92,9 @@ public sealed class CurvedMenuText : MonoBehaviour
         float centerY = (minY + maxY) * 0.5f;
         Vector3 arcOrigin = _ring.TransformPoint(new Vector3(
             Mathf.Cos(_angle) * _radius, Mathf.Sin(_angle) * _radius, _faceZ));
-        // Nova can reposition the UI block during layout. Use its actual centered
-        // origin for both icon and text while preserving the arc's relative offsets.
-        Vector3 anchorOffset = transform.parent.position - arcOrigin;
+			// Nova can reposition this root-level text block during layout. Use its
+			// actual world anchor; the text no longer inherits the icon block.
+			Vector3 anchorOffset = transform.position - arcOrigin;
         // Swap the reading direction only while the label is fully faded.
         float direction = _direction;
         for (int i = 0; i < info.characterCount; i++)

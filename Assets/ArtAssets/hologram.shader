@@ -3,11 +3,18 @@ Shader "hologram"
     Properties
     {
         _Color ("Interaction Tint", Color) = (1,1,1,1)
-        _ActiveFill ("Active Fill", Color) = (0.08,0.62,0.88,1)
-        _ActiveEdge ("Active Edge", Color) = (0.65,1,1,1)
-        _InactiveFill ("Inactive Fill", Color) = (0.38,0.40,0.72,1)
-        _InactiveEdge ("Inactive Edge", Color) = (0.78,0.76,1,1)
+        _ActiveFill ("Active Fill", Color) = (0.014,0.040,0.062,1)
+        _ActiveEdge ("Active Edge", Color) = (0.18,0.52,0.62,1)
+        _InactiveFill ("Inactive Fill", Color) = (0.008,0.018,0.035,1)
+        _InactiveEdge ("Inactive Edge", Color) = (0.08,0.25,0.34,1)
+        _HoverFill ("Hover Fill", Color) = (0.08,0.24,0.34,1)
+        _HoverEdge ("Hover Edge", Color) = (0.52,0.96,1,1)
+        _SelectedFill ("Selected Fill", Color) = (0.52,0.16,0.035,1)
+        _SelectedEdge ("Selected Edge", Color) = (1,0.62,0.18,1)
         [HideInInspector] _RingActive ("Ring Active", Float) = 1
+        [HideInInspector] _WedgeHovered ("Wedge Hovered", Float) = 0
+        [HideInInspector] _WedgeSelected ("Wedge Selected", Float) = 0
+        [HideInInspector] _WedgeLeafSelected ("Wedge Leaf Selected", Float) = 0
         [HideInInspector] _WedgeShape ("Wedge Shape", Vector) = (0.25,0.15,0.02,0.3927)
         [HideInInspector] _WedgeCenter ("Wedge Center", Float) = 0
         [HideInInspector] _ZTest ("Depth Test", Float) = 4
@@ -31,8 +38,9 @@ Shader "hologram"
 
             CBUFFER_START(UnityPerMaterial)
                 half4 _Color, _ActiveFill, _ActiveEdge, _InactiveFill, _InactiveEdge;
+                half4 _HoverFill, _HoverEdge, _SelectedFill, _SelectedEdge;
                 float4 _WedgeShape;
-                float _RingActive, _WedgeCenter;
+                float _RingActive, _WedgeCenter, _WedgeHovered, _WedgeSelected, _WedgeLeafSelected;
             CBUFFER_END
 
             struct Attributes
@@ -85,9 +93,25 @@ Shader "hologram"
                     float tick = Line(frac(tickPhase + 0.5) - 0.5, fwidth(tickPhase));
                     detail = max(inset * 0.45, tick * step(0.88, radial) * 0.65);
                 }
-                half4 fill = lerp(_InactiveFill, _ActiveFill, saturate(_RingActive));
-                half4 ink = lerp(_InactiveEdge, _ActiveEdge, saturate(_RingActive));
-                return half4(lerp(fill.rgb, ink.rgb, max(edge, detail)) * _Color.rgb, 1);
+                half active = saturate(_RingActive);
+                half hovered = saturate(_WedgeHovered);
+                half selected = saturate(_WedgeSelected);
+                half leafSelected = saturate(_WedgeLeafSelected);
+                half3 fill = lerp(_InactiveFill.rgb, _ActiveFill.rgb, active);
+                half3 ink = lerp(_InactiveEdge.rgb, _ActiveEdge.rgb, active);
+                // Keep the active ring dark but give its edge a restrained cyan glow.
+                fill = lerp(fill, _ActiveFill.rgb * 1.12h, active * 0.16h);
+                // Selection is deliberately warm and wins over the active/hover tint.
+                fill = lerp(fill, _SelectedFill.rgb, selected);
+                ink = lerp(ink, _SelectedEdge.rgb, selected);
+                // A selected leaf is only a lighter leaf, never navigation history.
+                fill = lerp(fill, _HoverFill.rgb, leafSelected);
+                ink = lerp(ink, _HoverEdge.rgb, leafSelected);
+                // Hover must brighten the whole wedge, including an already-selected wedge.
+                half hoverWeight = hovered * (selected ? 0.35h : 1.0h);
+                fill = lerp(fill, _HoverFill.rgb, hoverWeight);
+                ink = lerp(ink, _HoverEdge.rgb, hoverWeight);
+                return half4(lerp(fill, ink, max(edge, detail)) * _Color.rgb, 1);
             }
             ENDHLSL
         }

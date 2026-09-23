@@ -20,258 +20,306 @@ items:
             children:
               - id: creature_mche
                 label: 'Hector'
-                children:
+                varients:
                   - id: mche
-                    label: 'Gen I/nHector'
+                    gen: 1
+                    label: 'Hector'
                     description: 'There''s only sunshine in Hector''s forecast. This hippopotamus is always excited to see what each day has to offer. It is also extremely mindful and honest.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmVGQQcEkMU1j89GuNUDwXkN6swMZZzNX7UZNphY7Vb9XE'
                   - id: mcheb
-                    label: 'Gen II/nHeftin'
+                    gen: 2
+                    label: 'Heftin'
                     description: 'With more pep in its step, Heftin is one happy hippo. It is beyond genuine and always holds itself and others to a high moral standard, thank goodness its amazing attitude keeps that from being a drag to those it cares about.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmYr2UbJ4JBxDV7ZxVjnmE5EhpgRttD9QzPem1jPW7TSus'
                   - id: mchec
-                    label: 'Gen III/nHeftusk'
+                    gen: 3
+                    label: 'Heftusk'
                     description: 'Don’t let its growing size and chompers fool you, Heftusk is all cheer! This honorable hippo will always choose to do the right thing. Others even consult it on the topic because of its ability to remain high-minded in tough situations.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmcEt8aAGkeCtEw4Ju4fK8mSqenfkkXs3vSaH5kUUA8NMQ'
                   - id: mched
-                    label: 'Gen IV/nHeftorrent'
+                    gen: 4
+                    label: 'Heftorrent'
                     description: 'Hungry hippo? Try happy hippo! What''s not to be happy about when you live true to your principles. Heftorrent has become the master of knowing right from wrong and it lets that guide the way.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreidwmnrn56q6jwevhr7mpdksjfbprrlgpaqietsjp6iwfg4gzl3qfm'
               - id: creature_mcco
                 label: 'Cobie'
-                children:
+                varients:
                   - id: mcco
-                    label: 'Gen I/nCobie'
+                    gen: 1
+                    label: 'Cobie'
                     description: 'Every day for Cobie is like a game of trust fall with the universe- and it wins every time. This camel knows it is being guided, and that conviction helps lead the way.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmSUgL6i6HkbpnPB4KaS5RKNGgWmNiS5seuJNfs5LremSE'
                   - id: mccob
-                    label: 'Gen II/nCobrune'
+                    gen: 2
+                    label: 'Cobrune'
                     description: 'Cobrune has proven that even through the driest and widest of moon terrains, it will make it, thanks to its trust in the universe, who it is always working in cahoots with. This camel is in a constant state of cahoot-iverse.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmQpb7AVcQfTR24F7MAtjmxXK8fCYJvSgGN7QfsNCd7VDu'
                   - id: mccoc
-                    label: 'Gen III/nCobravan'
+                    gen: 3
+                    label: 'Cobravan'
                     description: 'Together with the universe, Cobravan has managed to make it through the longest droughts the moon has ever seen. This camel has never doubted the path it''s on because it knows if it practices complete acceptance, it’ll always lead to where it needs to be- and most of the time that happens to be near a generous supply of fresh water!'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmPtdikHoAhfoZx7oVPfSwmWb4YHsZP4or4ktu8mHnSK6Y'
                   - id: mccod
-                    label: 'Gen IV/nCaravanguard'
+                    gen: 4
+                    label: 'Caravanguard'
                     description: 'Ready for the long road ahead, Caravanguard has a come what may attitude that allows it to accept the current situation, whatever it is. It doesn''t matter that fur covers this camel''s eyes because the universe always leads the way.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreibi4fv5hsefwkfn37czv3shufusb3lk4lisvajg6xmlkl34qny4za'
               - id: creature_mcmo
                 label: 'Morfyn'
-                children:
+                varients:
                   - id: mcmo
-                    label: 'Gen I/nMorfyn'
+                    gen: 1
+                    label: 'Morfyn'
                     description: 'Morfyn can always find the silver lining to a dark cloud. This moose is bright both in its outlook and smarts.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmR8TEh3vhWMYtKexNP1yPmXTf3YjQi5iCSAbN4HAiY9te'
                     gender: 'male'
                   - id: mcmob
-                    label: 'Gen II/nMorfelk'
+                    gen: 2
+                    label: 'Morfelk'
                     description: 'Looking very regal these days, Morfelk has maintained its sunny outlook through countless dark nights. This is perhaps what makes it stand so tall. This moose is also extremely resourceful and astute.'
                     image: 'https://ttm.mypinata.cloud/ipfs/Qmf2qDwuVxx9NxJLqGUB5X2U76ZV7Zfoxhz4prWTfMMAZS'
                     gender: 'male'
                   - id: mcmoc
-                    label: 'Gen III/nMorfrost'
+                    gen: 3
+                    label: 'Morfrost'
                     description: 'With currently the largest antlers on the moon, Morfrost is also one of the most assured of the creatures. This brilliant moose is certain that with the right mindset, one can get through anything.'
                     image: 'https://ipfs.tothemoon.net/ipfs/Qmc14vVpebRG7KG2TzyzsgUxksE6Tw4wu9Awe6zJ1mLg4e'
                     gender: 'male'
                   - id: mcmod
-                    label: 'Gen IV/nMornstag'
+                    gen: 4
+                    label: 'Mornstag'
                     description: 'This ray of sunshine is smart enough to know that all will end well for those that believe it. Mornstag is a master at keeping the faith and standing even taller through tough times. This moose never lets worry get a hold of it.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreih3ub3asls4xricdbvrx2y2ayktozdbtn2t7kvplhx7h7mrjyp6aq'
                     gender: 'male'
               - id: creature_mcbo
                 label: 'Boaz'
-                children:
+                varients:
                   - id: mcbo
-                    label: 'Gen I/nBoaz'
+                    gen: 1
+                    label: 'Boaz'
                     description: 'With an unlikely serene energy, Boaz is a true gentle giant. A bit of a shy bull, it searches for ways to help those in need.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmW3DCEJ1ifprSAooojXbQaxkQtRNVXMsekxGxv4QLSioc'
                     gender: 'male'
                   - id: mcbob
-                    label: 'Gen II/nBodan'
+                    gen: 2
+                    label: 'Bodan'
                     description: 'Regardless of its less cute and more intimidating appearance, Bodan is still the kind-hearted, softie it always was. The only thing this bull will fiercely fight for is its friends.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmZmCU7GuVCS7rjVQNqz1HrUPBy7qVpaRuKdfEE4Kku9WJ'
                     gender: 'male'
                   - id: mcboc
-                    label: 'Gen III/nBovarn'
+                    gen: 3
+                    label: 'Bovarn'
                     description: 'Bovarn has still not grown into the aggressive, angry bull stereotype we’ve all heard of- And thank goodness for that because everyone loves this tender, gentle soul just as it is.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmNhtVY9MAX1ULqTzNvHFftk765beCvMFM3ZbyJBJMojFb'
                     gender: 'male'
                   - id: mcbod
-                    label: 'Gen IV/nBullforge'
+                    gen: 4
+                    label: 'Bullforge'
                     description: 'Looks are always deceiving when it comes to this creature. Bullforge''s soft demeanor has only been further ingrained in its personality, in spite of its menacing appearance.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreidlqp52nqad3pn2jyxeiplzf6743ine73kipotrzexe4owvqqtnda'
                     gender: 'male'
               - id: creature_mcdr
                 label: 'Drucie'
-                children:
+                varients:
                   - id: mcdr
-                    label: 'Gen I/nDrucie'
+                    gen: 1
+                    label: 'Drucie'
                     description: 'Drucie is sure of its creative capabilities. A true artist at heart, this deer is not afraid to colour outside the lines, then proudly sign its name across the top.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmWaoGoebYv6R9LmaYHYcEZTU42qpnoNQJavap4gS4TP1h'
                     gender: 'female'
                   - id: mcdrb
-                    label: 'Gen II/nDrustel'
+                    gen: 2
+                    label: 'Drustel'
                     description: 'Drustel’s on-of-a-kind, magnificent antlers reflect its creative soul. This unique deer is not only sure of its artistic skills, but also its ability to handle what may come.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmXUFRxFswhU7jXk8uY9dn2zkA4r2ngKjSuPuNn1HAKgxN'
                     gender: 'female'
                   - id: mcdrc
-                    label: 'Gen III/nDrethorn'
+                    gen: 3
+                    label: 'Drethorn'
                     description: 'Drethorn’s stance now reflects the type of self-certainty that only comes with growing up. This deer’s original artistic approach cannot be ignored as it has proven to be quite the visionary.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmYz3HztCWkanGypMTAgHA61m93atHWuM7mzFDN8pVayo2'
                     gender: 'female'
                   - id: mcdrd
-                    label: 'Gen IV/nDruhart'
+                    gen: 4
+                    label: 'Druhart'
                     description: 'Druhart has learned to use its art to manifest great blessings! This deer knows that if it can dream it, it can do it. As a result, once paint is put to paper, it considers it done.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreifrjbkprqo5gla7awthgtsfvibhmnhehs44dp6ppzn5ecdx2zlcgi'
                     gender: 'female'
               - id: creature_mcri
                 label: 'Ridley'
-                children:
+                varients:
                   - id: mcri
-                    label: 'Gen I/nRidley'
+                    gen: 1
+                    label: 'Ridley'
                     description: 'The desire for more comes with great obligation to achieve. Ridley is a rhinoceros who does not fool around when it comes to accomplishing what it set out to.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmaWhj3E1iyPL4n5XEgW7gTxBtaxW3tmgLX249u5wLgy9u'
                   - id: mcrib
-                    label: 'Gen II/nRidmar'
+                    gen: 2
+                    label: 'Ridmar'
                     description: 'Ridmar is always ready for more. Its hunger for greatness is luckily supported by its capacity to go for it. This rhinoceros is even more steadfast in its pursuits than before.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmSuNGrGKDpqtodU1GZWuUiNNGyCroTYd77XSaJTeTJcou'
                   - id: mcric
-                    label: 'Gen III/nRivram'
+                    gen: 3
+                    label: 'Rivram'
                     description: 'Now-a-days, the only thing different about Rivram is its newfound ability to enjoy the pursuit. Over three tons of relentlessness, this rhino is ready to pull out all the stops to get where it wants to go.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmanU5KPF2NtPL7Lpy3rkkVP1i2A22XQHqfu7BMrCnZWAP'
                   - id: mcrid
-                    label: 'Gen IV/nRodruk'
+                    gen: 4
+                    label: 'Rodruk'
                     description: 'Always aiming its focus on the next step and discovering new ways to improve, Rodruk can never be described as stagnant. This rhinoceros knows if it wants something to change, it''s got to initiate it and boy, does it ever.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreihezsz2jk4vbbifgpnkzgeofte52t735t2zk7zg5h6sk4qil3pd74'
               - id: creature_mcgu
                 label: 'Gunder'
-                children:
+                varients:
                   - id: mcgu
-                    label: 'Gen I/nGunder'
+                    gen: 1
+                    label: 'Gunder'
                     description: 'Gunder is its own symbol for good fortune. A master at keeping spirits up, even when circumstances don''t look the best.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmaSV8zhEKFU3VuUfDbGj99X3SnJRcw22Ch2nd641WJPnm'
                   - id: mcgub
-                    label: 'Gen II/nGundrok'
+                    gen: 2
+                    label: 'Gundrok'
                     description: 'This goat is the G.O.A.T. at trusting the universe. Gundrok knows everything will turn out okay in the end and if it’s not, then it’s not the end. This is because it has a history that proves this theory right. Blessed.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmTCQNgKWBJg74edwWQC4yJxVt41zbdWxLfTPbutGYSp8Y'
                   - id: mcguc
-                    label: 'Gen III/nGundram'
+                    gen: 3
+                    label: 'Gundram'
                     description: 'Bigger the horns, bigger the trust in the universe. Gundram has become a sort of icon, representing health and prosperity. All wonder how this goat has managed to attract such blessings, but Gundram attests it''s all about belief.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmV2STWHcWZLUnYgQ6PQhNPKFRbULZ1xJ8oZmuZXo9f7iA'
                   - id: mcgud
-                    label: 'Gen IV/nGoralhorn'
+                    gen: 4
+                    label: 'Goralhorn'
                     description: 'A true symbol of prosperity, Goralhorn helps teach others to attract what it has. It said it once and it''ll say it again- it all boils down to conviction- having trust that the universe will deliver. If this goat''s growing beard is any indication of its developing faith, then we know it''s got it all figured out.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreib3qkufoz7vdup3gnl4wb2xawxccu544ahp75fpq2jgrrexiht3ti'
               - id: creature_mcz
                 label: 'Zandra'
-                children:
+                varients:
                   - id: mcz
-                    label: 'Gen I/nZandra'
+                    gen: 1
+                    label: 'Zandra'
                     description: 'Ready with whatever pep talk is needed, Zandra is the motivator of the team. This zebra is always happy to offer its honest and principled approach to others.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmdoqWRWy7kUwK4sawuzf3AxWjb3tD5pjDFGXosZ3bVaHT'
                   - id: mczb
-                    label: 'Gen II/nZarnet'
+                    gen: 2
+                    label: 'Zarnet'
                     description: 'Zarnet’s pep talks have evolved into the greatest motivational speeches the universe has ever heard. This zebra loves to share its moral way with all around it.'
                     image: 'https://ttm.mypinata.cloud/ipfs/Qmcjo1omx1iosFraqKD2LaV3VWMpav63aTZFYouN38VuH3'
                   - id: mczc
-                    label: 'Gen III/nZastri'
+                    gen: 3
+                    label: 'Zastri'
                     description: 'Zastri and its spunky stripes always take the high-road. It’s one eager, spirited zebra who knows just what to say to get others to do the same.'
                     image: 'https://ipfs.tothemoon.net/ipfs/Qmax28vtg6ZwQofNNaFfonPpQMjMxmpUYs5L3BebMAfv93'
                   - id: mczd
-                    label: 'Gen IV/nZestreak'
+                    gen: 4
+                    label: 'Zestreak'
                     description: 'Passion radiates through the stripes on this zealous zebra. Zestreak has morphed into the greatest source of inspiration for all as it tirelessly works to raise others up and loves every second of it.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreic4u5hqfrls2lvhbgsv55bmcqkoh7bmoxedaqp5zg3k2tz7h7rvrm'
               - id: creature_mcdj
                 label: 'Django'
-                children:
+                varients:
                   - id: mcdj
-                    label: 'Gen I/nDjango'
+                    gen: 1
+                    label: 'Django'
                     description: 'Agile, creative, and ready for adventure. Django is a giraffe who uses its above-the-trees view to its advantage and is known for an innovative, whimsical approach to life.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmVKwEuoFvMsRQwqShew31eT5hg13XonhA2aiJDCz3mBz5'
                     gender: 'male'
                   - id: mcdjb
-                    label: 'Gen II/nDjaraf'
+                    gen: 2
+                    label: 'Djaraf'
                     description: 'With a few more feet to it than before, Djaraf is a creative mastermind who uses its intelligence as an anchor for its eccentric approach. This giraffe knows how to make the most of the view.'
                     image: 'https://ttm.mypinata.cloud/ipfs/Qmeq939RwatWV1z7N9bgneVHnR4eYGEPqMHNyPueZtoVhv'
                     gender: 'male'
                   - id: mcdjc
-                    label: 'Gen III/nGiravelle'
+                    gen: 3
+                    label: 'Giravelle'
                     description: 'Though its height will never exceed its creativity, Giravelle has hit another spurt! Pretty soon the term will be "Giravelle-eye view" describing an uncommon, sharper perspective.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmNnc4DnXxAWC59R1i3Eekr52yXJc3Wq3utzBzCY3MAAPC'
                     gender: 'male'
                   - id: mcdjd
-                    label: 'Gen IV/nGiragant'
+                    gen: 4
+                    label: 'Giragant'
                     description: 'It''s done it again, folks! Multiplied its size, smarts and out-of-the-box thinking tenfold! Just when we thought Giragant couldn''t reinvent the wheel again- it did! Good luck keeping up with this giraffe''s bewildering ideas.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiabqfhnwnxkpx5xdly4iyns4we47i5wt3577fakqmvgytdqahzhba'
                     gender: 'male'
               - id: creature_mcem
                 label: 'Emyra'
-                children:
+                varients:
                   - id: mcem
-                    label: 'Gen I/nEmyra'
+                    gen: 1
+                    label: 'Emyra'
                     description: 'Emyra is very trustworthy and sensible. This practicality is balanced out by the elephant''s idealism and undying hope that good will always prevail.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmRBDUHSgSgGRAgetqvNEvWDSWxh2egq2ZSYfBN1FNAA2z'
                   - id: mcemb
-                    label: 'Gen II/nEmyrin'
+                    gen: 2
+                    label: 'Emyrin'
                     description: 'Emyrin’s positivity shines through any darkness as it lets its trunk show it the way to brighter days. This reliable elephant shows up and moves forward no matter what.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmXHZzFb5hgG9JyH71rxkChRKytddg6NWn2DNvVcDqiSxj'
                   - id: mcemc
-                    label: 'Gen III/nTuskwarden'
+                    gen: 3
+                    label: 'Tuskwarden'
                     description: 'Tuskwarden and its growing trunk can handle whatever may come their way. This elephant is a steady force who understands a sunny outlook is enough to get through any storm.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmZyQX5fJ3NaBijK7h5NydMu38KzxXMf1qYinVk1xEPBSq'
                   - id: mcemd
-                    label: 'Gen IV/nEmpyrium'
+                    gen: 4
+                    label: 'Empyrium'
                     description: 'They say an elephant never forgets. Well, Empyrium hasn''t and will never forget to stay positive- no matter the hardship. Call upon this dependable creature night or day and it''ll be there- massive trunk and all!'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreia7offeupfx6n5dwscognt7gflthvi5iexy5jb7bilt7chr76h5aq'
               - id: creature_mcg
                 label: 'Gideon'
-                children:
+                varients:
                   - id: mcg
-                    label: 'Gen I/nGideon'
+                    gen: 1
+                    label: 'Gideon'
                     description: 'This gorilla knows that vibes don’t lie and always goes with its gut feeling. Gideon is a natural commander with a strong presence.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmRtAq26x6H17J7jHUBusPXTngiEtPyj6Pwy4UjMXkzLgJ'
                   - id: mcgb
-                    label: 'Gen II/nGidrel'
+                    gen: 2
+                    label: 'Gidrel'
                     description: 'With more fur that now represents a mane, this gorilla may be the real king of the moon jungle. Gidrel always listens to the voice that speaks answers to it deep within, then confidently shares the way to others.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmWo5d5MPYrF2Mjfm1PNh4qF99C97gwEQNsE6o8SRGZgCa'
                   - id: mcgc
-                    label: 'Gen III/nKnuckor'
+                    gen: 3
+                    label: 'Knuckor'
                     description: 'A luminary of its generation. Knuckor always looks inward for the answers, then uses its findings to shed light on the way. Contrary to popular belief about gorillas, this chief is not afraid to lead the way, even through water!'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmZCKjxgnYRMojQwHY7s6HiAyisziu9joz5QgawQg9MvU9'
                   - id: mcgd
-                    label: 'Gen IV/nGranbaron'
+                    gen: 4
+                    label: 'Granbaron'
                     description: 'Over the years Granbaron has mastered the art of knowing who warrants its fierceness and who doesn''t. Fortunately, it is calm and gentle by nature with an accurate hunch of who poses a threat. This makes it a reliable source to all. Who wouldn''t want to follow this gorilla''s lead?'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreichw5nv723mkin3jajptok6yqe3i5zy5vd6i5jnikzhr5oghtrxme'
               - id: creature_mcmi
                 label: 'Minerva'
-                children:
+                varients:
                   - id: mcmi
-                    label: 'Gen I/nMinerva'
+                    gen: 1
+                    label: 'Minerva'
                     description: 'Minerva can wait till the time is right. Being a creature of earthly extinction, this mammoth is equipped with rare skills that have never been seen by the human eye of this geologic age.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/Qma12iu2oiaMbzWy8LLa7CmdmRuUCmq7AYRN3R8xh7Diq2'
                   - id: mcmib
-                    label: 'Gen II/nMinervax'
+                    gen: 2
+                    label: 'Minervax'
                     description: 'Bringing specific skills of another age to the universe, this mammoth is able to offer unique survival tips and tricks. Minervax also teaches the others about the importance of self-control in times of waiting.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmNY5CbQ8iFzhM36HUMNjsUUKdYvidpdDyQKX5caX7gJZp'
                   - id: mcmic
-                    label: 'Gen III/nMinetusk'
+                    gen: 3
+                    label: 'Minetusk'
                     description: 'Though it certainly could, Minetusk doesn’t need to wait till the next ice age to blossom. This mammoth has been thriving on the moon thanks to its rare skill set and endurance.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmPLuRkKenVjoyw1jR1KbuDmqqX9hPuXv8kgZotJdEnZJk'
                   - id: mcmid
-                    label: 'Gen IV/nMammolith'
+                    gen: 4
+                    label: 'Mammolith'
                     description: 'Creatures of a previous geologic age had to be accustomed to waiting and completing simple tasks through difficult ways. This mammoth has developed into a powerful creature with a mindset like no other.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreieufbswwad6bvxgcvecnyite5grog4mq6ms3nexdmg53f7ovf22dq'
           - id: herbivores_small_animals
@@ -281,82 +329,98 @@ items:
             children:
               - id: creature_mcr
                 label: 'Roz'
-                children:
+                varients:
                   - id: mcr
-                    label: 'Gen I/nRoz'
+                    gen: 1
+                    label: 'Roz'
                     description: 'This rabbit is quick on its feet. Roz is one mother fluffer who will knock your socks off with its spunk, then smooth it all over with undeniable charisma.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmTzb7keqRdmuFyBuXrHcwjgmuBCC4UvNoJ4LnRgL5BK2W'
                   - id: mcrb
-                    label: 'Gen II/nRozip'
+                    gen: 2
+                    label: 'Rozip'
                     description: 'A bit more devious (but in a good way), than before, Rozip is the ultimate firecracker. Its sometimes sneaky manner comes from its developed smarts and is just part of that rabbit magnetism.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmQW1k3CFKRYyyDrqcvw6yvnfHTmQh599vwrpQ5DcVEjF6'
                   - id: mcrc
-                    label: 'Gen III/nRozbound'
+                    gen: 3
+                    label: 'Rozbound'
                     description: 'With more pop in its hop, this rabbit is the clever, quick furball it always was. All eyes are on Rozbound when it walks into a room because people can’t help but notice its verve.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmQtpAMZvfU2wknyJJcfESmxvB3VXSa4mq2KiUmabATAWW'
                   - id: mcrd
-                    label: 'Gen IV/nRotai'
+                    gen: 4
+                    label: 'Rotai'
                     description: 'This zesty bunny is back and spicier than ever! Everybody loves a little (or a lot) of Rotai. With its mental and physical agility, it''s always go time for this rabbit.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreibbim47f2pffewonj2bpvfspicydzssayxaqws4to4fatmrh424my'
               - id: creature_mck
                 label: 'Keats'
-                children:
+                varients:
                   - id: mck
-                    label: 'Gen I/nKeats'
+                    gen: 1
+                    label: 'Keats'
                     description: 'This kangaroo knows that when nothing goes right…make up an entire new direction. Keats'' flexibility and vision serve it very well as it navigates through the moon''s terrain.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmWHvGAGkscycdkSqvRrfbGJGL4WvBDuM1AVxRMFF5PWR5'
                   - id: mckb
-                    label: 'Gen II/nKeanar'
+                    gen: 2
+                    label: 'Keanar'
                     description: 'Always ready for wherever its tail may take it, Keanar embraces its ingenuity. This kangaroo knows no matter where it has to go, its creative approach will help it adjust.'
                     image: 'https://ttm.mypinata.cloud/ipfs/Qmf6L86S25s4CqWsKMLGQQTxNKFt3EuoUt9Mm1dwNbnqhQ'
                   - id: mckc
-                    label: 'Gen III/nKikaro'
+                    gen: 3
+                    label: 'Kikaro'
                     description: 'Certainly among the more unconventional creatures when it comes to approach; Kikaro has grown into a true original with an inventive spirit. Now, it is able to rely on its quick feet, along with that trusty tail of its.'
                     image: 'https://ipfs.tothemoon.net/ipfs/Qmd7TxADEwwcuZHwAPsyLsNU5oQ5Dnirf118vTXWaY151T'
                   - id: mckd
-                    label: 'Gen IV/nKangrath'
+                    gen: 4
+                    label: 'Kangrath'
                     description: 'There''s no telling which direction that tail may go anymore! But one thing is for sure- Kangrath will adjust in a more innovative way than the time before. This kangaroo has grown into an original genius.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreibrvcuko2qyxdapcrohplisptp53ydztqucmkscluvllfr27yae54'
               - id: creature_mcsp
                 label: 'Speed'
-                children:
+                varients:
                   - id: mcsp
-                    label: 'Gen I/nSpeed'
+                    gen: 1
+                    label: 'Speed'
                     description: 'Speed finished its today to-do list, yesterday. This sloth is a pro at finding the most practical and quickest way to do anything.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmbJXt6gH2f2Q7D6FxvYCV4YjGLxMuMaF2WAwmDVH5XK3h'
                   - id: mcspb
-                    label: 'Gen II/nSnooth'
+                    gen: 2
+                    label: 'Snooth'
                     description: 'Productive is an understatement with Snooth. This sloth has only gotten quicker and smarter with its process to get things done. A lazy Sunday? Speeds never heard of them.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmS41weQrUpLWDKGA1dtkENMd453cMyKoao8rqBW6coCk7'
                   - id: mcspc
-                    label: 'Gen III/nSlowsway'
+                    gen: 3
+                    label: 'Slowsway'
                     description: 'Never underestimate those disengaged eyes. Slowsway knows what needs to get done and it’s already done it. This sloth wakes up early with an earnest drive to tick all the boxes and move forward in life. It’s time to check it off!'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmaWvqChsSCbM57p8REfiZKcDpXUXvmC2gz1ADbpcHf4GW'
                   - id: mcspd
-                    label: 'Gen IV/nSlumboth'
+                    gen: 4
+                    label: 'Slumboth'
                     description: 'With an even lazier look than in previous generations, Slumboth''s appearance has only gotten more deceiving. Prepared to take on the countless tasks it''s set for itself, this sloth will be up and atom well before its alarm goes off.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreid6iqy7mkqjopolvassudjggwwoky25v4yfc6uxvcoo2uf7ldcsuu'
               - id: creature_mcba
                 label: 'Baxlee'
-                children:
+                varients:
                   - id: mcba
-                    label: 'Gen I/nBaxlee'
+                    gen: 1
+                    label: 'Baxlee'
                     description: 'A brilliant beaver who has the gift of empathy for those around it. Baxlee''s campy personality makes it a true original.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmZsgpUzXRuvebf2TLjST7mBmyNSFVE4JpKXSjM5NagDHb'
                   - id: mcbab
-                    label: 'Gen II/nBurlodge'
+                    gen: 2
+                    label: 'Burlodge'
                     description: 'Bright, thoughtful, and a real comedian, Burlodge is a unique beaver who, regardless of stereotype, is never too busy for those it holds dear to its heart.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmS8jqCgKGvA773dqme3fo4bpytNS2UpL2xTHBkg9wQdL7'
                   - id: mcbac
-                    label: 'Gen III/nBarkdam'
+                    gen: 3
+                    label: 'Barkdam'
                     description: 'You’ll always be welcome to join this beaver’s colony! Barkdam is back with even more jokes and love to give. The group can never get enough of this creature''s tomfoolery.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmWBPyJtAZks3uz7oM61BxHy5ryp887jS8v8u8cczujZQU'
                   - id: mcbad
-                    label: 'Gen IV/nBastimber'
+                    gen: 4
+                    label: 'Bastimber'
                     description: 'This beaver''s dam door is always open for its many friends. Along with its growing buck tooth, Bastimber''s banter has also matured over the years.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreickss67xl3kscvg3gxpdcyyqrza3ra5nt3ru7bfznf2nrydyocq34'
           - id: herbivores_birds
@@ -366,42 +430,50 @@ items:
             children:
               - id: creature_mcdar
                 label: 'Dart'
-                children:
+                varients:
                   - id: mcdar
-                    label: 'Gen I/nDart'
+                    gen: 1
+                    label: 'Dart'
                     description: 'With aim set on target, Dart will never miss. It is an unshakable and skilful master in its own Dodo way.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmQhiDiTaqkC7r2HkVbmriVyyLY87vkE12zfRWzgS7aPJm'
                   - id: mcdarb
-                    label: 'Gen II/nDarvo'
+                    gen: 2
+                    label: 'Darvo'
                     description: 'This Dodo doesn’t need the gift of flight, while it has impeccable aim. Darvo’s persistence is another quality that shadows the false stereotype of its species’ unintelligence.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmTCKRTBoQQ391QCrvgZAmKMTbJ5YPaTk8hmTvpCktodaF'
                   - id: mcdarc
-                    label: 'Gen III/nDarsen'
+                    gen: 3
+                    label: 'Darsen'
                     description: 'Proving that sense of direction is not within a bird’s wings, Darsen is doing just fine without them. This Dodo has only gained greater concentration with the passing of time.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmZGquURsV9WAuvjmrRU4MXbLte78cECzTJYXQGWYKaau6'
                   - id: mcdard
-                    label: 'Gen IV/nDoldrum'
+                    gen: 4
+                    label: 'Doldrum'
                     description: 'Bullseye! With precision like Doldrum''s it''s harder to miss than to hit a target. There''s no distracting this dodo. It''s got nowhere to fly off to, so its spotlight is always set on what''s in front of it.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiaslvwua273vbcndc7f4563ws7vdftlzpnc7vjmqcomwo5cdmpww4'
               - id: creature_mcpo
                 label: 'Posey'
-                children:
+                varients:
                   - id: mcpo
-                    label: 'Gen I/nPosey'
+                    gen: 1
+                    label: 'Posey'
                     description: 'Posey just keeps on giving, and its grace only makes it more popular with others. It is a beautiful parrot inside and out, thanks to its benevolent attitude.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmU1zy5cmursyxqpCywq6F11Fkv3aq3AyPcCpW6H4Eyytg'
                   - id: mcpob
-                    label: 'Gen II/nPosaro'
+                    gen: 2
+                    label: 'Posaro'
                     description: 'This parrot is the same as before, but shares even more of its moon crackers. Posaro is a magnet to those around it, thanks to its vibrant appearance and attitude.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmPJVJyRit89c8ULXKnDVzt9DfahuSeFCN3FjpoZPFKRsW'
                   - id: mcpoc
-                    label: 'Gen III/nPosquawk'
+                    gen: 3
+                    label: 'Posquawk'
                     description: 'Posquawk is the gift that keeps on giving. Its drawing personality shines far beyond its bright feathers as this parrot is extremely gracious and never holds back on kindness.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmWCM9DxUf8vS5EQ8rz9Vdy2D5nCtntfKVFp6Bg4wrPfdT'
                   - id: mcpod
-                    label: 'Gen IV/nParacrest'
+                    gen: 4
+                    label: 'Paracrest'
                     description: 'Paracrest is not wasting its days imitating others, but instead, it continues to find countless ways to spread joy. There''s nothing mundane about this parrot.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreihqb4vuvvsnlfjmzsu32oxuzxuzvm6nl3nzz3aqa4usxdfyvipmra'
       - id: predators
@@ -416,126 +488,150 @@ items:
             children:
               - id: creature_mcspe
                 label: 'Speers'
-                children:
+                varients:
                   - id: mcspe
-                    label: 'Gen I/nSpeers'
+                    gen: 1
+                    label: 'Speers'
                     description: 'A saber-toothed tiger who is not afraid to take charge and lay out the game plan. With its awareness and insight, Speers brings fierce authority everywhere it goes.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmeZPkLQ1U6oakgb7RhBnBHRVdBYWmnmQ9uPKAW4SUjaV7'
                   - id: mcspeb
-                    label: 'Gen II/nSpedran'
+                    gen: 2
+                    label: 'Spedran'
                     description: 'Spedran is nobody’s fool as it brings unmatched intelligence to the gang. This saber-toothed tiger is a strong, reliable guide who uses its experience to pave the way.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmfXyqisYLSWGZFmkSycHFrZCNeGSW9XuzcQktV5XPhanr'
                   - id: mcspec
-                    label: 'Gen III/nSpireclaw'
+                    gen: 3
+                    label: 'Spireclaw'
                     description: 'With canine teeth like those, who wouldn’t follow his orders? Just kidding, Spireclaw doesn’t need fear to inspire others, it just does so naturally with its intellect and valor. That’s what makes this saber-tooth tiger the chief it is.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmXQH73KHfE1xQgJJQJMntBJnRENjmVCi7zExsjzYXNShc'
                   - id: mcsped
-                    label: 'Gen IV/nScorchfang'
+                    gen: 4
+                    label: 'Scorchfang'
                     description: 'As a prehistoric mammal, Scorchfang naturally paves the way on the path of evolution. It''s in its bones and those massive canine teeth. This saber-tooth tiger has even more wisdom to lend than in its earlier years.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreia3uj53k33ieyeysmspm4lsnr7y4z6et4zqhslu66ybaiozyuusfm'
               - id: creature_mcl
                 label: 'Lennox'
-                children:
+                varients:
                   - id: mcl
-                    label: 'Gen I/nLennox'
+                    gen: 1
+                    label: 'Lennox'
                     description: 'Lennox is a grounded, practical lion who always recognizes its blessings and reminds those around it to do the same. This creature is the voice of reason in the group and acts as an anchor for the Cryptonauts in space.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmdV9RnLGf9PwsPpepVu5WP52ibmSPVKD31NE69h1qgWit'
                     gender: 'male'
                   - id: mclb
-                    label: 'Gen II/nLenvar'
+                    gen: 2
+                    label: 'Lenvar'
                     description: 'This down to earth lion is still jotting away in its gratitude journal, counting its blessings. The oh-so pragmatic Lenvar is certainly the more sensible of the creatures.'
                     image: 'https://ttm.mypinata.cloud/ipfs/Qmddrjn3dvd2TfciFsJE6XECVAh78fnX7W8rrvuLYbn6ts'
                     gender: 'male'
                   - id: mclc
-                    label: 'Gen III/nRumblemane'
+                    gen: 3
+                    label: 'Rumblemane'
                     description: 'With an even steadier, more-grounded stance than before, Rumblemane thanks the universe it has reached yet another phase of its life! This lion’s bright mane matches its mind.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmUGNbxvFde9N59VSWXZHVoPh7Pf6xEPou6HcnAmQokZXe'
                     gender: 'male'
                   - id: mcld
-                    label: 'Gen IV/nLeonarch'
+                    gen: 4
+                    label: 'Leonarch'
                     description: 'Not only has that vibrant mane grown, but so has Leonarch''s mindfulness. With the ability to let reason reign and remember all the blessings this stance has brought it, this lion is a solid, unstoppable force.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreigchsd4rjbfsnu3nm5fyjnn6b6ugerxkao4u5qu6ppaoc7rwsa2x4'
                     gender: 'male'
               - id: creature_mcwy
                 label: 'Wynter'
-                children:
+                varients:
                   - id: mcwy
-                    label: 'Gen I/nWynter'
+                    gen: 1
+                    label: 'Wynter'
                     description: 'With a chirpy, come-what-may attitude, Wynter is always prepared for anything. It is one spirited and bold wildcat.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmcmipgPAvuamusMLsrYshDBuSuhdPDWDMt1Vhgg23FExY'
                   - id: mcwyb
-                    label: 'Gen II/nWynrel'
+                    gen: 2
+                    label: 'Wynrel'
                     description: 'This wildcat is prepared to embrace what lies ahead with paws wide open. Along with its improved, steadier stance, Wynrel is even quicker and more agile than ever.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmevmYvExvXP3inkUn2ovw7bUiHhEvosREoi952BvQVJqM'
                   - id: mcwyc
-                    label: 'Gen III/nWynclaw'
+                    gen: 3
+                    label: 'Wynclaw'
                     description: 'It may look like a cool cat, but Wynclaw is definitely more wild than it is cat. Its ability to adapt at any given moment comes from this creature’s killer senses that have strengthened with time.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmZFqp4i5Pki31qFhxwmrYDzQ7c6CG957hiLgWmRDPNwKL'
                   - id: mcwyd
-                    label: 'Gen IV/nWynscar'
+                    gen: 4
+                    label: 'Wynscar'
                     description: 'As its name may suggest, Wynscar can weather any storm. This wildcat has fully grown into the title as even the universe''s harshest season can''t catch it off guard. That doesn''t mean the heat can either; it''s one adjustable cat.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreibttsjysjgiutvf3h2p76it77wvkzapfz6pdrpirpc6bh6qwr55za'
               - id: creature_mct
                 label: 'Tilden'
-                children:
+                varients:
                   - id: mct
-                    label: 'Gen I/nTilden'
+                    gen: 1
+                    label: 'Tilden'
                     description: 'Eye of the tiger is an understatement with Tilden. Its positive outlook and tenacity make it a born winner.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmXRjstFaDQbqVGb8afjhApsspddSBXamfLeVMyKJr47rx'
                   - id: mctb
-                    label: 'Gen II/nTilvar'
+                    gen: 2
+                    label: 'Tilvar'
                     description: 'With sharpened focus, Tilvar and its sunny stance will only go farther as time passes. This tiger has earned its stripes and is a true champ.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmU7LKYyqYohAPRtJjx2s7ppvmVscJsQ3nFGMmv57CpzWT'
                   - id: mctc
-                    label: 'Gen III/nTilroar'
+                    gen: 3
+                    label: 'Tilroar'
                     description: 'Tilroar knows a thing or two about keeping the faith. But coupled with its steadfastness and tiger strength, there is no taming this wild cat.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmcEhN8RtfNW3TL9PQyXMPkwhZ1UQDjdqLi5rNnVgSobct'
                   - id: mctd
-                    label: 'Gen IV/nTigrava'
+                    gen: 4
+                    label: 'Tigrava'
                     description: 'With that unwavering mindset, this tiger has learned that the opinions of others mean nothing, but of oneself….well, that''s what determines its fate.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiaopuirkovchbzbv3vdg2irlrapkueawocjxvgw5bwfya2hjpkuou'
               - id: creature_mcch
                 label: 'Chantz'
-                children:
+                varients:
                   - id: mcch
-                    label: 'Gen I/nChantz'
+                    gen: 1
+                    label: 'Chantz'
                     description: 'Able to hypnotize anyone with its appeal, this beautiful cheetah has a powerful impact over those around it. Chantz has the influence of a fierce politician, but with pure intentions.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmcqGHte4mgsxPG7AoZZgzr7uJQDcJydRorQ677jY3yTpg'
                   - id: mcchb
-                    label: 'Gen II/nChanzip'
+                    gen: 2
+                    label: 'Chanzip'
                     description: 'All that allure comes with great responsibility and power. Chanzip is aware of its magnetism and luckily never takes advantage of it. This cheetah is of solid integrity and that makes it all the more loveable.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmYjh9SAQ8HuWtDjtMemcg6iM2NuBzbX2h59JZMX7wrUEa'
                   - id: mcchc
-                    label: 'Gen III/nChazrush'
+                    gen: 3
+                    label: 'Chazrush'
                     description: 'With fur always perfectly placed and a bewitching attitude, this cheetah is adored by all around it. Chazrush understands that all that glitters isn’t gold (like on its stunning adult coat) so it doesn’t let it get to its head.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmPbrX6kfkZnyCNMKJfKZJfKzoidaqfkYP4agyGSJ3GiPA'
                   - id: mcchd
-                    label: 'Gen IV/nChasebolt'
+                    gen: 4
+                    label: 'Chasebolt'
                     description: 'Simply en-Chasebolt-ing! This cheetah has always effortlessly drawn others to it, but even more so now that it''s rocking those adult spots. It''s impossible NOT to notice it when it walks into a room. Good thing humility still has its part in that allure.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreieni25cv5qzvihuvftnbe7dskawo25kz7amfiipjuvzs33fuozcom'
               - id: creature_mcw
                 label: 'Wila'
-                children:
+                varients:
                   - id: mcw
-                    label: 'Gen I/nWila'
+                    gen: 1
+                    label: 'Wila'
                     description: 'What good is being hungry like a wolf without the determination to catch your prey? Luckily, Wila has both- backed up by experience and technique.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmcFkLQakD75zxMbTuM8tBxN2sFUAGG5WiZYEBtN2NjA1P'
                   - id: mcwb
-                    label: 'Gen II/nWildern'
+                    gen: 2
+                    label: 'Wildern'
                     description: 'Wildern’s boldness radiates from its eyes, beyond the vibrant mask framing them. This wolf’s valor is only amplified through its competency.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmRYuezeKj21MD3Fi8Q7SDtwit8dneptVFWdYPuxBFDUsm'
                   - id: mcwc
-                    label: 'Gen III/nHowlgrim'
+                    gen: 3
+                    label: 'Howlgrim'
                     description: 'Exuding fierceness, Howlgrim’s piercing look depicts its self-mastery and talent. It is one tenacious wolf with keen senses that have only developed further with time.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmNWzf4NFAv12QJKat6Y74WTSL3DWdjKPDnwyAQE7rrjFR'
                   - id: mcwd
-                    label: 'Gen IV/nWulvorn'
+                    gen: 4
+                    label: 'Wulvorn'
                     description: 'If someone didn''t know better they''d say steer clear of this terrifying beast. That someone would also be disregarding one of the most powerful creatures to exist as this wolf has the mastery to achieve anything without the use of intimidation or violence.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiafbmzeuar4ap4ds3cxdagm4ht63srf2ju72cgbhnrvq6jrvc7y4u'
           - id: predators_birds
@@ -545,102 +641,122 @@ items:
             children:
               - id: creature_mce
                 label: 'Everett'
-                children:
+                varients:
                   - id: mce
-                    label: 'Gen I/nEverett'
+                    gen: 1
+                    label: 'Everett'
                     description: 'Everett can fly high or low, but it will not quit. This eagle knows how to play its best cards based on the hand it’s dealt.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmZ9LsHLcSjjSoecm79Yvd32dBL6gvksRAqqeyLTjUdHLT'
                   - id: mceb
-                    label: 'Gen II/nEvraze'
+                    gen: 2
+                    label: 'Evraze'
                     description: 'Of course, everyone wants to fly like an eagle when it gives you the power to make the most of any situation at hand. Little do they know it''s Evraze’s adaptability and earnestness that grant it that.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmVjFdJGTVKG6wf6YeE9so6KNdzWM4Pv9oGB1Ct5fGNDCA'
                   - id: mcec
-                    label: 'Gen III/nEvralon'
+                    gen: 3
+                    label: 'Evralon'
                     description: 'With a much greater wing-span than before, this eagle’s ability to adjust has only strengthened. Along with its adaptability, Evralon is a high-flier and would never aim low to mingle with the pigeons.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmR9kMhDnSaXHVvS4oJasU1bAf55pNSQMRrXy7vGTbAN6p'
                   - id: mced
-                    label: 'Gen IV/nEvershear'
+                    gen: 4
+                    label: 'Evershear'
                     description: 'With eagle vision that''s only sharpened, Evershear is ready to lock eyes on the destination no matter how far or tough to reach. This creature is prepared to soar in any direction at a moment''s notice.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreich2bs46rmuiyvudvnx7f2pghfsvvxt2c3zeog2foccjgm5jkfaay'
               - id: creature_mcp
                 label: 'Piper'
-                children:
+                varients:
                   - id: mcp
-                    label: 'Gen I/nPiper'
+                    gen: 1
+                    label: 'Piper'
                     description: 'A penguin that has a guiding feeling, a sixth sense, a trusting calm. Piper is the little glimmer of light found in the deepest dark and always shows the way.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmWvZ9nhg43eLwnV32Vg5TmF5sWT8G2treWuh7kxTGwYDX'
                   - id: mcpb
-                    label: 'Gen II/nPipraxis'
+                    gen: 2
+                    label: 'Pipraxis'
                     description: 'Pipraxis has only grown more confident in itself, the universe and its cuteness. This penguin’s gut feeling is not to be ignored.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmYH9PkwoWY7LkXfPqC225c85qNvgeaJzGs9pheCzuqRVx'
                   - id: mcpc
-                    label: 'Gen III/nPolerix'
+                    gen: 3
+                    label: 'Polerix'
                     description: 'Polerix has grown into a self-assured adolescent who is now a force to be reckoned with. Its little "hunches" have developed into powerful feelings and visions that lead the way for this penguin and those around it.'
                     image: 'https://ipfs.tothemoon.net/ipfs/Qmek7mfMZEjZJVrgx11fpkpwqc3nuRnUyLkfB6XhN58KqF'
                   - id: mcpd
-                    label: 'Gen IV/nPolamarch'
+                    gen: 4
+                    label: 'Polamarch'
                     description: 'Polamarch now has years of experience proving that its instincts lead to the most hidden of truths, which only makes it stronger. This penguin has spent its entire growing up part of life proving that unwavering belief lights the darkest tunnels.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreieejgkhvcyudrc3jnx7zbh327hulw2rqcx5swmt7w7lbnuntywu7e'
               - id: creature_mcfu
                 label: 'Fulton'
-                children:
+                varients:
                   - id: mcfu
-                    label: 'Gen I/nFulton'
+                    gen: 1
+                    label: 'Fulton'
                     description: 'A gracious falcon, Fulton makes others swoon with its magnetism. Unaware of its own appeal, its greatest quality is definitely its massive heart.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmSApyoYcU1u5BMwFiWV1c1UAJQurQkfrHFrBq3eR9GdKg'
                   - id: mcfub
-                    label: 'Gen II/nFulcrest'
+                    gen: 2
+                    label: 'Fulcrest'
                     description: 'Fulcrest’s learned to own its appeal, but has also strengthened its ability to demonstrate great compassion for others. This falcon is a future (unintentional) heart-breaker who has not let its good looks get to its head, or heart.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmXKxgqUMHpKsYv61bWBAsXD2jABQdxaw2XxR7RzSqwWRc'
                   - id: mcfuc
-                    label: 'Gen III/nFaltalon'
+                    gen: 3
+                    label: 'Faltalon'
                     description: 'You thought young Faltalon was a sight for sore eyes, check out the third-gen. This falcon is back with even more allure and luckily, tenderness to balance it out.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmcndLBXnhbFRPFqj32h6Qq3PVUDFVtHe2b4mrJUMwbF2a'
                   - id: mcfud
-                    label: 'Gen IV/nFalcspear'
+                    gen: 4
+                    label: 'Falcspear'
                     description: 'Finally, Falcspear has learned to use its killer looks to its advantage. Instead of being the cute-but-doesn''t-know-it bird it once was, this falcon uses its charm to convince stubborn souls to do the right thing.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreifm5sa3wkden5ubf3qiiej6xhymwr574a3qbxz56iz62zwfg3ivye'
               - id: creature_mch
                 label: 'Holden'
-                children:
+                varients:
                   - id: mch
-                    label: 'Gen I/nHolden'
+                    gen: 1
+                    label: 'Holden'
                     description: 'Holden always knows the smartest and fastest way. Whether it is a path to a destination or solution to a problem, this hawk is ready to help.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmfYCegc4QHFzeToeihMXrZtqY8Fpzqy6bvbHYTLMjDcWG'
                   - id: mchb
-                    label: 'Gen II/nHolmar'
+                    gen: 2
+                    label: 'Holmar'
                     description: 'If its quickness wasn’t enough, then its consistency would certainly make up for it. Faster than the speed of light, Holmar’s spectacular speed is nothing that’s ever been seen on earthly hawks and it will reach that record- breaking velocity every time.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmRXT8PSyHdRiTXCJcUJxwiUtSt7gVv25FG8eeAcHq6MeG'
                   - id: mchc
-                    label: 'Gen III/nHoltalon'
+                    gen: 3
+                    label: 'Holtalon'
                     description: 'With a more majestic look, this hawk has earned its fine feathers. Holtalon is still among the fastest of the bird creatures and uses its killer hawk eyes to scour out the best route.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmbyB7rAGBJGyJffMo5wETCXocB5jqAveN9yXzSvB9bsqK'
                   - id: mchd
-                    label: 'Gen IV/nHawkrion'
+                    gen: 4
+                    label: 'Hawkrion'
                     description: 'You can still bet on Hawkrion being the first to cross the finish line, as well as be there for those in need. This hawk may seem too illustrious to be truly counted on, but this creature''s never forgotten its core self.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiecnteh4quzqovkdvxofc4xg74wqk4wezlgasrvwscv44kfgnlv6u'
               - id: creature_mco
                 label: 'Orson'
-                children:
+                varients:
                   - id: mco
-                    label: 'Gen I/nOrson'
+                    gen: 1
+                    label: 'Orson'
                     description: 'As a creature of the night, Orson spends the dark hours on the lookout, ready for anything. This owl knows how to change course when needed.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmNRu9xkmzuWkosx5PF3zy8WRtYrmv3uTzEVC2rKY92ZJy'
                   - id: mcob
-                    label: 'Gen II/nOrslet'
+                    gen: 2
+                    label: 'Orslet'
                     description: 'The night watch must remain agile and ready, and boy, is that ever Orslet. This owl has grown into its role and only sharpened the needed skills.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmdWJjTfmL754iegxr566cqgEWfdxQBXqTxA9B2tQbnrwK'
                   - id: mcoc
-                    label: 'Gen III/nOrbrow'
+                    gen: 3
+                    label: 'Orbrow'
                     description: 'With an even later bedtime than before, Orbrow is able to remain on watch longer and therefore be even more connected with the happenings of the moon. Minute by minute this owl is on the watch, ready to make necessary moves.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmSgn6cicMx6WyinvvqTFJgFskzJyumXE3UUgUN6qpsY1e'
                   - id: mcod
-                    label: 'Gen IV/nOrbisage'
+                    gen: 4
+                    label: 'Orbisage'
                     description: 'Having perfected its “On Guard” stance, Orbisage is now able to see and process everything going on around it- yes, the full 360 degrees! This owl can also switch its focus within 1/100th of an earthly second.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreib2fdyb4hi4uguow4iepakw3p7a6sw7nv736x7s5fr2e4kub4yepi'
           - id: predators_reptiles
@@ -650,62 +766,74 @@ items:
             children:
               - id: creature_mcs
                 label: 'Sirius'
-                children:
+                varients:
                   - id: mcs
-                    label: 'Gen I/nSirius'
+                    gen: 1
+                    label: 'Sirius'
                     description: 'Sirius does not get distracted easily, which makes it one scrupulous snake. It may be strict, but only out of the desire for a greater good when it comes to reaching the group''s common goal.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmQkaBKAEb4HjC3HPWPUjqFNCPAX2NxMzZ81RG9FomCp8y'
                   - id: mcsb
-                    label: 'Gen II/nSircoil'
+                    gen: 2
+                    label: 'Sircoil'
                     description: 'This snake has not shed its fastidious skin, but it’s definitely for the better. Sircoil’s trustworthy and dutiful nature makes it as solid as a rock, regardless of its ability to slither through the tiniest of places like a liquid.'
                     image: 'https://ttm.mypinata.cloud/ipfs/Qmcm3MuHrJvUUrJzCrb91wY4nqzsbsa6r3kzAHnsX1EWnR'
                   - id: mcsc
-                    label: 'Gen III/nGlassfang'
+                    gen: 3
+                    label: 'Glassfang'
                     description: 'Never to be described as a flake, even when shedding, Glassfang is one tenacious soul. It is allegiant to its cause and regardless of the malleable back bone, this is one snake you can always fall back on.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmeHkKHeNnw1KNQ2oY27jxQEgZshdbeSpLw4wGq5ser3Ve'
                   - id: mcsd
-                    label: 'Gen IV/nSibilisk'
+                    gen: 4
+                    label: 'Sibilisk'
                     description: 'As enduring as the scales on its back, Sibilisk is one unyielding snake. Once the group decides what''s best, this snake is there to make it happen one way or another. If there''s anything its enemies have learned over the years it''s to let Sibilisk slither on by.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiha5tgbtjdjolbmwoxygijzwgbjfriq7gxhs25ckb6bb4oajg5g7i'
               - id: creature_mcc
                 label: 'Claxton'
-                children:
+                varients:
                   - id: mcc
-                    label: 'Gen I/nClaxton'
+                    gen: 1
+                    label: 'Claxton'
                     description: 'Claxton loves its dad jokes and always shares them to get a laugh going. This croc believes laughter is the best way to brighten everyone''s day, so the jokes just keep on coming.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmQN27z2kZ3SqfnZk155KD2hmkzL7tUrSwkSzKh4JCn84c'
                   - id: mccb
-                    label: 'Gen II/nClaxguard'
+                    gen: 2
+                    label: 'Claxguard'
                     description: 'Claxguard is one cheery champ! This jokester of a croc drops those puns like they are going out of style…maybe because they already are, but it doesn’t need to know that, as it''s part of what makes it so loveable.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmUU4s68a7wd25WuNQbHcR1GJ6c65o9P18LoS4uVcqqT25'
                   - id: mccc
-                    label: 'Gen III/nClastodon'
+                    gen: 3
+                    label: 'Clastodon'
                     description: 'As if its jokes couldn’t get any cheesier, third generation Clastodon came around. It may appear more serious than before, but that could not be farther from the truth as Clastodon is still the loveable, wise-cracking croc who hatched from its mother’s egg long ago!'
                     image: 'https://ipfs.tothemoon.net/ipfs/Qmaw7nKnPG37Pm9rpz59tWvrSDXWrTybknNVphQvGZHdXt'
                   - id: mccd
-                    label: 'Gen IV/nClagator'
+                    gen: 4
+                    label: 'Clagator'
                     description: 'Good luck not cracking up with this croc. No crocodile tears here. This creature is genuine and only looking to spread the love.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiblhta3hnzw3qzrl2itox4twt72n6jw7loi2sh7n27uxfmjfkqx74'
               - id: creature_mcda
                 label: 'Daxton'
-                children:
+                varients:
                   - id: mcda
-                    label: 'Gen I/nDaxton'
+                    gen: 1
+                    label: 'Daxton'
                     description: 'Every year is the Year of the Dragon when you are this blessed. Daxton is armed with the fearlessness and true valor of the type of dragon''s they write tales about.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmaqyTMuFTPCmRogcyeACfiJ6q31WD2CbAuDubbJtiGi1H'
                   - id: mcdab
-                    label: 'Gen II/nDaxrel'
+                    gen: 2
+                    label: 'Daxrel'
                     description: 'Still not the type to spit fire on a moon castle, but Daxrel does have the bravery to overcome anything. This dragon is as gallant as they come. It always makes the right moves as everything in its life can only be described as kismet.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmQ1gLG3uby6dQkvcuvJUPLjoR6DGeZ48hxAASDtyYhYvb'
                   - id: mcdac
-                    label: 'Gen III/nDrakstorm'
+                    gen: 3
+                    label: 'Drakstorm'
                     description: 'Blessed with some major claw and wing development, nature has been kind to Drakstorm- that’s probably because it always has been. This valiant dragon also has the fortitude of one hundred knights ready to save the princess.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmRdKkFcuszC9TBcesuN65Tjiv1J75ubHc8sxhdH8Lwvat'
                   - id: mcdad
-                    label: 'Gen IV/nDrakspire'
+                    gen: 4
+                    label: 'Drakspire'
                     description: 'It''s not everyday one comes across the grit of Drakspire. This dragon can slay and the universe knows it, which is why it always backs it up in his great, noble pursuits.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreibqjcdcrgfwofudzbmdo25amht4kybwwd5mo6kj36ij4r4farqjaa'
           - id: predators_aquatic
@@ -715,126 +843,150 @@ items:
             children:
               - id: creature_mcf
                 label: 'Fender'
-                children:
+                varients:
                   - id: mcf
-                    label: 'Gen I/nFender'
+                    gen: 1
+                    label: 'Fender'
                     description: 'Quick on its feet, this frog has all the other creatures in stitches with its constant banter. Fender is a real punster who finds the humour in everything.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmRnBXL69mHsAfxLDNRMVCBuzcLtB8wbFa6LbDGhqyVMkX'
                   - id: mcfb
-                    label: 'Gen II/nFendrix'
+                    gen: 2
+                    label: 'Fendrix'
                     description: 'Even funnier than before (if that was even possible), 2nd Generation Fendrix still has the jokes, only now there is more wisdom to its wise cracks. Who knew that a developed sense of humor would be a mark of maturity?'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmXDbRmdwhbNxMuWyVMC9EsqzkN9dUZK55A6fe7GTPX9Qc'
                   - id: mcfc
-                    label: 'Gen III/nFenstride'
+                    gen: 3
+                    label: 'Fenstride'
                     description: 'It may have more muscles, making it one strong frog, but its goofy tongue and personality have not gone anywhere. Fenstride is still the comedian it was before who’s always looking to share a laugh.'
                     image: 'https://ipfs.tothemoon.net/ipfs/Qme1zQAEPRCgB4iBY9zZTsntYGr1gJAUJk5fvujfX1Nqar'
                   - id: mcfd
-                    label: 'Gen IV/nFenward'
+                    gen: 4
+                    label: 'Fenward'
                     description: 'Its ready stance and developed body may make it seem like a menacing force but make no mistake, Fenward is still the entertaining frog that once used that cute little croak to make its way into the hearts of all.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreidmiotvrzagftxpll4ove4ocw7wqiobpoqpts6ivyacag7e2ekzxu'
               - id: creature_mcdo
                 label: 'Dottie'
-                children:
+                varients:
                   - id: mcdo
-                    label: 'Gen I/nDottie'
+                    gen: 1
+                    label: 'Dottie'
                     description: 'A bit timid, Dottie explores in its own way. This dolphin can be described as serene, but is always eager to find out what lies beyond its current view.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmVQFQRPxJH6D5HGU6no985G9cdeSi3qe2EKPHynMGeQFq'
                   - id: mcdob
-                    label: 'Gen II/nDorsail'
+                    gen: 2
+                    label: 'Dorsail'
                     description: 'Like still water at the end of a windy day, Dorsail brings peace and therefore, a balance to the many animated, eccentric characters of the group. This dolphin still takes its time to find what the deeper waters hold.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmVSfyMdFWoUndo4JecvBwJtpRTSU6DyhEtzSaHJyEEAtD'
                   - id: mcdoc
-                    label: 'Gen III/nDorsurge'
+                    gen: 3
+                    label: 'Dorsurge'
                     description: 'Dorsurge is still the low-key soul of the sea it always was, but now, this dolphin has discovered plenty previously unknown parts and earned its explorer title among the bunch.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmdkBjDMRnxYpULTRe79guyZpScukrUqtDVFoUSmZSTSVk'
                   - id: mcdod
-                    label: 'Gen IV/nDorsonic'
+                    gen: 4
+                    label: 'Dorsonic'
                     description: 'Dorsonic is now the group''s go-to for discovering what lies beyond the reefs already conquered. However, in doing so, they have learned to accept that it works in its own way and time. Because of its slow and steady approach, this dolphin never misses a thing.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreigxpa77s2nnjqxt6ax3siywb23uhexwx4rlhmecfe2ojrrr36wsgq'
               - id: creature_mcwa
                 label: 'Wai'
-                children:
+                varients:
                   - id: mcwa
-                    label: 'Gen I/nWai'
+                    gen: 1
+                    label: 'Wai'
                     description: 'A knowledgeable whale whose experience makes it one of the most accomplished creatures. Wai is the definition of all-knowing.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmWtAz2oD8y1SJeHZvMcor83jaFzyRQagT26dkdb2vaBso'
                   - id: mcwab
-                    label: 'Gen II/nWairen'
+                    gen: 2
+                    label: 'Wairen'
                     description: 'An astonishing creature of the sea, this whale’s brain can be compared to the size of its body (of course in a metaphorical sense). Wairen has developed into one of the most astute of the gang.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmRpGb3VbzB2xBN6BgfFm5tAe9pzaQqp4zYo2vkk2eA5b2'
                   - id: mcwac
-                    label: 'Gen III/nWaitide'
+                    gen: 3
+                    label: 'Waitide'
                     description: 'A true intellectual who’s crystal ball hold’s all-encompassing knowledge. With the passing of time, Waitide’s enlightened view makes this whale the most progressive creature.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmXgv8zMT2zsJKLw6LMnqaVXjkne6GTrHdiMsxeeSrH78r'
                   - id: mcwad
-                    label: 'Gen IV/nWaveseer'
+                    gen: 4
+                    label: 'Waveseer'
                     description: 'Waveseer has become everyone''s main source for sage advice. This whale always knows the best course of action and will share what its crystal ball says with all.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreicqwmtik5jcz6qpwweor2zdoeslt5gvaqy235ewn5ubddlnucsw6u'
               - id: creature_mcsh
                 label: 'Sheldon'
-                children:
+                varients:
                   - id: mcsh
-                    label: 'Gen I/nSheldon'
+                    gen: 1
+                    label: 'Sheldon'
                     description: 'Sheldon always has a shark tale to tell. Everyone is its closest, dearest friend, including strangers since it is an open book letting all read about its exciting life.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmSFLMgJuEQjtuV585qhCZuENrHMAeRrXmw1Uhq52sLh3f'
                   - id: mcshb
-                    label: 'Gen II/nSurfscar'
+                    gen: 2
+                    label: 'Surfscar'
                     description: 'Shark tales? Please, now all gather to hear Surfscar’s legendary shark novels! Its many friends recognize its way with communication and relationships, so all stay close.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmbwPyyosDoUh4Zpss6XrdYKXxD2GQCP9bN9Xw41WMapZc'
                   - id: mcshc
-                    label: 'Gen III/nReefbite'
+                    gen: 3
+                    label: 'Reefbite'
                     description: 'Ever heard of a shark who’s popular among schools of fish? That’s Reefbite. A one-of-a-kind storyteller that attracts all walks of life (including supposed-to-be prey) with its magnetic ways.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmQaRTNi15peCoC7BNDZS61QyGqrAgut53rN7FhWRWzQjU'
                   - id: mcshd
-                    label: 'Gen IV/nStormjaw'
+                    gen: 4
+                    label: 'Stormjaw'
                     description: 'And so the story goes on…Stormjaw has become the moon''s resident storyteller. This shark uses the activity to bring everyone together simply to blow them away. Only such a large jaw could share lofty tales like these.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreidskv5dkbsjq3y6xivdl4su4cklvfkm2ymfsisjewwrcunzi5vr6u'
               - id: creature_mcj
                 label: 'Jupiter'
-                children:
+                varients:
                   - id: mcj
-                    label: 'Gen I/nJupiter'
+                    gen: 1
+                    label: 'Jupiter'
                     description: 'Jupiter is a top communicator. This jellyfish makes lasting connections everywhere it goes with a strong reverence for those around it. It also has the ability to make them feel like the most important being in the universe.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmPBpyLqnVcRjgyptPjkDPqU4PgFAzoni8sLRC1jZxNypQ'
                     gender: 'female'
                   - id: mcjb
-                    label: 'Gen II/nJupril'
+                    gen: 2
+                    label: 'Jupril'
                     description: 'What makes Jupril so popular isn’t its outgoingness, but instead, the presence it gives to those around it. This jellyfish is considerate and would never sting a soul.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmZ88NDhLHYDRoEpiBh8LaQ8VbApd1D1cFBxMnxSYPZWAE'
                     gender: 'female'
                   - id: mcjc
-                    label: 'Gen III/nJupilux'
+                    gen: 3
+                    label: 'Jupilux'
                     description: 'Jupilux has the ability to touch (not sting) the hearts of those who have the privilege of meeting it. This jellyfish is a favorite because of its ability to help others see their true value, and that, of course, is its.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmPqJWdsivTtzs57e5ptyfoMexoWzd3BibqRpTS6G2xB1V'
                     gender: 'female'
                   - id: mcjd
-                    label: 'Gen IV/nJuphera'
+                    gen: 4
+                    label: 'Juphera'
                     description: 'Whoever said jellyfish have no heart, obviously have yet to meet Juphera. A truly considerate being who thrives in the presence of others, this creature doesn''t just glow in the dark, it lights it.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreibcyoeild5t2pwvcohyukpcexpyftktec7z7d2b36t5c33ypvhepe'
                     gender: 'female'
               - id: creature_mcov
                 label: 'Ova'
-                children:
+                varients:
                   - id: mcov
-                    label: 'Gen I/nOva'
+                    gen: 1
+                    label: 'Ova'
                     description: 'A bright octopus, who is wise beyond its years. Known for being an old soul, young Ova comes with plenty of fortitude and tenacity.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmQNrXZ9DCeJUGCbKDZ13TgNgYiZVHYo1sBFNmUoDeHcXe'
                   - id: mcovb
-                    label: 'Gen II/nInkravel'
+                    gen: 2
+                    label: 'Inkravel'
                     description: 'Still far too intelligent for its age, Old soul Inkravel has got its eye on the prize. This octopus knows how to make the most of its maturity and intellect.'
                     image: 'https://ttm.mypinata.cloud/ipfs/Qmcrxx2XLtmyxcf9ToAcVSErfxxerayDD7DgfmmxD6RGkn'
                   - id: mcovc
-                    label: 'Gen III/nOvacron'
+                    gen: 3
+                    label: 'Ovacron'
                     description: 'This single-eyed beauty has the greatest concentration and intelligence of all the sea creatures. Ovacron’s eye is a representation of its one-track mind and this octopus has grown to own these gifts of its.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmbN5q13Q2ZSY6M3yZoPYfn6gYxhzHWTW7taome5UZXPFU'
                   - id: mcovd
-                    label: 'Gen IV/nOvanox'
+                    gen: 4
+                    label: 'Ovanox'
                     description: 'The old soul has finally grown into its body. Mature Ovanox continues to have more sophistication and foresight than other creatures of its age, but at least now its tentacles have caught up to the size of its brain.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreif3jrxzhelavmoslzxunbq2zihri264xqzpemu73qvza2kvgxx26i'
       - id: omnivores
@@ -849,106 +1001,126 @@ items:
             children:
               - id: creature_mcm
                 label: 'Malaki'
-                children:
+                varients:
                   - id: mcm
-                    label: 'Gen I/nMalaki'
+                    gen: 1
+                    label: 'Malaki'
                     description: 'Monkey see does not as Monkey do with Malaki. This creature isn''t afraid to go down its own path when it comes to learning and exploring, which it loves to do- all while having a good laugh.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmWze9nnUoZVDXj8EShDAgiTRgnZ8MDLfyo3B3LfRBwhqB'
                     gender: 'male'
                   - id: mcmb
-                    label: 'Gen II/nMalakor'
+                    gen: 2
+                    label: 'Malakor'
                     description: 'Malakor may appear a bit more dignified and serious, but it is still the same cheeky monkey. Its jokes always come along on the journey of exploration.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmP2NJvG89UjD6GCC2eEZVQ7hq39xyirjkSt8hic2tT9gz'
                     gender: 'male'
                   - id: mcmc
-                    label: 'Gen III/nMalimbo'
+                    gen: 3
+                    label: 'Malimbo'
                     description: 'Malimbo, a truly inquisitive soul, is a bit more dignified than before, but that has not affected its whimsy. This monkey is constantly cracking clever jokes, in fact, it’s even funnier than before! Must be that growing monkey intelligence the world’s on about.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmU4nEhh1QoTBxpjwaLeJrMhmBJFdWKhQK3b5xfRo6wpiH'
                     gender: 'male'
                   - id: mcmd
-                    label: 'Gen IV/nAcrolaki'
+                    gen: 4
+                    label: 'Acrolaki'
                     description: 'With a much more mature look, it may seem that Acrolaki has leaned more towards the "wise" part of "wisecrack" while forgetting about the rest, but that could not be farther from the truth. This monkey has held on tight to that infant-like wonder and continues to decorate the day with laughter.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreib3frk5inqjame6t24niffrl5t32udl7i2ujsyc5ao7rn6ppgkkri'
                     gender: 'male'
               - id: creature_mcbr
                 label: 'Bromley'
-                children:
+                varients:
                   - id: mcbr
-                    label: 'Gen I/nBromley'
+                    gen: 1
+                    label: 'Bromley'
                     description: 'Bromley is a bear of its word, with a way of words. It is quick on its feet and will make others laugh, but always while maintaining pure dignity of itself and others.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmSyobfdpFjyd5GizhGPsZWL1ExR7DzRe5yLBEr19EsQHG'
                   - id: mcbrb
-                    label: 'Gen II/nBraglan'
+                    gen: 2
+                    label: 'Braglan'
                     description: 'Still a cute teddy, growing into his size, Braglan is more honest and noble than ever. This bear’s quick, playful humor makes it an unforgettable bruin.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmTbFBr7PeU7o2mDQZ1XMrCg7fNcZSX8gq8vmbwsHPkYkz'
                   - id: mcbrc
-                    label: 'Gen III/nBrawnpaw'
+                    gen: 3
+                    label: 'Brawnpaw'
                     description: 'All have been waiting for Brawnpaw to come out of its long slumber with its crafty one-liners. It’s been a long winter without this magnanimous cub.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmY83u5tYvab15qkDmbZa8FEjX4qyN1CyMwGdBhMnNeBjp'
                   - id: mcbrd
-                    label: 'Gen IV/nBorealord'
+                    gen: 4
+                    label: 'Borealord'
                     description: 'After really packing on the pounds- and puns- this winter, Borealord is back and more considerate than ever. This bear doesn''t let anything stop it from keeping itself dignified and the gang in stitches!'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiglvkg5hkseduc3lpob35lz4cmcyyo5mnzdc32stbqff2itunmbzq'
               - id: creature_mcpe
                 label: 'Pezi'
-                children:
+                varients:
                   - id: mcpe
-                    label: 'Gen I/nPezi'
+                    gen: 1
+                    label: 'Pezi'
                     description: 'The type of pig who values hard work and a job well done. Pezi doesn''t let the carefree slackers fall behind because it wants to see everyone succeed for their own self-worth, as well as the well-being of the group.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmZy6kVdWLTHzG5ezpktM8PDnTLP9DkTxJ9mkTKigSA5pm'
                   - id: mcpeb
-                    label: 'Gen II/nPezmar'
+                    gen: 2
+                    label: 'Pezmar'
                     description: 'This is no lazy pig. If anything, Pezmar is even more meticulous than in its baby days. It has the gift of rationality to reach the other side of any challenge it may face.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmbDQKsPGrcW2cUTbq8ci326bjetwkRggKQSp3i4Z9KdZd'
                   - id: mcpec
-                    label: 'Gen III/nPezeron'
+                    gen: 3
+                    label: 'Pezeron'
                     description: 'Pezeron may look like a bit of a backbreaker, but that’s because it totally is. This pig will not rest or go for a roll in the mud till the job is done. Don’t worry, it’s just as hard (if not harder) on itself than with others.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmWPkqKE8h4rSFUt5MVnwFAsekaPdyDxj3YYc8XG5HeC2i'
                   - id: mcped
-                    label: 'Gen IV/nPezerk'
+                    gen: 4
+                    label: 'Pezerk'
                     description: 'Pezerk is now old enough to know how to soften its hard, tough-love approach. With the gift of reason, this pig can move mountains and persuade the group to join in on the fun.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreigvlbmx74ivsdmjhjz5hlbsfydjqjksl3j2o7otf7a3253u2kjis4'
               - id: creature_mcb
                 label: 'Brynly'
-                children:
+                varients:
                   - id: mcb
-                    label: 'Gen I/nBrynly'
+                    gen: 1
+                    label: 'Brynly'
                     description: 'Dauntlessness, strong and true. Brynly the badger keeps digging even through concrete. No stone left unturned, no grub left untouched, you can count on it.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmYodCii6u3ahQsbLSZs1DwtMnHHp3TffCgPQHgYrnFjiX'
                   - id: mcbb
-                    label: 'Gen II/nBryntar'
+                    gen: 2
+                    label: 'Bryntar'
                     description: 'Bryntar has embraced its nocturnal self and spends its nights hard at work. A strong, robust badger who is not afraid to give it its all to reach the other end of the tunnel. Dig, dig dig!'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmTavAbzSU5m5o3jAjuawiVZkTbRQwUjAm4xUV72hGZsEU'
                   - id: mcbc
-                    label: 'Gen III/nQuarryfang'
+                    gen: 3
+                    label: 'Quarryfang'
                     description: 'With new, monstrous claws that match its strength, Quarryfang is the real brunt of the blow. Worms, beware! This badger can make its way through the most solid of ground.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmSPVfbR2dFKCQm2omws4jh9oQCW97QdsoZ8vjioBSVhXG'
                   - id: mcbd
-                    label: 'Gen IV/nBrynmaul'
+                    gen: 4
+                    label: 'Brynmaul'
                     description: 'More efficient than every Moon Tool there is, this badger can hollow out any space in seconds! Bank on Brynmaul to lead the way out of a rock-hard pickle.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiao5xd6qzlnifqantsgmmwspfbvf5sonvujahj5bianmwqux75vf4'
               - id: creature_mcsa
                 label: 'Saturn'
-                children:
+                varients:
                   - id: mcsa
-                    label: 'Gen I/nSaturn'
+                    gen: 1
+                    label: 'Saturn'
                     description: 'Always looking for more ways to contribute to the community, Saturn is an inquisitive, thoughtful squirrel. It would never hoard his acorns, instead it is more of the type to share its last few.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmYEMM7Z4oL3VP6BxoytBsXv79yp3gXvgDoaixhGPHpxxv'
                   - id: mcsab
-                    label: 'Gen II/nSatrune'
+                    gen: 2
+                    label: 'Satrune'
                     description: 'It seems the bushier its tail gets, the more benevolent it becomes. Along with its kindness, Satrune the squirrel leaves no tree unexplored and will always share its findings with others.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmbFNRKSPeAfz6yKFWYjqMML29XDCbJvb5jVYfPqR6jRSY'
                   - id: mcsac
-                    label: 'Gen III/nSaturion'
+                    gen: 3
+                    label: 'Saturion'
                     description: 'They say a squirrel''s front teeth never stop growing, well neither does Saturion’s charitableness. This noble creature only knows how to give- and explore. This includes its ability to spread lush trees onto bare territory through gifting its acorns to the moon’s surface.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmWqyTrcuha1eAV8pwmVtXUkCYEXkrWgP7zk2fjGmPBNVt'
                   - id: mcsad
-                    label: 'Gen IV/nSatalis'
+                    gen: 4
+                    label: 'Satalis'
                     description: 'Leaving no acorn unturned, Satalis has always known the best way to help a community is to learn all there is about its environment. This squirrel has become the moon''s resident pathfinder thanks to its inquisitive nature.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreidazuuxxhpy7yxeyv2efs5doxbc3lo7bmc5tyguwfa4zp7y6yvoam'
           - id: omnivores_birds
@@ -958,66 +1130,78 @@ items:
             children:
               - id: creature_mccha
                 label: 'Chalkly'
-                children:
+                varients:
                   - id: mccha
-                    label: 'Gen I/nChalkly'
+                    gen: 1
+                    label: 'Chalkly'
                     description: 'Just like its beak, Chalkly is unbreakable. This chicken is not afraid to cross the road and knows just what it is made of.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmcrGuApNDS2xVM5Pi8ao7wvJDgvxuR3GZJYPkzAzQtX1S'
                     gender: 'male'
                   - id: mcchab
-                    label: 'Gen II/nScratchlet'
+                    gen: 2
+                    label: 'Scratchlet'
                     description: 'This spunky chicken will not back down. Chalky is sure of itself and its capabilities, proving all those chicken jokes wrong.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmNLp3Tkkj5mdvieFKDkCrPaZwZFbrd4LbcizeAVGuE2rM'
                     gender: 'male'
                   - id: mcchac
-                    label: 'Gen III/nRousecomb'
+                    gen: 3
+                    label: 'Rousecomb'
                     description: 'With an appearance that finally matches its fortitude and boldness, Chalky’s cluck comes with a bravado that’s supported by true courage. This is the chicken you want by your side if you’re scared of the dark and in a galaxy-wide blackout.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmZetvPE5JwwULGM9GS2Ky8VTUkooLPJeSt3PJ8d6KYfQu'
                     gender: 'male'
                   - id: mcchad
-                    label: 'Gen IV/nChargecrest'
+                    gen: 4
+                    label: 'Chargecrest'
                     description: 'With a much more gallant look than before, Chargecrest''s appearance matches its brave and daring personality. This chicken doesn''t wait on any eggs to hatch to make a move. It knows when the time is right and won''t be waiting on external cues.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiekvsua2nf3gh5j4ez6ktasm3n6ahsat2taho5t74l3js6q7lherm'
                     gender: 'male'
               - id: creature_mcfo
                 label: 'Fortuna'
-                children:
+                varients:
                   - id: mcfo
-                    label: 'Gen I/nFortuna'
+                    gen: 1
+                    label: 'Fortuna'
                     description: 'Fortuna believes true fortune is not tied to material belongings, but instead- appreciation for one another in the form of relational wealth. This flamingo values kindness and compassion above all else.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmNNe6jv7ML2fifC7VSWRvgppfuPDtKcovh55ArQhQmndk'
                   - id: mcfob
-                    label: 'Gen II/nForlina'
+                    gen: 2
+                    label: 'Forlina'
                     description: 'Forlina’s beauty does not only come from its elegant appearance, but its love and tenderness for those around it. This is a flamingo that knows where its fortune lies- in its massive heart.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmTt2axKbenj6KiqXFWLZbUaWLAsXEu6fGRzUYmQEbEc1E'
                   - id: mcfoc
-                    label: 'Gen III/nBlushwing'
+                    gen: 3
+                    label: 'Blushwing'
                     description: 'A truly flawless creature who’s refinement is undoubtedly more than feather-deep. It is the tenderness of Blushwing’s heart that catches the eyes of those around it. This flamingo has not forgotten what is important in life, even with its increasing beauty.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmZFCRqRVm5ACbouQ3tFqqaiF6tJc6Xcw5jWccVqAhFv6Z'
                   - id: mcfod
-                    label: 'Gen IV/nFlammirage'
+                    gen: 4
+                    label: 'Flammirage'
                     description: 'Flammirage knows that the secret to its striking elegance lies on the inside. This flamingo''s self-care routine is all about the internal with focus on its growing benevolent heart and down-to-earth demeanor.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreiauptae6ityh3t3pm4wjeo4e6vn7mwwrr4uiw2iqpv7sgrfjilmfq'
               - id: creature_mcd
                 label: 'Dalton'
-                children:
+                varients:
                   - id: mcd
-                    label: 'Gen I/nDalton'
+                    gen: 1
+                    label: 'Dalton'
                     description: 'This duck is always there when you need it. You can count on Dalton''s self-assurance and steadfastness to get you out from between a rock and a hard place.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmXmqcHaBnHriLVVBGr6jZcuVn8GeLsAv4emf2X7z35c5x'
                   - id: mcdb
-                    label: 'Gen II/nQuillwake'
+                    gen: 2
+                    label: 'Quillwake'
                     description: 'Never the one to duck-out of a tough situation, Quillwake is still a steady force to be reckoned with. For this reason, this duck is sure of itself and so are those around it.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmQo2z3jXZkKvnZBKWwwQWrPvL35wBFyqQrMfyDURpk2jr'
                   - id: mcdc
-                    label: 'Gen III/nDriftwing'
+                    gen: 3
+                    label: 'Driftwing'
                     description: 'Driftwing’s bigger bill has developed into a more accurate depiction of its capabilities and sureness of itself. But this duck has not grown cocky as it still is that solid rock for those around it.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmPyP4ejCjFEVdRVExpXdXLPc5GTZpai2EPpPkNQK7mktF'
                   - id: mcdd
-                    label: 'Gen IV/nMalladrift'
+                    gen: 4
+                    label: 'Malladrift'
                     description: 'Bigger bill. Wider wingspan. Malladrift can take whatever this duck waddles itself into and it has the experience to back that claim up. Everyone knows they can count on it.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreihyd6c2elm3s4lxqjelapkm5iibjarvpchc6thn7kmvuoocndxavq'
           - id: omnivores_reptiles
@@ -1027,42 +1211,50 @@ items:
             children:
               - id: creature_mclu
                 label: 'Ludvik'
-                children:
+                varients:
                   - id: mclu
-                    label: 'Gen I/nLudvik'
+                    gen: 1
+                    label: 'Ludvik'
                     description: 'Ludvik would take the scales off its back and give them to a friend in need. It is a considerate, heart-on-the-sleeve type lizard.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmVrbHYrvntXKM2zQGzB4G8GL2gA2uybbvacLip1oBacpQ'
                   - id: mclub
-                    label: 'Gen II/nLudvex'
+                    gen: 2
+                    label: 'Ludvex'
                     description: 'Who said reptiles are cold-blooded? Not anyone who’s met Ludvex. This lizard is among the kindest of the bunch and its undeniable warmth has only increased with time.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmdoyxJ9oH5DZ2YiAuCPmPUTJYBsTibagyD26BoQbMgcVQ'
                   - id: mcluc
-                    label: 'Gen III/nLudscale'
+                    gen: 3
+                    label: 'Ludscale'
                     description: 'If Ludscale’s size will be any representation of its massive heart, then this benevolent reptile will have to grow into the frame of the komodo dragon! This lizard is a compassionate creature who never turns down those in need.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmNgNwi7ubtRc3XWk4TmjjDUmLtvbcrPbU44rDbPT33jFV'
                   - id: mclud
-                    label: 'Gen IV/nLithscale'
+                    gen: 4
+                    label: 'Lithscale'
                     description: 'It must be hard to stay so grounded when you''ve grown into such a powerful, awe-inspiring creature. Not for Lithscale! Regardless of its new upgraded features, this lizard hasn''t forgotten the most important one that''s been there from the beginning- its heart.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreihvrbhn3o3cdakakalfmavpfpsdvdwhohcp5473hg6d2eibxsm2xm'
               - id: creature_mcta
                 label: 'Tadeo'
-                children:
+                varients:
                   - id: mcta
-                    label: 'Gen I/nTadeo'
+                    gen: 1
+                    label: 'Tadeo'
                     description: 'Even when it seems not to notice, it does. Tadeo is an all-seeing, all-knowing turtle, thanks to its checked-out appearance.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmX2UaddWFZW4yBFhYMYA2eMMtNT3jDQtQyEy6oQUxkJ4r'
                   - id: mctab
-                    label: 'Gen II/nTadshell'
+                    gen: 2
+                    label: 'Tadshell'
                     description: 'The secrets out- Tadshell has eyes at the back of its shell…. just kidding, this has yet to be confirmed, but how else to explain this turtle’s ability to see all? Perhaps it’s its brilliance and natural perceptiveness.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmSpxYVSWGTGFHztxuoz9nJzgsNRNp9yMj52WFnm6p1DYJ'
                   - id: mctac
-                    label: 'Gen III/nTiderock'
+                    gen: 3
+                    label: 'Tiderock'
                     description: 'Is that smoke coming from a shell? Accompanied by its superior intelligence and sharpness, Tiderock has grown into a fiery force with a chimney-like shape. Some presume it is to send signals, but only time will tell what evolution will bring. It’s always a mystery with this turtle.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmUeVsvTiqqfHdnBJL54GNd59vSruJbGPYQfohZmBgWCm4'
                   - id: mctad
-                    label: 'Gen IV/nTidecano'
+                    gen: 4
+                    label: 'Tidecano'
                     description: 'Confirmation: we have spotted fire. Tidecano has returned- flames and all! This turtle is certainly more conspicuous than in its wee years, but has grown even more astute and nimble.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreigz2cvyrzduxmwryl7tciq35tfmlbpnbeyxwl4xnoorguk76vdeyq'
           - id: omnivores_aquatic
@@ -1072,49 +1264,53 @@ items:
             children:
               - id: creature_mccl
                 label: 'Clause'
-                children:
+                varients:
                   - id: mccl
-                    label: 'Gen I/nClause'
+                    gen: 1
+                    label: 'Clause'
                     description: 'Whatever the waves washup, Clause is ready to handle it. This crab is steadfast when it comes to reaching a final goal, but flexible with the way it does so.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmUCaqcwrPyTsrMfFtCwrt9JwC4vpxwy5UnSdq3AUAua8k'
-                    gender: 'male'
                   - id: mcclb
-                    label: 'Gen II/nClaven'
+                    gen: 2
+                    label: 'Claven'
                     description: 'Being a creature of the water, you wouldn’t think Claven could be so grounded, but rest assured this is one trustworthy crab. However, this does not mean it is rigid. Claven is always prepared to adjust its methods.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmatHKf8E4wek6mhoX9MJzHSigA5vTBKjpB1HcYFYiX8A2'
-                    gender: 'male'
                   - id: mcclc
-                    label: 'Gen III/nClavice'
+                    gen: 3
+                    label: 'Clavice'
                     description: 'Ready to walk in all directions, Clavice reacts to the way of the water. Also, good luck catching this crab off-guard since it is extremely reliable and always prepared.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmSK3Bms1Quy1Cz3w8Wz47cFH4Rz16yzfGrCJ6tjPawJAo'
-                    gender: 'male'
                   - id: mccld
-                    label: 'Gen IV/nClamprex'
+                    gen: 4
+                    label: 'Clamprex'
                     description: 'Ready to snap in any direction necessary, Clamprex would never abuse its powers. Over the years, this crab has learned that in order to be skilled, one must practice restraint.'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreihpkcfyqc3nb2bb4zejrxoacnh7y5wwdfim5djmuzcwgxwoa3slqe'
-                    gender: 'male'
               - id: creature_mcfi
                 label: 'Fulure'
-                children:
+                varients:
                   - id: mcfi
-                    label: 'Gen I/nFulure'
+                    gen: 1
+                    label: 'Fulure'
                     description: 'Though it is still outgoing, this fish brings forward a sense of peacefulness with it. These yin and yang aspects to its personality give Fulure the perfect balance when it comes to making new connections.'
                     weight: 1
                     image: 'https://ipfs.tothemoon.net/ipfs/QmY4yCMsfdU4GoNuHceCCBdZ7XqZNXz6z2DvCaV54WG9P6'
                     gender: 'female'
                   - id: mcfib
-                    label: 'Gen II/nCurrenta'
+                    gen: 2
+                    label: 'Currenta'
                     description: 'Friendlier than ever, Currenta is more of an open-up-once-you-get-to-know-it creature. This fish has an ease to it, which is what attracts all of its 49 best friends.'
                     image: 'https://ttm.mypinata.cloud/ipfs/QmY9pLGZ4FPmzCH6HLjfNvDbmB9gZrpxbUgNY8XijvhFR6'
                     gender: 'female'
                   - id: mcfic
-                    label: 'Gen III/nBrinelume'
+                    gen: 3
+                    label: 'Brinelume'
                     description: 'Still the low-key presence it always was, Brinelume is now the center of the entire creature’s social circle- forget the fish school! If you asked it, it’d deny it, but this fish’s composed nature and no-effort approach make it the one everyone wants to be around.'
                     image: 'https://ipfs.tothemoon.net/ipfs/QmPPNn3SZRYfG8Rwx11WQ6rBwTyBc7ZumboWVhqDPP6wPb'
                     gender: 'female'
                   - id: mcfid
-                    label: 'Gen IV/nFyrion'
+                    gen: 4
+                    label: 'Fyrion'
                     description: 'There are no other fish in the sea like Fyrion. Its trademark soft demeanor has only attracted more friends throughout the years and will continue to do so…all done effortlessly, of course!'
                     image: 'https://ipfs.tothemoon.net/ipfs/bafkreifwnvtwkpjc3wthvmhypdf6d4ir6cnihjmxrdp776gthgygoszwum'
                     gender: 'female'

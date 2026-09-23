@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Icons
   m_EditorClassIdentifier: Core.Registry::Core.Registry.Registry
   assetType: 1
-  defaultAsset: {fileID: 2800000, guid: f4b3e5a29ec20194a8ba1d6cf7b1b037, type: 3}
+  defaultAsset: {fileID: 2800000, guid: ff23a5d3926745248a0a34844f59186e, type: 3}
   description: Registry for managing asset references.
   itemEntries:
   - uid: creature
@@ -69,13 +69,6 @@ MonoBehaviour:
     asset: {fileID: 2800000, guid: 7a63266f14e469246a29b04c3f02f33a, type: 3}
     tags: []
     description: Imported from Assets/ArtAssets/Textures/icons/vehicle.png
-    metadata:
-      keys: []
-      values: []
-  - uid: 9slice_flat_test
-    asset: {fileID: 2800000, guid: b5eb128e722b9584bae231400ef13950, type: 3}
-    tags: []
-    description: Imported from Assets/ArtAssets/Textures/icons/9slice_flat_test.psd
     metadata:
       keys: []
       values: []

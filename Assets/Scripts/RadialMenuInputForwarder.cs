@@ -41,7 +41,11 @@ public class RadialMenuInputForwarder : MonoBehaviour
         {
             pointerPos = Mouse.current.position.ReadValue();
             clicked = Mouse.current.leftButton.wasPressedThisFrame;
-            scroll = Mouse.current.scroll.ReadValue().y / 120f;
+            scroll = Mouse.current.scroll.ReadValue().y;
+#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+            if (InputSystem.settings.scrollDeltaBehavior == InputSettings.ScrollDeltaBehavior.KeepPlatformSpecificInputRange)
+                scroll /= 120f;
+#endif
         }
         else if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
         {

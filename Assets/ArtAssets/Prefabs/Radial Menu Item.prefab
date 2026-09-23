@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3187438137697519815}
   - {fileID: 4305533856148806003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuButton
   debugLog: 0
+  enableHoverScale: 1
+  hoverScale: 1.05
+  hoverLerpSpeed: 12
+  enableClickOffset: 1
+  clickOffset: 0.02
+  clickResetDelay: 0.08
+  enableVertexDisplacement: 1
+  vertexDisplacement: 0.02
+  enableHoverTint: 0
+  hoverTint: {r: 0.95, g: 0.95, b: 0.95, a: 1}
+  enableClickTint: 0
+  clickTint: {r: 0.85, g: 0.85, b: 0.85, a: 1}
+  tintLerpSpeed: 12
 --- !u!1 &3553942508327890524
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +72,7 @@ GameObject:
   - component: {fileID: 2362067344867220598}
   - component: {fileID: 8864413969695315672}
   - component: {fileID: 5211912737965955590}
+  - component: {fileID: 291195738971291793}
   m_Layer: 0
   m_Name: UIBlock2D
   m_TagString: Untagged
@@ -74,11 +89,10 @@ Transform:
   m_GameObject: {fileID: 3553942508327890524}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3187438137697519815}
+  m_Children: []
   m_Father: {fileID: 7343637896489198265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2362067344867220598
@@ -126,7 +140,7 @@ MonoBehaviour:
         Raw: 0
         Type: 0
       Z:
-        Raw: 0
+        Raw: 0.5
         Type: 0
     Padding:
       Left:
@@ -236,6 +250,7 @@ MonoBehaviour:
     OffsetBySize: 0
     AspectRatio: {x: 0, y: 0, z: 0}
     AspectRatioAxis: 0
+    ExpandWeight: {x: 1, y: 1}
   autoLayout:
     Axis: 0
     Spacing:
@@ -260,6 +275,9 @@ MonoBehaviour:
       ReverseOrder: 0
       alignment: -1
       ExpandToGrid: 0
+      Columns: 0
+      Rows: 0
+      ResizeChildren: 0
   visibility:
     ZIndex: 0
     BlockType: 1
@@ -273,10 +291,24 @@ MonoBehaviour:
     ReceiveShadows: 1
   PreviewSize: {x: 10, y: 10, z: 0}
   visuals:
-    Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    Color: {r: 0, g: 0.9939028, b: 1, a: 1}
     CornerRadius:
       Raw: 0
       Type: 0
+    CornerRadii:
+      TopLeft:
+        Raw: 0
+        Type: 0
+      TopRight:
+        Raw: 0
+        Type: 0
+      BottomRight:
+        Raw: 0
+        Type: 0
+      BottomLeft:
+        Raw: 0
+        Type: 0
+    UseIndividualCornerRadii: 0
     RadialFill:
       Center:
         X:
@@ -313,6 +345,14 @@ MonoBehaviour:
         Type: 0
       Enabled: 0
       Direction: 2
+      disableTopLeft: 0
+      disableTop: 0
+      disableTopRight: 0
+      disableLeft: 0
+      disableRight: 0
+      disableBottomLeft: 0
+      disableBottom: 0
+      disableBottomRight: 0
     Shadow:
       Color: {r: 0, g: 0, b: 0, a: 0.5}
       Width:
@@ -334,12 +374,14 @@ MonoBehaviour:
       Adjustment:
         CenterUV: {x: 0, y: 0}
         UVScale: {x: 1, y: 1}
+        Rotation: 0
         PixelsPerUnitMultiplier: 1
         scaleMode: 1
+        fillAxis: 0
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: f4b3e5a29ec20194a8ba1d6cf7b1b037, type: 3}
+  texture: {fileID: 0}
   sprite: {fileID: 0}
 --- !u!114 &5211912737965955590
 MonoBehaviour:
@@ -353,6 +395,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9105d9d4dcd012347bbd5fbf4c78f4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  Target: {fileID: 0}
+  FollowRotation: 0
+  LerpSpeed: 20
+  UpDirection: {x: 0, y: 1, z: 0}
+--- !u!114 &291195738971291793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3553942508327890524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388f1fceb3d2beb408ed2d18963ab884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Nova::Nova.ClipMask
+  info:
+    Color: {r: 1, g: 1, b: 1, a: 1}
+    Clip: 1
+  maskTexture: {fileID: 2800000, guid: 30183713bcb111740b8cb6bc37f009ab, type: 3}
+  isAlpha: 1
+  procedural: 0
+  proceduralPercent: 0.5
+  proceduralRotation: 0
 --- !u!1 &5295522450571307753
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,12 +446,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5295522450571307753}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4305533856148806003}
+  m_Father: {fileID: 7343637896489198265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -417,7 +483,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -1151244047195092855, guid: a39fa937094bd824f9280a40b7bfaa18, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -596,6 +662,7 @@ MonoBehaviour:
     OffsetBySize: 0
     AspectRatio: {x: 0, y: 0, z: 0}
     AspectRatioAxis: 0
+    ExpandWeight: {x: 1, y: 1}
   autoLayout:
     Axis: 0
     Spacing:
@@ -620,6 +687,9 @@ MonoBehaviour:
       ReverseOrder: 0
       alignment: -1
       ExpandToGrid: 0
+      Columns: 0
+      Rows: 0
+      ResizeChildren: 0
   visibility:
     ZIndex: 0
     BlockType: 2
@@ -631,7 +701,12 @@ MonoBehaviour:
     LightingModel: 0
     ShadowCastingMode: 2
     ReceiveShadows: 1
-  PreviewSize: {x: 1, y: 1, z: 0}
+  PreviewSize: {x: 10, y: 10, z: 0}
+  contentType: 0
+  passwordMask: "\u2022"
+  useNumberRange: 0
+  numberMin: 0
+  numberMax: 999999999
 --- !u!114 &4121125655709475427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,10 +727,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLACEHOLDER
+  m_text: X
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a39fa937094bd824f9280a40b7bfaa18, type: 2}
+  m_sharedMaterial: {fileID: -1151244047195092855, guid: a39fa937094bd824f9280a40b7bfaa18, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -679,7 +754,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 360
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -702,7 +777,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
+  m_ActiveFontFeatures: 6e72656bu
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1

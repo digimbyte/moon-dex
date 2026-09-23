@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 /// <summary>
 /// Shared base for YAML-driven buttons.
@@ -28,6 +29,7 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	public Transform EndCapAnchor { get; private set; }
 
 	public bool IsSelected { get; private set; }
+	public bool IsLeafSelected { get; private set; }
 	public bool IsActive { get; private set; }
 	public bool IsHovered { get; private set; }
 
@@ -70,75 +72,26 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	private Vector3[] _displacedVerts;
 	private bool _vertsInitialized = false;
 	private bool _retired;
-	private Nova.SortGroup _hoverLabelSort;
-	private bool _labelSortEnabled;
-	private bool _labelRenderOverOpaque;
-	private int _labelSortingOrder;
-	private int _labelRenderQueue;
 	private Material _restingWedgeMaterial;
 	private Material _hoverWedgeMaterial;
+	private int _hoverRenderQueue;
 	private float _hoverFrontTime = -1f;
+	private Nova.SortGroup _iconSort;
+	private Nova.SortGroup _textSort;
+	private bool _labelSortCaptured;
+	private readonly System.Collections.Generic.List<LabelSortState> _labelSortStates = new System.Collections.Generic.List<LabelSortState>();
 
-	void SetWedgeInFront(bool hovered)
+	struct LabelSortState
 	{
-		if (hovered)
-		{
-			if (_hoverWedgeMaterial != null || _meshRenderer == null) return;
-			var material = _meshRenderer.sharedMaterial;
-			if (material == null || material.shader.name != "hologram") return;
-			_restingWedgeMaterial = material;
-			_hoverWedgeMaterial = new Material(material);
-			// Draw after the other rings, immediately before the hovered label.
-			_hoverWedgeMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Overlay - 1;
-			_hoverWedgeMaterial.SetInt("_ZTest", (int)UnityEngine.Rendering.CompareFunction.Always);
-			_hoverWedgeMaterial.SetInt("_ZWrite", 0);
-			_meshRenderer.sharedMaterial = _hoverWedgeMaterial;
-		}
-		else if (_hoverWedgeMaterial != null)
-		{
-			if (_meshRenderer != null) _meshRenderer.sharedMaterial = _restingWedgeMaterial;
-			Destroy(_hoverWedgeMaterial);
-			_hoverWedgeMaterial = null;
-			_restingWedgeMaterial = null;
-		}
+		public Nova.SortGroup Group;
+		public bool Enabled;
+		public bool RenderOverOpaque;
+		public int SortingOrder;
+		public int RenderQueue;
 	}
 
-	void SetLabelInFront(bool hovered)
-	{
-		if (hovered)
-		{
-			if (_hoverLabelSort != null) return;
-			var text = GetComponentInChildren<Nova.TextBlock>(true);
-			if (text == null) return;
-			// The icon block is the label's parent, so both share hover priority.
-			var icon = text.transform.parent != null
-				? text.transform.parent.GetComponent<Nova.UIBlock2D>() : null;
-			var content = icon != null ? icon.gameObject : text.gameObject;
-			_hoverLabelSort = content.GetComponent<Nova.SortGroup>();
-			if (_hoverLabelSort == null)
-			{
-				_hoverLabelSort = content.AddComponent<Nova.SortGroup>();
-				_hoverLabelSort.enabled = false;
-			}
-			_labelSortEnabled = _hoverLabelSort.enabled;
-			_labelRenderOverOpaque = _hoverLabelSort.RenderOverOpaqueGeometry;
-			_labelSortingOrder = _hoverLabelSort.SortingOrder;
-			_labelRenderQueue = _hoverLabelSort.RenderQueue;
-			// Only the hovered item's icon and text bypass mesh depth.
-			_hoverLabelSort.RenderOverOpaqueGeometry = true;
-			_hoverLabelSort.SortingOrder = short.MaxValue - 1;
-			_hoverLabelSort.RenderQueue = (int)UnityEngine.Rendering.RenderQueue.Overlay;
-			_hoverLabelSort.enabled = true;
-		}
-		else if (_hoverLabelSort != null)
-		{
-			_hoverLabelSort.enabled = _labelSortEnabled;
-			_hoverLabelSort.RenderOverOpaqueGeometry = _labelRenderOverOpaque;
-			_hoverLabelSort.SortingOrder = _labelSortingOrder;
-			_hoverLabelSort.RenderQueue = _labelRenderQueue;
-			_hoverLabelSort = null;
-		}
-	}
+	const float HoverDelaySeconds = 1f;
+	const int HoverRenderQueueOffset = 2000;
 
 	void OnDisable()
 	{
@@ -146,6 +99,11 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 		SetWedgeInFront(false);
 		SetLabelInFront(false);
 		IsHovered = false;
+	}
+
+	void OnDestroy()
+	{
+		SetWedgeInFront(false);
 	}
 
 	internal void Retire()
@@ -224,6 +182,7 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 			_meshRenderer.GetPropertyBlock(_mpb);
 			_mpb.SetColor("_Color", _meshCurrentColor);
 			_mpb.SetColor("_BaseColor", _meshCurrentColor);
+			ApplyWedgeState();
 			_meshRenderer.SetPropertyBlock(_mpb);
 		}
 
@@ -256,8 +215,7 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	private void LateUpdate()
 	{
 		if (!_visualsInitialized || MeshChild == null) return;
-		if (IsHovered && _hoverFrontTime >= 0f &&
-			(Time.unscaledTime >= _hoverFrontTime || (Owner != null && ParentDepth == Owner.ActiveRingDepth)))
+		if (IsHovered && _hoverFrontTime >= 0f && Time.unscaledTime >= _hoverFrontTime)
 		{
 			_hoverFrontTime = -1f;
 			SetWedgeInFront(true);
@@ -267,13 +225,14 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 		MeshChild.localScale = Vector3.Lerp(MeshChild.localScale, _meshTargetScale, t);
 		MeshChild.localPosition = Vector3.Lerp(MeshChild.localPosition, _meshTargetLocalPos, t);
 
-		if (_meshRenderer != null)
+		if (_meshRenderer != null && _mpb != null)
 		{
 			float ct = Mathf.Clamp01(tintLerpSpeed * Time.deltaTime);
 			_meshCurrentColor = Color.Lerp(_meshCurrentColor, _meshTargetColor, ct);
 			_meshRenderer.GetPropertyBlock(_mpb);
 			_mpb.SetColor("_Color", _meshCurrentColor);
 			_mpb.SetColor("_BaseColor", _meshCurrentColor);
+			ApplyWedgeState();
 			_meshRenderer.SetPropertyBlock(_mpb);
 		}
 	}
@@ -304,13 +263,8 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 		if (_retired || !isActiveAndEnabled || IsHovered) return;
 		if (debugLog) Debug.Log($"[MenuButtonBase] OnMeshHoverEnter id='{NodeId}'", this);
 		IsHovered = true;
-		if (Owner != null && ParentDepth != Owner.ActiveRingDepth)
-			_hoverFrontTime = Time.unscaledTime + 1f;
-		else
-		{
-			SetWedgeInFront(true);
-			SetLabelInFront(true);
-		}
+		ApplyWedgeState();
+		_hoverFrontTime = Time.unscaledTime + HoverDelaySeconds;
 		OnHoverEnterLocal();
 	}
 
@@ -320,10 +274,101 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 		if (_retired || !isActiveAndEnabled) return;
 		if (debugLog) Debug.Log($"[MenuButtonBase] OnMeshHoverExit id='{NodeId}'", this);
 		IsHovered = false;
-		OnHoverExitLocal();
+		ApplyWedgeState();
 		_hoverFrontTime = -1f;
 		SetWedgeInFront(false);
 		SetLabelInFront(false);
+		OnHoverExitLocal();
+	}
+
+	void SetWedgeInFront(bool elevated)
+	{
+		if (_meshRenderer == null) return;
+
+		if (elevated)
+		{
+			if (_hoverWedgeMaterial != null) return;
+			var material = _meshRenderer.sharedMaterial;
+			if (material == null) return;
+
+			_restingWedgeMaterial = material;
+			// Reserve three queue slots at the top: mesh, icon, then text.
+			_hoverRenderQueue = Mathf.Min(4997, material.renderQueue + HoverRenderQueueOffset);
+			_hoverWedgeMaterial = new Material(material)
+			{
+				name = $"{material.name} (Section Hover)",
+				renderQueue = _hoverRenderQueue
+			};
+			if (_hoverWedgeMaterial.HasProperty("_ZTest"))
+				_hoverWedgeMaterial.SetInt("_ZTest", (int)CompareFunction.Always);
+			if (_hoverWedgeMaterial.HasProperty("_ZWrite"))
+				_hoverWedgeMaterial.SetInt("_ZWrite", 0);
+			_meshRenderer.sharedMaterial = _hoverWedgeMaterial;
+		}
+		else if (_hoverWedgeMaterial != null)
+		{
+			_meshRenderer.sharedMaterial = _restingWedgeMaterial;
+			if (Application.isPlaying) Destroy(_hoverWedgeMaterial);
+			else DestroyImmediate(_hoverWedgeMaterial);
+			_hoverWedgeMaterial = null;
+			_restingWedgeMaterial = null;
+			_hoverRenderQueue = 0;
+		}
+	}
+
+	void CaptureLabelSortGroups()
+	{
+		if (_labelSortCaptured) return;
+		var iconBlock = transform.Find("UIBlock2D");
+		_iconSort = iconBlock == null ? null : iconBlock.GetComponent<Nova.SortGroup>();
+		var textBlock = GetComponentInChildren<Nova.TextBlock>(true);
+		_textSort = textBlock == null ? null : textBlock.GetComponent<Nova.SortGroup>();
+		foreach (var group in GetComponentsInChildren<Nova.SortGroup>(true))
+		{
+			if (group == null) continue;
+			_labelSortStates.Add(new LabelSortState
+			{
+				Group = group,
+				Enabled = group.enabled,
+				RenderOverOpaque = group.RenderOverOpaqueGeometry,
+				SortingOrder = group.SortingOrder,
+				RenderQueue = group.RenderQueue
+			});
+		}
+		_labelSortCaptured = true;
+	}
+
+	void SetLabelInFront(bool elevated)
+	{
+		// Capture only when elevating, after ring setup has assigned label queues.
+		// Disable/retire before the first hover must not cache prefab defaults.
+		if (elevated) CaptureLabelSortGroups();
+		else if (!_labelSortCaptured) return;
+		for (int i = 0; i < _labelSortStates.Count; i++)
+		{
+			var state = _labelSortStates[i];
+			var group = state.Group;
+			if (group == null) continue;
+			if (elevated)
+			{
+				group.RenderOverOpaqueGeometry = true;
+				group.SortingOrder = group == _iconSort
+					? short.MaxValue - 2
+					: group == _textSort
+						? short.MaxValue - 1
+						: short.MaxValue - 3 + i;
+				int contentQueue = group == _textSort ? _hoverRenderQueue + 2 : _hoverRenderQueue + 1;
+				group.RenderQueue = Mathf.Min(4999, contentQueue);
+				group.enabled = true;
+			}
+			else
+			{
+				group.enabled = state.Enabled;
+				group.RenderOverOpaqueGeometry = state.RenderOverOpaque;
+				group.SortingOrder = state.SortingOrder;
+				group.RenderQueue = state.RenderQueue;
+			}
+		}
 	}
 
 	// State (set by RadialMenuFromYaml)
@@ -331,12 +376,28 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	{
 		IsSelected = selected;
 		OnSelectedChanged(selected);
+		ApplyWedgeState();
+	}
+
+	public void SetLeafSelected(bool selected)
+	{
+		IsLeafSelected = selected;
+		ApplyWedgeState();
 	}
 
 	public void SetActive(bool active)
 	{
 		IsActive = active;
 		OnActiveChanged(active);
+		ApplyWedgeState();
+	}
+
+	void ApplyWedgeState()
+	{
+		if (_meshRenderer == null || _mpb == null) return;
+		_mpb.SetFloat("_WedgeHovered", IsHovered ? 1f : 0f);
+		_mpb.SetFloat("_WedgeSelected", IsSelected ? 1f : 0f);
+		_mpb.SetFloat("_WedgeLeafSelected", IsLeafSelected ? 1f : 0f);
 	}
 
 	// ----- Override points for per-item visuals/behavior -----
