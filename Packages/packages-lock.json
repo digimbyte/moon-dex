@@ -11,7 +11,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d0da64c3dbfe10595687872db251a82efa163742"
+      "hash": "e95db470ae4d6b797078d25f4217a6f3d579b123"
     },
     "com.staggartcreations.splinespawner": {
       "version": "file:com.staggartcreations.splinespawner",

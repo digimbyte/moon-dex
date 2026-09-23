@@ -28,6 +28,7 @@ Material:
     - _RingActive: 1
     - _WedgeCenter: 0
     - _WedgeHovered: 0
+    - _WedgeLeafSelected: 0
     - _WedgeSelected: 0
     - _ZTest: 4
     - _ZWrite: 1

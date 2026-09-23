@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | MoonDex</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <title>MoonDex</title>
+    <meta name="theme-color" content="#05080c">
+    <link rel="shortcut icon" href="Build/Web/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="WebGLShell/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -13,7 +14,9 @@
         <canvas id="unity-canvas" width="1280" height="720" tabindex="-1"></canvas>
         <div id="unity-loading-container">
           <div id="unity-loading-bar">
-            <div id="unity-logo"></div>
+            <div id="unity-logo" aria-hidden="true"></div>
+            <div class="loading-title">MOONDEX</div>
+            <div class="loading-caption">Entering the lunar archive</div>
             <div id="unity-progress-bar-empty">
               <div id="unity-progress-bar-full"></div>
             </div>
@@ -22,8 +25,8 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
+        <span id="unity-logo-title-footer">LUNAR ARCHIVE</span>
+        <button id="unity-fullscreen-button" type="button" aria-label="Enter fullscreen" title="Enter fullscreen">⛶</button>
         <div id="unity-build-title">MoonDex</div>
       </div>
     </div>
@@ -45,9 +48,9 @@
         var div = document.createElement('div');
         div.innerHTML = msg;
         warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        if (type == 'error') div.className = 'banner-error';
         else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          if (type == 'warning') div.className = 'banner-warning';
           setTimeout(function() {
             warningBanner.removeChild(div);
             updateBannerVisibility();
@@ -56,14 +59,14 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build";
+      var buildUrl = "Build/Web/Build";
       var loaderUrl = buildUrl + "/Web.loader.js";
       var config = {
         arguments: [],
         dataUrl: buildUrl + "/Web.data.unityweb",
         frameworkUrl: buildUrl + "/Web.framework.js.unityweb",
         codeUrl: buildUrl + "/Web.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
+        streamingAssetsUrl: "Build/Web/StreamingAssets",
 
         // If you have a custom web site structure, or want to place multiple Unity build instances on the same page,
         // you can pass fullscreenElementID: "my-unity-fullscreen-container-id", in this configuration field to
@@ -87,7 +90,7 @@
       // Set this to false if you want to decouple this synchronization from
       // happening inside the engine, and you would instead like to size up
       // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+      config.matchWebGLToCanvasSize = false;
 
       // If you would like all file writes inside Unity Application.persistentDataPath
       // directory to automatically persist so that the contents are remembered when
@@ -113,10 +116,6 @@
         // config.devicePixelRatio = 1;
 
 
-      } else {
-        // Desktop style: Render the game canvas container in a window that can be maximized to fullscreen:
-        fullscreenContainer.style.width = "1280px";
-        fullscreenContainer.style.height = "720px";
       }
 
 

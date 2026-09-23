@@ -4,6 +4,8 @@ on:
   push:
     branches: [master]
     paths:
+      - 'index.html'
+      - 'WebGLShell/**'
       - 'Build/Web/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -33,16 +35,27 @@ jobs:
       - name: Require a WebGL export
         shell: bash
         run: |
-          if [ ! -f Build/Web/index.html ]; then
+          if [ ! -f Build/Web/Build/Web.loader.js ]; then
             echo '::error::Export Unity WebGL into Build/Web/ and commit the complete export before deploying.'
             exit 1
+          fi
+      - name: Package page and Unity content
+        shell: bash
+        run: |
+          mkdir -p _site/WebGLShell _site/Build/Web/TemplateData
+          cp index.html _site/index.html
+          cp WebGLShell/style.css _site/WebGLShell/style.css
+          cp -R Build/Web/Build _site/Build/Web/Build
+          cp Build/Web/TemplateData/favicon.ico _site/Build/Web/TemplateData/favicon.ico
+          if [ -d Build/Web/StreamingAssets ]; then
+            cp -R Build/Web/StreamingAssets _site/Build/Web/StreamingAssets
           fi
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload WebGL export
         uses: actions/upload-pages-artifact@v4
         with:
-          path: Build/Web
+          path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
