@@ -292,8 +292,9 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 			if (material == null) return;
 
 			_restingWedgeMaterial = material;
-			// Reserve three queue slots at the top: mesh, icon, then text.
-			_hoverRenderQueue = Mathf.Min(4997, material.renderQueue + HoverRenderQueueOffset);
+			// ScreenSpace controls inherit their root's overlay queue, including Back.
+			// Elevate mesh, icon, and text below that root, in three consecutive slots.
+			_hoverRenderQueue = Mathf.Min((int)RenderQueue.Overlay - 3, material.renderQueue + HoverRenderQueueOffset);
 			_hoverWedgeMaterial = new Material(material)
 			{
 				name = $"{material.name} (Section Hover)",
@@ -358,7 +359,7 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 						? short.MaxValue - 1
 						: short.MaxValue - 3 + i;
 				int contentQueue = group == _textSort ? _hoverRenderQueue + 2 : _hoverRenderQueue + 1;
-				group.RenderQueue = Mathf.Min(4999, contentQueue);
+				group.RenderQueue = Mathf.Min((int)RenderQueue.Overlay - 1, contentQueue);
 				group.enabled = true;
 			}
 			else

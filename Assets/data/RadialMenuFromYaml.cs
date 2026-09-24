@@ -468,7 +468,8 @@ public class RadialMenuFromYaml : MonoBehaviour
 				if (backSort == null) backSort = _backButton.AddComponent<Nova.SortGroup>();
 				backSort.RenderOverOpaqueGeometry = true;
 				// The back button is a permanent top-level control. Keep it above
-				// the temporary hovered-wedge queues (4997-4999).
+				// the temporary hovered-wedge queues (3997-3999), even when
+				// ScreenSpace inherits its root's overlay queue (4000).
 				backSort.RenderQueue = 5000;
 				backSort.SortingOrder = short.MaxValue;
 				backSort.enabled = true;
