@@ -654,7 +654,9 @@ public class RadialMenuFromYaml : MonoBehaviour
 				throw new InvalidOperationException("A different registry already uses the Image Cache bucket name.");
 
 			// The manager owns the request and texture, independently of this display.
-			var texture = await manager.GetTextureFromUrlAsync(imageCache.name, url);
+			var queue = manager.GetComponent<WikiImageRequestQueue>();
+			if (queue == null) queue = manager.gameObject.AddComponent<WikiImageRequestQueue>();
+			var texture = await queue.GetTextureAsync(manager, imageCache.name, url);
 			if (!IsCurrentImage(url, generation, target)) return;
 			target.SetImage(texture);
 			target.BodyEnabled = true;
