@@ -1319,6 +1319,9 @@ items:
     icon: 'nova'
     weight: 4
     children:
+      - id: nova_information
+        label: 'About'
+        description: '<b>NOVA Alliance</b><br><i>Uniting Humanity Across the Stars.</i><br><br>In a time when the call of the cosmos grows louder, the NOVA Alliance stands at the forefront of humanity''s next great journey. Established with a vision to spread unity among the stars, NOVA brings together elite trainers and specialists from every discipline -- scientists, engineers, artists, and thinkers -- all dedicated to pioneering a bold new frontier.<br><br>At the heart of this initiative are the Cryptonauts: volunteers who embody the spirit of exploration and the diversity of human experience. These brave individuals have joined NOVA not just to venture into space, but to carry the richness of Earth''s cultures into the cosmos. Each Cryptonaut contributes their unique talents and perspectives, ensuring that as humanity expands, it does so with the full tapestry of our collective identity.<br><br>Currently, NOVA''s grand endeavor is the colonization of the Moon. Orbiting above in a colossal capital ship, thousands of Cryptonauts rest in cryopods, awaiting activation. As infrastructure is meticulously delivered and assembled on the lunar surface, these volunteers stand ready to awaken and begin crafting a new chapter of human civilization beyond Earth.<br><br>The NOVA Alliance is more than a space program; it''s a movement towards unity through arts, creation, exploration, and beyond. By fostering collaboration and celebrating individuality, NOVA aims to weave a future where the wonders of the universe are discovered and appreciated by all.<br><br>Together, we are not just reaching for the stars -- we are bringing the very best of humanity with us.'
       - id: nova_village
         label: 'Village'
       - id: cryptonaut
@@ -2592,98 +2595,104 @@ items:
         icon: 'trainer'
         weight: 2
         children:
-          - id: trainer_gin
-            label: 'GIN'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/GIN.png'
-            description: 'A true teacher at heart. GIN is the trailblazer whose bravery is anchored to his sound judgment and kindness.'
-            weight: 1
-            gender: 'male'
-          - id: trainer_jax
-            label: 'JAX'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/JAX.png'
-            description: 'The entire universe is working in his favour and he knows it. His good things will come attitude makes JAX a man of ease and composure in any situation.'
-            weight: 1
-            gender: 'male'
-          - id: trainer_pxl
-            label: 'PXL'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/PXL.png'
-            description: 'It''s easy to go with the flow and maintain child-like wonder with an unwavering belief like PXL''s. Of course, a playful, can-do attitude is part of this package, but her most striking trait is her insurmountable fearlessness.'
-            weight: 1
-            gender: 'female'
-          - id: trainer_rev
-            label: 'REV'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/REV.png'
-            description: 'Good things come to those who wait and REV feels this deep in her bones. Her charisma and nobleness make her a magnet to those around her.'
-            weight: 1
-            gender: 'female'
-          - id: trainer_axl
-            label: 'AXL'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/AXL.png'
-            description: 'There is a time to wait, and a time to create, and AXL always knows what’s the time for what. His kindness and humor make him a valued member of the Moon Trainer team as he always keeps the gang in good spirits.'
-            weight: 1
-            gender: 'male'
-          - id: trainer_dev
-            label: 'DEV'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/DEV.png'
-            description: 'Never afraid to grab the bull by the horns, DEV and his wild hair will charm his way into your heart. A smart guy who doesn’t only depend on that, but is also determined and ready for whatever.'
-            weight: 1
-            gender: 'male'
-          - id: trainer_lin
-            label: 'LIN'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/LIN.png'
-            description: 'LIN knows that where the attention goes, energy flows. That’s why she is always counting her blessings, then watching them multiply. A talented trainer with natural technique, LIN is one smart moon cookie.'
-            weight: 1
-            gender: 'female'
-          - id: trainer_rax
-            label: 'RAX'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/RAX.png'
-            description: 'With a strong presence, RAX is not afraid to take charge when needed. She is the group''s go-to with her agile, practical approach to life and can-do attitude.'
-            weight: 1
-            gender: 'female'
-          - id: trainer_izi
-            label: 'IZI'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/IZI.png'
-            description: 'IZI definitely gives more than she gets, but that doesn’t mean she’s ever at a loss- it’s just literally impossible to match her kindness. The universe sees this and acts accordingly as it constantly sends delightful surprises her way.'
-            weight: 1
-            gender: 'female'
-          - id: trainer_kye
-            label: 'KYE'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/KYE.png'
-            description: 'KYE will still be waiting, long after the last grain falls through the hourglass. With incredible persistence, this trainer doesn’t know how to throw in the towel. The going is never tough enough for her.'
-            weight: 1
-            gender: 'female'
-          - id: trainer_wun
-            label: 'WUN'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/WUN.png'
-            description: 'When it comes to WUN, four eyes means just that- four eyes. This trainer carries the ability to spot and adapt to all happenings. Aside from his intellectual appearance, WUN is also a true jokester underneath.'
-            weight: 1
-            gender: 'male'
-          - id: trainer_zen
-            label: 'ZEN'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/ZEN.png'
-            description: 'Running water. ZEN is the peaceful force that relieves those around him and creates a state of complete serenity. At the same time, he is able to break through the dam blocking the forward motion of the group. On earth and space, not much can compete with the strength of water.'
-            weight: 1
-            gender: 'male'
-          - id: trainer_key
-            label: 'KEY'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/KEY.png'
-            description: 'KEY''s brain is in overdrive all the time, but never burns out! There''s always a light on at home with this trainer. Just try to keep up with his banter. He won''t stop till he has learned all there is to know about this universe!'
-            gender: 'male'
-          - id: trainer_uzi
-            label: 'UZI'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/UZI.png'
-            description: 'Confident and ready to run the day, UZI is a smooth talker who likes to win. He knows that with a sunny outlook and suave way, nothing is impossible. Look out!'
-            gender: 'male'
-          - id: trainer_wyn
-            label: 'WYN'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/WYN.png'
-            description: 'WYN''s in no rush to blaze the trail. She knows what''s truly hers for the taking will be there when she arrives- all in good time. Besides, racing from place to place leaves no time for laughter and that''s something she can''t go without.'
-            gender: 'female'
-          - id: trainer_zin
-            label: 'ZIN'
-            image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/ZIN.png'
-            description: 'ZIN has every skill that the terrain requires. She regularly shows Cryptonauts how to do the same for nothing in return. She sees it as a way to pay homage to the moon for being the most beautiful and giving landscape to all.'
-            gender: 'female'
+          - id: trainers_discovery_leadership
+            label: 'Discovery & Leadership'
+            children:
+              - id: trainer_gin
+                label: 'GIN'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/GIN.png'
+                description: 'A true teacher at heart. GIN is the trailblazer whose bravery is anchored to his sound judgment and kindness.'
+                weight: 1
+                gender: 'male'
+              - id: trainer_pxl
+                label: 'PXL'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/PXL.png'
+                description: 'It''s easy to go with the flow and maintain child-like wonder with an unwavering belief like PXL''s. Of course, a playful, can-do attitude is part of this package, but her most striking trait is her insurmountable fearlessness.'
+                weight: 1
+                gender: 'female'
+              - id: trainer_dev
+                label: 'DEV'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/DEV.png'
+                description: 'Never afraid to grab the bull by the horns, DEV and his wild hair will charm his way into your heart. A smart guy who doesn’t only depend on that, but is also determined and ready for whatever.'
+                weight: 1
+                gender: 'male'
+              - id: trainer_rax
+                label: 'RAX'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/RAX.png'
+                description: 'With a strong presence, RAX is not afraid to take charge when needed. She is the group''s go-to with her agile, practical approach to life and can-do attitude.'
+                weight: 1
+                gender: 'female'
+              - id: trainer_wun
+                label: 'WUN'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/WUN.png'
+                description: 'When it comes to WUN, four eyes means just that- four eyes. This trainer carries the ability to spot and adapt to all happenings. Aside from his intellectual appearance, WUN is also a true jokester underneath.'
+                weight: 1
+                gender: 'male'
+              - id: trainer_zen
+                label: 'ZEN'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/ZEN.png'
+                description: 'Running water. ZEN is the peaceful force that relieves those around him and creates a state of complete serenity. At the same time, he is able to break through the dam blocking the forward motion of the group. On earth and space, not much can compete with the strength of water.'
+                weight: 1
+                gender: 'male'
+              - id: trainer_key
+                label: 'KEY'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/KEY.png'
+                description: 'KEY''s brain is in overdrive all the time, but never burns out! There''s always a light on at home with this trainer. Just try to keep up with his banter. He won''t stop till he has learned all there is to know about this universe!'
+                gender: 'male'
+              - id: trainer_uzi
+                label: 'UZI'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/UZI.png'
+                description: 'Confident and ready to run the day, UZI is a smooth talker who likes to win. He knows that with a sunny outlook and suave way, nothing is impossible. Look out!'
+                gender: 'male'
+          - id: trainers_community_support
+            label: 'Community & Support'
+            children:
+              - id: trainer_jax
+                label: 'JAX'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/JAX.png'
+                description: 'The entire universe is working in his favour and he knows it. His good things will come attitude makes JAX a man of ease and composure in any situation.'
+                weight: 1
+                gender: 'male'
+              - id: trainer_rev
+                label: 'REV'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/REV.png'
+                description: 'Good things come to those who wait and REV feels this deep in her bones. Her charisma and nobleness make her a magnet to those around her.'
+                weight: 1
+                gender: 'female'
+              - id: trainer_axl
+                label: 'AXL'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/AXL.png'
+                description: 'There is a time to wait, and a time to create, and AXL always knows what’s the time for what. His kindness and humor make him a valued member of the Moon Trainer team as he always keeps the gang in good spirits.'
+                weight: 1
+                gender: 'male'
+              - id: trainer_lin
+                label: 'LIN'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/LIN.png'
+                description: 'LIN knows that where the attention goes, energy flows. That’s why she is always counting her blessings, then watching them multiply. A talented trainer with natural technique, LIN is one smart moon cookie.'
+                weight: 1
+                gender: 'female'
+              - id: trainer_izi
+                label: 'IZI'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/IZI.png'
+                description: 'IZI definitely gives more than she gets, but that doesn’t mean she’s ever at a loss- it’s just literally impossible to match her kindness. The universe sees this and acts accordingly as it constantly sends delightful surprises her way.'
+                weight: 1
+                gender: 'female'
+              - id: trainer_kye
+                label: 'KYE'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/KYE.png'
+                description: 'KYE will still be waiting, long after the last grain falls through the hourglass. With incredible persistence, this trainer doesn’t know how to throw in the towel. The going is never tough enough for her.'
+                weight: 1
+                gender: 'female'
+              - id: trainer_wyn
+                label: 'WYN'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/WYN.png'
+                description: 'WYN''s in no rush to blaze the trail. She knows what''s truly hers for the taking will be there when she arrives- all in good time. Besides, racing from place to place leaves no time for laughter and that''s something she can''t go without.'
+                gender: 'female'
+              - id: trainer_zin
+                label: 'ZIN'
+                image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/trainers/ZIN.png'
+                description: 'ZIN has every skill that the terrain requires. She regularly shows Cryptonauts how to do the same for nothing in return. She sees it as a way to pay homage to the moon for being the most beautiful and giving landscape to all.'
+                gender: 'female'
       - id: vehicles
         label: 'Vehicles'
         icon: 'vehicle'
@@ -2696,11 +2705,11 @@ items:
               - id: moon_buggy
                 label: 'Moon Buggy'
               - id: race_car
-                label: 'Race Car'
-                description: 'Vroom vroom. This vehicle can be upgraded/modified to increase Speed, Acceleration, and Control. The rear spoiler majorly reduces drag and provides more grip, even when approaching those crazy speeds. With a powerful engine and traction in the tires, this car is ready to run.'
+                label: 'Racing Car'
+                description: 'Racing Car: Classic Precision Meets Modular Freedom. Velocity Reimagined: The Apex of Modular Racing. Introducing Colony’s ultimate vehicles: the Modular Racing Car and Hover Car—symbols of engineering brilliance and player creativity. Designed with adaptability at their core, these vehicles thrive in every corner of the colony, from bustling villages and dynamic hub towns to the untamed open fields. Each vehicle is a canvas of customization, empowering you to craft a machine tailored to your needs, style, and terrain challenges. Built for Every Corner of the Colony. These vehicles aren’t just tools—they’re an extension of your identity within Colony. Whether navigating the tight streets of the village, showing off your customizations in the hub town, or pushing limits in the open fields, your ride defines your journey. Crafted to harmonize form and function, the Modular Racing Car and Hover Car invite you to explore, innovate, and conquer. The roads and skies are calling—build your legacy today!'
               - id: hover_craft
-                label: 'Hover Craft'
-                description: 'With its sleek, aerodynamic design, the Hovercraft can pierce through the wind with its airfoil composition and low drag shape. It can be upgraded and modified to increase Speed, Acceleration, and Control.'
+                label: 'Hover Car'
+                description: 'Hover Car: Elevate Above Limits. Velocity Reimagined: The Apex of Modular Racing. Introducing Colony’s ultimate vehicles: the Modular Racing Car and Hover Car—symbols of engineering brilliance and player creativity. Designed with adaptability at their core, these vehicles thrive in every corner of the colony, from bustling villages and dynamic hub towns to the untamed open fields. Each vehicle is a canvas of customization, empowering you to craft a machine tailored to your needs, style, and terrain challenges. Built for Every Corner of the Colony. These vehicles aren’t just tools—they’re an extension of your identity within Colony. Whether navigating the tight streets of the village, showing off your customizations in the hub town, or pushing limits in the open fields, your ride defines your journey. Crafted to harmonize form and function, the Modular Racing Car and Hover Car invite you to explore, innovate, and conquer. The roads and skies are calling—build your legacy today!'
               - id: rover
                 label: 'Rover'
                 icon: 'category_rover'
@@ -2734,45 +2743,44 @@ items:
           - id: vehicles_construction
             label: 'Construction'
             icon: 'category_vehicles_construction'
+            description: 'Lunar Engineering Division: The Keystone Fleet. The Lunar Engineering Division (LED) has unveiled its cutting-edge construction fleet, purpose-built for the unique challenges of lunar colonization. Designed with precision and resilience, each vehicle in the fleet serves as a vital component of humanity’s first steps towards a sustainable extraterrestrial settlement. The Future of Lunar Construction. This fleet represents more than a collection of tools; it’s a testament to human ingenuity and adaptability. Each vehicle’s design reflects the harsh realities of lunar construction, while their advanced features offer a glimpse of what’s possible as humanity expands its frontier. Together, these vehicles form the keystone of the Lunar Engineering Division’s mission to build a thriving outpost on the Moon.'
             children:
               - id: scissor_lift
-                label: 'Scissor Lift'
-                description: 'Made to reach heights beyond the view from its base, the scissor lift is a quick way to get those hard to reach places and build vertical.'
+                label: 'Ascend Scissor Lift'
+                description: 'The Ascend lifts colonists to new heights, enabling the installation of solar arrays, communication towers, and other elevated systems. Its modular safety harnesses and anti-vibration platforms are tailored for lunar gravity, making it indispensable for maintenance and assembly in the colony’s vertical expansion.'
                 image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/cryptonaut/vehicles/Scissor_Lift.png'
               - id: forklift
-                label: 'Forklift'
-                description: 'This lightweight champion of a forklift can hold up to nearly 100,000 lbs! This is crucial when it comes to transporting material to build.'
+                label: 'MULE Forklift'
+                description: 'Nicknamed the "MULE" for its unparalleled utility, this compact powerhouse specializes in moving essential materials like oxygen tanks, solar panels, and resource crates. Its reinforced chassis and electromagnetic stabilization system ensure precision handling even on uneven lunar surfaces. While it may lack speed, the MULE''s reliability makes it the backbone of supply chain logistics.'
                 image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/cryptonaut/vehicles/Forklift.png'
               - id: backhoe
-                label: 'Backhoe'
-                description: 'This rear actor is the ultimate excavating machine. Offering ultimate power and precision, this vehicle will be a necessity when it comes to construction, demolition, landscaping and breaking through the hardest services of the moon.'
+                label: 'Hydra Backhoe'
+                description: 'The Hydra''s dual-functionality embodies LED’s commitment to efficiency. Its front loader excels in clearing debris and moving loose regolith, while the rear-mounted excavator arm digs trenches for vital infrastructure like water pipelines and power conduits. Adaptable and rugged, the Hydra allows colonists to tackle multiple tasks without swapping equipment, optimizing mission timelines.'
                 image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/cryptonaut/vehicles/Backhoe.png'
               - id: cement_mixer
-                label: 'Cement Mixer'
-                description: 'Producing enough concrete for a metropolitan oasis, this mixer has a motor wattage of 3000. Flawlessly incorporating water and mix in a short period of time, this machine produces the most effective, smoothest concrete.'
+                label: 'Cyclone Cement Mixer'
+                description: 'Built for precision and durability, the Cyclone maintains optimal concrete consistency during transit, even in the Moon''s low-gravity environment. Advanced gyroscopic stabilization and thermal control ensure that every batch of cement meets strict structural integrity requirements, critical for building habitats and radiation shields.'
                 image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/cryptonaut/vehicles/Cement_Mixer.png'
               - id: dump_truck
-                label: 'Dump Truck'
-                description: 'Crack proof and rust proof- this dump truck helps transport construction materials, waste and just about anything that needs to get from A to B safe and secured.'
+                label: 'Atlas Dump Truck'
+                description: 'The Atlas stands as the fleet''s workhorse, hauling vast quantities of lunar soil, ore, and construction materials across the barren landscape. Outfitted with a lightweight titanium-alloy bed and an automated tipping system, it’s engineered for maximum payloads and rapid unloading, minimizing downtime on high-stakes construction projects.'
                 image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/cryptonaut/vehicles/Dump_Truck.png'
               - id: wheeled_crane
-                label: 'Wheeled Crane'
-                description: 'The Wheeled Crane can lift up to 18 tons- that''s about five Moon Elephants! This baby also has the ability to move a full 360 degrees offering complete range of motion.'
+                label: 'Colossus Standard Crane'
+                description: 'The Colossus lives up to its name, towering over the lunar base with an unparalleled reach. It’s designed to lift and position massive prefabricated structures and solar farm panels with precision. Essential for large-scale construction, its imposing presence symbolizes the monumental effort behind humanity’s leap to the stars.'
                 image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/cryptonaut/vehicles/Wheeled_Crane.png'
               - id: hydraulic_crane
-                label: 'Hydraulic Crane'
-                description: 'Due to its internal hydraulic system, this crane can hold up to 50 tons! In comparison to the solid Wheeled Crane, that is about 12 and a half Moon Elephants, which more than doubles its weight capability.'
+                label: 'Aegis Hydraulic Crane'
+                description: 'Compact and nimble, the Aegis Crane specializes in precise lifts and delicate assembly tasks. Designed for confined spaces, it’s the go-to tool for placing intricate components like antenna arrays and laboratory modules. Its advanced hydraulic system ensures smooth and controlled operations, essential for maintaining the colony’s delicate infrastructure.'
                 image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/cryptonaut/vehicles/Hydraulic_crane.png'
               - id: iex_43
-                label: 'Excavator'
-                description: 'This tank-like crawler is ideal for the uneven terrain of the moon. Its compact look and use of hydraulic power offer stability on tricky surfaces.'
+                label: 'Titan Excavator'
+                description: 'The Titan is the fleet’s heavy-duty excavator, equipped to reshape the Moon’s rugged landscape. With its articulated arm and reinforced scoop, it excels at digging foundations and carving out tunnels for subterranean facilities. Its adaptability allows colonists to sculpt the Moon into a thriving outpost, one scoop at a time.'
                 image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/cryptonaut/vehicles/Excavator.png'
           - id: vehicles_combat
             label: 'Combat'
             icon: 'category_vehicles_combat'
             children:
-              - id: king_apc
-                label: 'King APC'
               - id: goliath
                 label: 'Goliath'
           - id: vehicle_parts
@@ -2780,8 +2788,9 @@ items:
             icon: 'category_vehicle_parts'
             children:
               - id: hovercraft_parts
-                label: 'Hovercraft'
+                label: 'Hover Car'
                 icon: 'category_hovercraft_parts'
+                description: 'Modular Jet Propulsion Systems: Choose from balanced systems for control, high-output thrusters for raw speed, or precision jets for agility in tight spaces. Steering Mechanisms: Swap between ergonomic control stations or advanced interface modules designed for intuitive navigation and aerial stunts. Aerodynamic & Aesthetic Enhancements: Customize with integrated spoilers, light trails, and glow modules to stand out as you hover through the colony skies. Advanced Hover Systems: Add altitude stabilizers or efficiency boosters to tailor your hover experience to the demands of exploration or competitive racing.'
                 children:
                   - id: ihcbw_48
                     label: 'Balanced Wheel'
@@ -2820,8 +2829,9 @@ items:
                     description: 'The Lighting Booster modification is designed for increasing Acceleration, but has a negative effect on Speed. In terms of Acceleration, it is more suitable than Surge and Velocity.'
                     image: 'https://raw.githubusercontent.com/TOTHEMOONUNIVERSE/moondex/main/assets/cryptonaut/parts/HC_Lightning_Booster.png'
               - id: race_car_parts
-                label: 'Race Car'
+                label: 'Racing Car'
                 icon: 'category_race_car_parts'
+                description: 'Swappable Steering Wheels: From minimalist control hubs to precision racing-grade options, personalize your driving experience with style and performance in mind. Interchangeable Car Wheels: Optimize for terrain with options ranging from high-traction off-road tires to sleek high-speed racing wheels, each offering unique handling dynamics. Spoiler & Aerodynamic Add-Ons: Enhance stability and flair with customizable spoilers, ensuring maximum control and a look that demands attention. Utility Upgrades: Equip advanced braking systems, nitrous boosts, or even specialized cargo racks for utility in every scenario.'
                 children:
                   - id: ircbw_58
                     label: 'Balanced Wheel'
@@ -3028,20 +3038,112 @@ items:
     icon: 'earth'
     weight: 4
     children:
+      - id: earthcorp_information
+        label: 'About'
+        description: '<b>Earth Corp</b><br><i>Pioneering Interstellar Capitalism.</i><br><br>In the dawn of humanity''s expansion beyond Earth, Earth Corp stands as the titan of interstellar commerce and innovation. Committed to bringing the efficiencies of capitalism to the farthest reaches of the universe, Earth Corp specializes in the distribution of electronic goods and cutting-edge services that touch every aspect of life among the stars.<br><br>From advanced telecommunications that bridge galaxies to revolutionary transportation systems that make interstellar travel commonplace, Earth Corp is redefining what''s possible. Their defense technologies set new standards for safety and security in an ever-expanding frontier.<br><br>With a vast portfolio of patents, they are at the helm of technological advancement, ensuring they remain leaders in every field they enter.<br><br>Heavily invested in research and development, Earth Corp''s influence permeates through its commitment to innovation and excellence. They strive to not only meet the current demands of a spacefaring society but to anticipate and shape the needs of the future. By offering unparalleled products and services, Earth Corp aims to unify the cosmos under a shared vision of progress and prosperity.<br><br>As humanity reaches for the stars, Earth Corp is there to supply the tools, technologies, and infrastructure necessary to make the universe a smaller, more connected place. They''re not just participating in the future -- they''re building it.'
       - id: buildings_earthcorp
         label: 'Buildings'
         icon: 'category_buildings_earthcorp'
       - id: earthcorp_weapons
         label: 'Weapons'
         icon: 'category_weapons'
+        description: 'Earth Corp Arsenal: The Vanguard of Lunar Defense. As humanity extends its reach beyond Earth, Earth Corp leads the charge in developing state-of-the-art weaponry for the challenges of space and lunar warfare. Combining cutting-edge materials and advanced energy systems, these weapons ensure survival and dominance in the harshest environments. Each design is tailored for specific combat scenarios, offering colonists and soldiers alike the tools they need to defend humanity’s frontier. The Arsenal of Tomorrow. Earth Corp’s weapon designs symbolize the cutting edge of human ingenuity and resilience. From compact pistols to devastating heavy weapons, this arsenal equips humanity to face any challenge, ensuring the safety and expansion of colonies across the solar system. In the depths of space, Earth Corp provides the tools for survival and supremacy.'
+        children:
+          - id: earthcorp_phantom_pistol
+            label: 'P. Pistol'
+            title: 'Phantom Pistol'
+            description: 'Lightweight, compact, and deadly, the Phantom Pistol is the sidearm of choice for lunar operatives. Its plasma-charged rounds deliver precision and power, making it ideal for close-quarters engagements or as a reliable backup weapon. Advanced recoil dampening ensures accuracy even in zero-gravity environments.'
+          - id: earthcorp_viper_smg
+            label: 'V. SMG'
+            title: 'Viper SMG'
+            description: 'Built for speed and versatility, the Viper SMG excels in suppressive fire. Utilizing rapid-fire kinetic rounds infused with energy cores, this weapon delivers high impact at close to medium range. Its modular design allows quick adaptations for urban skirmishes or rugged lunar outposts.'
+          - id: earthcorp_nova_plasma_rifle
+            label: 'N. Plasma'
+            title: 'Nova Plasma Rifle'
+            description: 'The Nova Plasma Rifle channels concentrated plasma energy into devastating bursts, melting through armor and alien materials alike. Designed for medium to long-range engagements, it features an overheating safeguard and an energy recycler to maximize efficiency in prolonged battles.'
+          - id: earthcorp_cyclone_assault_rifle
+            label: 'C. Assault'
+            title: 'Cyclone Assault Rifle'
+            description: 'The Cyclone Assault Rifle is Earth Corp’s all-purpose weapon, engineered for adaptability in the unpredictable landscapes of the Moon. Firing hybrid kinetic-energy projectiles, it boasts unparalleled reliability and accuracy. Its tactical scope and adjustable fire modes make it a cornerstone of any combat operation.'
+          - id: earthcorp_inferno_flamethrower
+            label: 'I. Flame'
+            title: 'Inferno Flamethrower'
+            description: 'Specialized for close-range devastation, the Inferno Flamethrower unleashes streams of high-temperature plasma flames. Equipped with a cryo-resistant fuel canister, it’s designed to clear hostile fauna, repel enemy waves, or sterilize lunar structures from potential contamination.'
+          - id: earthcorp_thunderbolt_shotgun
+            label: 'T. Shotgun'
+            title: 'Thunderbolt Shotgun'
+            description: 'The Thunderbolt Shotgun delivers unparalleled stopping power with its electromagnetic shell dispersal system. Perfect for breaching fortified positions or close-quarters combat, its compact frame and brutal force make it a trusted tool for the colony’s elite security teams.'
+          - id: earthcorp_eclipse_sniper_rifle
+            label: 'E. Sniper'
+            title: 'Eclipse Sniper Rifle'
+            description: 'For precision at extreme distances, the Eclipse Sniper Rifle reigns supreme. Its long-range particle accelerator fires high-velocity projectiles capable of penetrating even the toughest exosuits. Designed with lunar terrain in mind, its adaptive scope compensates for the Moon’s unique light and gravity conditions.'
+          - id: earthcorp_titan_rocket_launcher
+            label: 'T. Rocket'
+            title: 'Titan Rocket Launcher'
+            description: 'The Titan Rocket Launcher is the ultimate heavy weapon, capable of obliterating vehicles, structures, or clustered enemies in a single strike. Its guided missile system ensures accuracy, while its collapsible frame makes it easier to transport across the harsh lunar landscape.'
       - id: earthcorp_vehicles
         label: 'Vehicles'
         icon: 'category_earthcorp_vehicles'
+        children:
+          - id: king_apc
+            label: 'KING APC'
+            children:
+              - id: king_apc_base_frame
+                label: 'Base Frame'
+                description: 'Earth Corps'' Apex of Modular Innovation: The KING APC. The KING APC exemplifies the cutting-edge of Earth Corps military technology, showcasing unparalleled external customization options designed to adapt to the moon’s perilous terrain and hostile threats. This modular masterpiece offers players an array of attachments tailored for exploration, combat, and utility. The image captures Earth Corps'' vision for the KING APC—a formidable vehicle whose modularity is both a gameplay mechanic and a narrative cornerstone. Every external feature reflects the ingenuity of humanity’s finest engineers, symbolizing resilience and adaptability in the face of lunar adversity.'
+              - id: king_apc_modules
+                label: 'Modules'
+                children:
+                  - id: king_apc_weapons_and_turrets
+                    label: 'Weapons and Turrets'
+                    description: 'From precision cannons to heavy artillery, the KING boasts an arsenal of interchangeable weaponry, ensuring squads can adjust their firepower for any scenario. Turret slots allow rapid response to enemy ambushes, making the vehicle a mobile fortress.'
+                  - id: king_apc_utility_enhancements
+                    label: 'Utility Enhancements'
+                    description: 'Advanced antennae, radar arrays, and communication nodes empower long-range reconnaissance and enemy detection, while smoke and flare modules provide essential defensive tools for evasion and distraction.'
+                  - id: king_apc_mobility_and_defense
+                    label: 'Mobility and Defense'
+                    description: 'Swappable wheels and suspension components optimize traversal across the moon’s varied landscape, granting improved speed, traction, or durability based on mission demands.'
+                  - id: king_apc_specialized_modules
+                    label: 'Specialized Modules'
+                    description: 'A wide range of auxiliary systems, such as energy cells, storage pods, and medical kits, support sustained operations. These modules ensure the KING adapts seamlessly to survival, combat, or exploration-focused strategies.'
+      - id: earthcorp_soldiers
+        label: 'Soldiers'
+        description: 'Earth Corp Elite Forces: Protectors of the Frontier. Earth Corp’s expansion into the cosmos demands a specialized military force, designed to safeguard humanity’s ambitions. Comprised of SWAT-based Soldiers and Experimental Units, these operatives wield cutting-edge weaponry tailored to their unique combat roles. Each soldier’s design reflects Earth Corp’s commitment to tactical superiority, blending modern functionality with a futuristic edge. Forged for Survival and Supremacy. Earth Corp’s elite forces are more than just soldiers—they’re the guardians of humanity’s future. Whether it’s the disciplined ranks of the SWAT Soldiers or the cutting-edge prowess of the Experimental Units, each operative is a testament to Earth Corp’s dedication to innovation and survival. As Earth Corp pushes further into the frontier, these warriors ensure that humanity not only survives but thrives among the stars.'
+        children:
+          - id: earthcorp_swat_soldiers
+            label: 'SWAT Soldiers'
+            description: 'The SWAT Soldiers form the backbone of Earth Corp’s security forces, excelling in tactical operations and urban combat. Their gear is inspired by modern riot and SWAT designs but reimagined for a sci-fi battlefield. Each SWAT soldier is equipped with a preferred weapon system that complements their role in combat:'
+            children:
+              - id: earthcorp_riot_specialist
+                label: 'Riot Specialist'
+                description: 'Heavily armored for close-quarters combat, these operatives use shotguns to suppress and neutralize enemies in confined spaces. Their shields and shock-resistant plating allow them to spearhead advances or control chaotic engagements.'
+              - id: earthcorp_tactical_operative
+                label: 'Tactical Operative'
+                description: 'Agile and precise, Tactical Operatives are equipped with submachine guns for high mobility and rapid fire. These soldiers excel in flanking maneuvers, breaching operations, and suppressing hostiles in fast-paced encounters.'
+              - id: earthcorp_heavy_enforcer
+                label: 'Heavy Enforcer'
+                description: 'Armed with assault rifles, Heavy Enforcers are built for balanced combat scenarios, providing reliable firepower and durability in prolonged engagements. Their reinforced armor ensures they can withstand significant punishment while maintaining suppressive fire.'
+          - id: earthcorp_experimental_units
+            label: 'Experimental Units'
+            description: 'The Experimental Units are Earth Corp’s premier specialists, designed for high-risk missions requiring unique capabilities. Each unit operates with advanced technology and a specialized weapon, ensuring they excel in their chosen combat role:'
+            children:
+              - id: earthcorp_scout
+                label: 'Scout'
+                description: 'Masters of reconnaissance and stealth, Scouts are armed with sniper rifles for long-range precision. Their lightweight armor and advanced optics allow them to identify threats and eliminate targets before they’re even seen.'
+              - id: earthcorp_demolitions_expert
+                label: 'Demolitions Expert'
+                description: 'Focused on raw destruction, these soldiers wield rocket launchers or flamethrowers, depending on the mission. Whether demolishing enemy fortifications or clearing hostile zones, Demolitions Experts bring unparalleled firepower to the battlefield.'
+              - id: earthcorp_combat_specialist
+                label: 'Combat Specialist'
+                description: 'These adaptable soldiers prefer plasma rifles, offering versatility in any situation. With mid-range energy bursts and advanced targeting systems, Combat Specialists bridge the gap between brute force and tactical precision.'
   - id: juroka
     label: 'Juroka'
     icon: 'juroka'
     weight: 4
     children:
+      - id: juroka_information
+        label: 'About'
+        description: '<b>The Juroka Hive</b><br><i>Shadows of the Moon.</i><br><br>Hidden within the perpetual darkness of the moon''s far side lies the enigmatic Juroka Hive -- a collective of diverse alien species united under a singular purpose. Unlike any known civilization, the Juroka are not a single race but a conglomerate of various life forms, each contributing unique abilities and characteristics to the hive. Their origins remain a mystery, as does the catalyst that brought these disparate species together.<br><br>The Juroka are rarely glimpsed, their presence inferred from the expanses of purple, corrupted soil that mar the lunar landscape. This otherworldly terrain teems with smaller organisms, each designed to maintain and expand a complex, biodiverse ecosystem that serves the hive''s relentless progression. As they advance, this corrupted soil spreads, overtaking the moon''s barren surface and transforming it into a thriving yet alien environment.<br><br>At the heart of their dominion stands a solitary, towering barbed spire, piercing the starless lunar sky. This ominous structure is believed to be the nexus of the Juroka Hive -- a central hub from which their influence radiates. From here, the diverse members of the hive coordinate, their collective consciousness driving the creation and proliferation of their unique ecosystem.<br><br>The Juroka Hive operates in the shadows, its true intentions unknown. Their silent expansion raises unsettling questions: What unites these different species under one hive? What is their ultimate goal? Are they confined to the moon, or do they have ambitions that stretch beyond its shadowed surface?<br><br>As humanity watches and wonders, the Juroka continue their enigmatic existence, a silent force reshaping the dark side of the moon.'
       - id: buildings_juroka
         label: 'Buildings'
         icon: 'category_buildings_juroka'
@@ -3083,16 +3185,48 @@ items:
         label: 'Plots'
         icon: 'category_moon_plots'
         children:
-          - id: moon_plot_mountain
-            label: 'Mountain'
-          - id: moon_plot_lake
-            label: 'Lake'
-          - id: moon_plot_forest
-            label: 'Forest'
-          - id: moon_plot_crater
-            label: 'Crater'
-          - id: moon_plot_meadow
-            label: 'Meadow'
+          - id: moon_plot_landscapes
+            label: 'Landscape'
+            children:
+              - id: moon_plot_mountain
+                label: 'Mountains'
+                description: 'Mountains offer rich resources, mining potential, and vast land for development. Note: this is an aerial scan - no geological surveys have taken place.'
+              - id: moon_plot_lake
+                label: 'Lakes'
+                description: 'Lakes offer a steady fish supply and ample land, making them ideal for water-based facilities. Note: this is an aerial scan - no geological surveys have taken place.'
+              - id: moon_plot_forest
+                label: 'Forests'
+                description: 'Forests offer abundant wood, diverse food sources, and extensive foraging opportunities. Note: this is an aerial scan - no geological surveys have taken place.'
+              - id: moon_plot_crater
+                label: 'Craters'
+                description: 'Craters offer exclusive foraging, unique building opportunities, and specialized development potential. Note: this is an aerial scan - no geological surveys have taken place.'
+              - id: moon_plot_river
+                label: 'Rivers'
+                description: 'Rivers provide fresh fish and ample space for private facilities. Note: this is an aerial scan - no geological surveys have taken place.'
+              - id: moon_plot_meadow
+                label: 'Meadow'
+          - id: moon_plot_substrates
+            label: 'Underground/Substrates'
+            description: 'Lunascapes (Moon Plots) from The Colonization Game. Moon Plot Substrates/Underground Environments Sneak Peek. As humanity pushes the boundaries of exploration, our early lunar probes have unveiled the hidden depths of the Moon, revealing a remarkable diversity of underground environments. From glowing crystalline caverns bathed in violet light to fiery magma chambers pulsating with raw energy, the Moon holds secrets far beyond barren surface plains. Probes have returned samples from these sites of interest, showcasing a rich tapestry of subterranean tunnels and unique substrates. Some caverns teem with vibrant bioluminescent flora, thriving in slime-filled ecosystems, while others echo with howling winds rushing through vast, hollow networks. Water-filled grottos hint at the Moon''s hidden reservoirs, while jagged metallic veins glimmer with untapped mineral wealth. Each site presents both unparalleled opportunities for resource extraction and unprecedented challenges for colonization. These discoveries fuel humanity''s ambition to not only conquer the Moon''s surface but to thrive within its enigmatic underground realms, paving the way for a new era of lunar colonization.'
+            children:
+              - id: moon_plot_crystalline_caverns
+                label: 'Crystalline Caverns'
+                description: 'Glowing crystalline caverns bathed in violet light.'
+              - id: moon_plot_magma_chambers
+                label: 'Magma Chambers'
+                description: 'Fiery magma chambers pulsating with raw energy.'
+              - id: moon_plot_slime_ecosystems
+                label: 'Slime Ecosystems'
+                description: 'Caverns teem with vibrant bioluminescent flora, thriving in slime-filled ecosystems.'
+              - id: moon_plot_hollow_networks
+                label: 'Hollow Networks'
+                description: 'Howling winds rush through vast, hollow networks.'
+              - id: moon_plot_water_grottos
+                label: 'Water-Filled Grottos'
+                description: 'Water-filled grottos hint at the Moon''s hidden reservoirs.'
+              - id: moon_plot_metallic_veins
+                label: 'Metallic Veins'
+                description: 'Jagged metallic veins glimmer with untapped mineral wealth.'
       - id: food
         label: 'Food'
         icon: 'plant'

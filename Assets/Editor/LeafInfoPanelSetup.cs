@@ -40,8 +40,8 @@ public static class LeafInfoPanelSetup
             }
         }
         if (menu == null || panel == null) return;
-        var title = panel.Find("Text Title")?.GetComponent<Nova.TextBlock>();
-        var body = panel.Find("Text Body")?.GetComponent<Nova.TextBlock>();
+        var title = panel.Find("Text Title")?.GetComponent<Aura.TextBlock>();
+        var body = panel.Find("Text Body")?.GetComponent<Aura.TextBlock>();
         if (title == null || body == null) { Debug.LogError("Info_Panel requires Text Title and Text Body."); return; }
         bool needsSetup = menu.leafPanelIn == null || menu.leafPanelOut == null;
         bool wasDirty = scene.isDirty;
@@ -57,7 +57,7 @@ public static class LeafInfoPanelSetup
                 string name = entry.FindPropertyRelative("name").stringValue;
                 if (name != "IN" && name != "OUT") continue;
                 if (entry.FindPropertyRelative("propertyName").stringValue != "Position.X") continue;
-                if (entry.FindPropertyRelative("targetComponent").objectReferenceValue != panel.GetComponent<Nova.UIBlock2D>()) continue;
+                if (entry.FindPropertyRelative("targetComponent").objectReferenceValue != panel.GetComponent<Aura.UIBlock2D>()) continue;
                 Undo.RegisterCompleteObjectUndo(animation, "Correct panel Nova position binding");
                 entry.FindPropertyRelative("propertyName").stringValue = "Position.Raw";
                 entry.FindPropertyRelative("detectedPropertyType").stringValue = "Vector3";
@@ -68,7 +68,7 @@ public static class LeafInfoPanelSetup
             }
         }
         foreach (var root in scene.GetRootGameObjects())
-        foreach (var button in root.GetComponentsInChildren<NovaSamples.UIControls.Button>(true))
+        foreach (var button in root.GetComponentsInChildren<AuraSamples.UIControls.Button>(true))
         {
             if (button.name != "Back") continue;
             button.OnClicked ??= new UnityEngine.Events.UnityEvent();

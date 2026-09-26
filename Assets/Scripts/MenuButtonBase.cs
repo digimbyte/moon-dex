@@ -76,14 +76,14 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	private Material _hoverWedgeMaterial;
 	private int _hoverRenderQueue;
 	private float _hoverFrontTime = -1f;
-	private Nova.SortGroup _iconSort;
-	private Nova.SortGroup _textSort;
+	private Aura.SortGroup _iconSort;
+	private Aura.SortGroup _textSort;
 	private bool _labelSortCaptured;
 	private readonly System.Collections.Generic.List<LabelSortState> _labelSortStates = new System.Collections.Generic.List<LabelSortState>();
 
 	struct LabelSortState
 	{
-		public Nova.SortGroup Group;
+		public Aura.SortGroup Group;
 		public bool Enabled;
 		public bool RenderOverOpaque;
 		public int SortingOrder;
@@ -321,10 +321,10 @@ public abstract class MenuButtonBase : MonoBehaviour, IRadialMenuItemHost
 	{
 		if (_labelSortCaptured) return;
 		var iconBlock = transform.Find("UIBlock2D");
-		_iconSort = iconBlock == null ? null : iconBlock.GetComponent<Nova.SortGroup>();
-		var textBlock = GetComponentInChildren<Nova.TextBlock>(true);
-		_textSort = textBlock == null ? null : textBlock.GetComponent<Nova.SortGroup>();
-		foreach (var group in GetComponentsInChildren<Nova.SortGroup>(true))
+		_iconSort = iconBlock == null ? null : iconBlock.GetComponent<Aura.SortGroup>();
+		var textBlock = GetComponentInChildren<Aura.TextBlock>(true);
+		_textSort = textBlock == null ? null : textBlock.GetComponent<Aura.SortGroup>();
+		foreach (var group in GetComponentsInChildren<Aura.SortGroup>(true))
 		{
 			if (group == null) continue;
 			_labelSortStates.Add(new LabelSortState

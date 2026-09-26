@@ -47,8 +47,8 @@ public static class RadialWedgeMeshTool
 	static readonly Color32 OuterC = new(255, 255, 255, 255); // alpha=255
 
 	/// <summary>
-	/// Builds/overwrites the provided Mesh with a 3D wedge.
-	/// - Local plane is XY, extruded +Z
+	/// Builds/overwrites the provided Mesh with an open 3D wedge shell.
+	/// - Local plane is XY, extruded +Z; only back, inner and outer faces
 	/// - Vertex color alpha marks inner/outer radial class:
 	///     outer verts alpha=255, inner verts alpha=0
 	/// </summary>
@@ -100,22 +100,6 @@ public static class RadialWedgeMeshTool
 			_tris.Add(idx + 0); _tris.Add(idx + 2); _tris.Add(idx + 3);
 		}
 
-		// FRONT face (z0)
-		for (int i = 0; i < seg; i++)
-		{
-			float t0 = (float)i / seg;
-			float t1 = (float)(i + 1) / seg;
-
-			var fi0 = new Vector3(inner2[i].x, inner2[i].y, z0);
-			var fo0 = new Vector3(outer2[i].x, outer2[i].y, z0);
-			var fo1 = new Vector3(outer2[i + 1].x, outer2[i + 1].y, z0);
-			var fi1 = new Vector3(inner2[i + 1].x, inner2[i + 1].y, z0);
-
-			AddQuad(fi1, fo1, fo0, fi0,
-					new Vector2(t1, 0), new Vector2(t1, 1), new Vector2(t0, 1), new Vector2(t0, 0),
-					InnerC, OuterC, OuterC, InnerC);
-		}
-
 		// BACK face (z1) reversed winding
 		for (int i = 0; i < seg; i++)
 		{
@@ -162,36 +146,6 @@ public static class RadialWedgeMeshTool
 			AddQuad(i1f, i0f, i0b, i1b,
 					new Vector2(t1, 0), new Vector2(t0, 0), new Vector2(t0, 1), new Vector2(t1, 1),
 					InnerC, InnerC, InnerC, InnerC);
-		}
-
-		// START cap (at start angle)
-		{
-			Vector2 in2 = inner2[0];
-			Vector2 out2 = outer2[0];
-
-			var a = new Vector3(in2.x, in2.y, z0);
-			var b = new Vector3(out2.x, out2.y, z0);
-			var c = new Vector3(out2.x, out2.y, z1);
-			var d = new Vector3(in2.x, in2.y, z1);
-
-			AddQuad(a, b, c, d,
-					new Vector2(0, 0), new Vector2(1, 0), new Vector2(1, 1), new Vector2(0, 1),
-					InnerC, OuterC, OuterC, InnerC);
-		}
-
-		// END cap (at end angle)
-		{
-			Vector2 in2 = inner2[seg];
-			Vector2 out2 = outer2[seg];
-
-			var a = new Vector3(in2.x, in2.y, z0);
-			var b = new Vector3(in2.x, in2.y, z1);
-			var c = new Vector3(out2.x, out2.y, z1);
-			var d = new Vector3(out2.x, out2.y, z0);
-
-			AddQuad(a, b, c, d,
-					new Vector2(0, 0), new Vector2(0, 1), new Vector2(1, 1), new Vector2(1, 0),
-					InnerC, InnerC, OuterC, OuterC);
 		}
 
 		mesh.Clear();

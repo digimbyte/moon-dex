@@ -16,27 +16,27 @@ public class RadialMenuFromYaml : MonoBehaviour
 
 	[Header("Leaf Information Panel")]
 	public GameObject leafInfoPanel;
-	public Nova.TextBlock leafTitle;
-	public Nova.TextBlock leafBody;
+	public Aura.TextBlock leafTitle;
+	public Aura.TextBlock leafBody;
 	public Core.Animator.Animate leafPanelIn;
 	public Core.Animator.Animate leafPanelOut;
 	bool _leafPanelVisible;
 	GameObject _backButton;
 	MenuNode _selectedVarient;
-	readonly List<Nova.UIBlockHit> _pointerUiHits = new List<Nova.UIBlockHit>();
+	readonly List<Aura.UIBlockHit> _pointerUiHits = new List<Aura.UIBlockHit>();
 	int _uiConsumedFrame = -1;
 	internal bool RingInputConsumed => _uiConsumedFrame == Time.frameCount;
 
 	internal bool BlocksRingInput(Ray ray)
 	{
 		if (RingInputConsumed) return true;
-		Nova.Interaction.RaycastAll(ray, _pointerUiHits);
+		Aura.Interaction.RaycastAll(ray, _pointerUiHits);
 		foreach (var hit in _pointerUiHits)
 		{
 			var block = hit.UIBlock;
 			if (block == null) continue;
 			if ((leafInfoPanel != null && block.transform.IsChildOf(leafInfoPanel.transform))
-				|| block.GetComponentInParent<NovaSamples.UIControls.Button>() != null)
+				|| block.GetComponentInParent<AuraSamples.UIControls.Button>() != null)
 			{
 				_uiConsumedFrame = Time.frameCount;
 				return true;
@@ -50,7 +50,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 	public bool useLocalImages;
 	[Tooltip("Folder mirroring the YAML category paths for local testing. Relative paths start at the project/build folder.")]
 	public string localImageDirectory = "remote_assets";
-	Nova.UIBlock2D _leafImage;
+	Aura.UIBlock2D _leafImage;
 	Coroutine _imageLoad;
 	UnityWebRequest _imageRequest;
 	Texture2D _loadedImage;
@@ -454,7 +454,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 			if (_backButton == null)
 			{
 				foreach (var root in gameObject.scene.GetRootGameObjects())
-				foreach (var button in root.GetComponentsInChildren<NovaSamples.UIControls.Button>(true))
+				foreach (var button in root.GetComponentsInChildren<AuraSamples.UIControls.Button>(true))
 				{
 					if (button.name != "Back" || button.OnClicked == null) continue;
 					for (int i = 0; i < button.OnClicked.GetPersistentEventCount(); i++)
@@ -464,8 +464,8 @@ public class RadialMenuFromYaml : MonoBehaviour
 			}
 			if (_backButton != null)
 			{
-				var backSort = _backButton.GetComponent<Nova.SortGroup>();
-				if (backSort == null) backSort = _backButton.AddComponent<Nova.SortGroup>();
+				var backSort = _backButton.GetComponent<Aura.SortGroup>();
+				if (backSort == null) backSort = _backButton.AddComponent<Aura.SortGroup>();
 				backSort.RenderOverOpaqueGeometry = true;
 				// The back button is a permanent top-level control. Keep it above
 				// the temporary hovered-wedge queues (3997-3999), even when
@@ -486,8 +486,8 @@ public class RadialMenuFromYaml : MonoBehaviour
 		{
 			if (Application.isPlaying && leafInfoPanel != null)
 			{
-				var panelSort = leafInfoPanel.GetComponent<Nova.SortGroup>();
-				if (panelSort == null) panelSort = leafInfoPanel.AddComponent<Nova.SortGroup>();
+				var panelSort = leafInfoPanel.GetComponent<Aura.SortGroup>();
+				if (panelSort == null) panelSort = leafInfoPanel.AddComponent<Aura.SortGroup>();
 				panelSort.RenderOverOpaqueGeometry = true;
 				panelSort.RenderQueue = (int)RenderQueue.Overlay + 1;
 				panelSort.SortingOrder = short.MaxValue;
@@ -616,7 +616,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 	void UpdateLeafImage(MenuNode node)
 	{
 		if (_leafImage == null && leafInfoPanel != null)
-			_leafImage = leafInfoPanel.transform.Find("Image")?.GetComponent<Nova.UIBlock2D>();
+			_leafImage = leafInfoPanel.transform.Find("Image")?.GetComponent<Aura.UIBlock2D>();
 		if (_leafImage == null) return;
 		string url = null;
 		try { url = ResolveImageUrl(node); }
@@ -632,13 +632,13 @@ public class RadialMenuFromYaml : MonoBehaviour
 			LoadCachedLeafImage(url, _imageGeneration, _leafImage);
 	}
 
-	bool IsCurrentImage(string url, ulong generation, Nova.UIBlock2D target)
+	bool IsCurrentImage(string url, ulong generation, Aura.UIBlock2D target)
 	{
 		return this != null && isActiveAndEnabled && generation == _imageGeneration
 			&& _imageUrl == url && target != null && _leafImage == target;
 	}
 
-	async void LoadCachedLeafImage(string url, ulong generation, Nova.UIBlock2D target)
+	async void LoadCachedLeafImage(string url, ulong generation, Aura.UIBlock2D target)
 	{
 		try
 		{
@@ -660,6 +660,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 			if (!IsCurrentImage(url, generation, target)) return;
 			target.SetImage(texture);
 			target.BodyEnabled = true;
+			target.gameObject.SetActive(true);
 		}
 		catch (Exception error)
 		{
@@ -679,7 +680,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 		bool hasVarients = HasVarients(leaf);
 		options.gameObject.SetActive(hasVarients);
 		if (!hasVarients) return;
-		var buttons = options.GetComponentsInChildren<NovaSamples.UIControls.Button>(true);
+		var buttons = options.GetComponentsInChildren<AuraSamples.UIControls.Button>(true);
 		int selectedIndex = 0;
 		if (_selectedVarient != null)
 		{
@@ -736,7 +737,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 		return url;
 	}
 
-	System.Collections.IEnumerator LoadLeafImage(string url, ulong generation, Nova.UIBlock2D target)
+	System.Collections.IEnumerator LoadLeafImage(string url, ulong generation, Aura.UIBlock2D target)
 	{
 		using (var request = UnityWebRequestTexture.GetTexture(url))
 		{
@@ -756,6 +757,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 					_loadedImage = DownloadHandlerTexture.GetContent(request);
 					_leafImage.SetImage(_loadedImage);
 					_leafImage.BodyEnabled = true;
+					_leafImage.gameObject.SetActive(true);
 				}
 			}
 			finally { if (generation == _imageGeneration) _imageRequest = null; }
@@ -780,6 +782,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 		{
 			_leafImage.ClearImage();
 			_leafImage.BodyEnabled = false;
+			_leafImage.gameObject.SetActive(false);
 		}
 		if (_loadedImage != null) Destroy(_loadedImage);
 		_loadedImage = null;
@@ -897,6 +900,10 @@ public class RadialMenuFromYaml : MonoBehaviour
 			var hitMesh = GetPooledMesh();
 			hitArea.AddComponent<MeshFilter>().sharedMesh = hitMesh;
 			RadialWedgeMeshTool.BuildInto(hitMesh, p);
+			// Match the visible shell's inward winding so its back face is
+			// hittable through the open front, without adding invisible faces.
+			hitMesh.triangles = triangles;
+			hitMesh.RecalculateNormals();
 
 			// 6.5) Create anchor transforms for text/UI placement
 			if (createAnchors)
@@ -912,6 +919,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 			// Keep the collider and event receiver on the same object. The fallback
 			// raycaster resolves RadialMenuMeshEvents from the hit collider.
 			var hitCollider = hitArea.AddComponent<MeshCollider>();
+			hitCollider.convex = false;
 			hitCollider.sharedMesh = hitMesh;
 			hitArea.AddComponent<RadialMenuMeshEvents>().Initialize(pendingItems[pendingItems.Count - 1]);
 
@@ -927,13 +935,13 @@ public class RadialMenuFromYaml : MonoBehaviour
 					Vector3 labelPosition = center.localPosition;
 					labelPosition.z = faceZ;
 					Vector3 visualLocalPosition = labelPosition;
-					var block = uiBlock.GetComponent<Nova.UIBlock2D>();
-					var iconSort = uiBlock.GetComponent<Nova.SortGroup>();
-					if (iconSort == null) iconSort = uiBlock.gameObject.AddComponent<Nova.SortGroup>();
+					var block = uiBlock.GetComponent<Aura.UIBlock2D>();
+					var iconSort = uiBlock.GetComponent<Aura.SortGroup>();
+					if (iconSort == null) iconSort = uiBlock.gameObject.AddComponent<Aura.SortGroup>();
 					// Keep each ring's UI inside its 50-wide render band so lower-ring
 					// content cannot draw through the active ring's wedge.
-					iconSort.RenderOverOpaqueGeometry = false;
-					iconSort.RenderQueue = ringQueue + 10;
+					iconSort.RenderOverOpaqueGeometry = true;
+					iconSort.RenderQueue = ringQueue + 1;
 					iconSort.SortingOrder = ringDepth;
 					iconSort.enabled = true;
 					float midRadius = p.innerDiameter * 0.5f + p.radialThickness * 0.5f;
@@ -953,12 +961,11 @@ public class RadialMenuFromYaml : MonoBehaviour
 					if (tracker == null) tracker = uiBlock.gameObject.AddComponent<TrackCamera>();
 					tracker.enabled = true;
 					tracker.LockScreenAxes = true;
-					tracker.LeafHitMesh = isLeaf ? hitArea.GetComponent<MeshFilter>() : null;
 					if (block != null)
 					{
 						var registry = RegistrySingleton.Instance;
 						Texture2D icon = registry != null ? registry.GetIcon(node.icon) : null;
-						var iconMask = uiBlock.GetComponent<Nova.ClipMask>();
+						var iconMask = uiBlock.GetComponent<Aura.ClipMask>();
 						if (iconMask != null)
 							iconMask.Mask = icon;
 						block.Size.X = iconSize;
@@ -966,8 +973,8 @@ public class RadialMenuFromYaml : MonoBehaviour
 						layoutActions.Add(() => block.TrySetLocalPosition(visualLocalPosition));
 					}
 
-					var text = rootGO.transform.Find("TextBlock")?.GetComponent<Nova.TextBlock>()
-						?? uiBlock.GetComponentInChildren<Nova.TextBlock>(true);
+					var text = rootGO.transform.Find("TextBlock")?.GetComponent<Aura.TextBlock>()
+						?? uiBlock.GetComponentInChildren<Aura.TextBlock>(true);
 					if (text != null)
 					{
 						layoutActions.Add(() =>
@@ -977,10 +984,10 @@ public class RadialMenuFromYaml : MonoBehaviour
 						});
 						text.Text = node.label;
 						// Share the label/icon sort group with the existing delayed hover override.
-						var textSort = text.GetComponent<Nova.SortGroup>();
-						if (textSort == null) textSort = text.gameObject.AddComponent<Nova.SortGroup>();
-						textSort.RenderOverOpaqueGeometry = false;
-						textSort.RenderQueue = ringQueue + 20;
+						var textSort = text.GetComponent<Aura.SortGroup>();
+						if (textSort == null) textSort = text.gameObject.AddComponent<Aura.SortGroup>();
+						textSort.RenderOverOpaqueGeometry = true;
+						textSort.RenderQueue = ringQueue + 2;
 						textSort.SortingOrder = ringDepth + 1;
 						textSort.enabled = true;
 						// Nova passes its capped layout size to TMP as the available text bounds.
@@ -997,8 +1004,8 @@ public class RadialMenuFromYaml : MonoBehaviour
 						text.TMP.enableAutoSizing = true;
 						text.TMP.textWrappingMode = TMPro.TextWrappingModes.NoWrap;
 						text.TMP.overflowMode = TMPro.TextOverflowModes.Truncate;
-						text.AutoSize.X = Nova.AutoSize.Shrink;
-						text.AutoSize.Y = Nova.AutoSize.Shrink;
+						text.AutoSize.X = Aura.AutoSize.Shrink;
+						text.AutoSize.Y = Aura.AutoSize.Shrink;
 						text.TMP.alignment = TMPro.TextAlignmentOptions.Center;
 						text.Alignment.X = 0;
 						text.Alignment.Y = 0;
@@ -1009,7 +1016,6 @@ public class RadialMenuFromYaml : MonoBehaviour
 							if (textTracker == null) textTracker = text.gameObject.AddComponent<TrackCamera>();
 							textTracker.enabled = true;
 							textTracker.LockScreenAxes = true;
-							textTracker.LeafHitMesh = hitArea.GetComponent<MeshFilter>();
 							textTracker.LeafText = text;
 							// CenterAnchor axes are tangent, extrusion, and radial respectively.
 							textTracker.LeafLabelBounds = new Vector3(labelWidth, p.extrusionDepth * 0.8f, p.radialThickness * 0.8f);
@@ -1320,6 +1326,7 @@ public class RadialMenuFromYaml : MonoBehaviour
 		internal int RemainingDepth = -1;
 		public string id;
 		public string label;
+		public string title;
 		public int gen;
 		public string description;
 		public string gender;
@@ -1327,14 +1334,15 @@ public class RadialMenuFromYaml : MonoBehaviour
 		{
 			get
 			{
-				if (string.IsNullOrWhiteSpace(gender)) return label;
+				string infoTitle = string.IsNullOrWhiteSpace(title) ? label : title;
+				if (string.IsNullOrWhiteSpace(gender)) return infoTitle;
 				string symbols = string.Empty;
 				foreach (string value in gender.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
 				{
 					if (string.Equals(value, "male", StringComparison.OrdinalIgnoreCase)) symbols += "\u2642";
 					else if (string.Equals(value, "female", StringComparison.OrdinalIgnoreCase)) symbols += "\u2640";
 				}
-				return symbols.Length == 0 ? label : label + " " + symbols;
+				return symbols.Length == 0 ? infoTitle : infoTitle + " " + symbols;
 			}
 		}
 		public string image;
@@ -1572,6 +1580,10 @@ public class RadialMenuFromYaml : MonoBehaviour
 
 				case "label":
 					node.label = Unquote(value).Replace("/n", "\n");
+					return true;
+				case "title":
+					node.title = value == "~" || string.Equals(value, "null", StringComparison.OrdinalIgnoreCase)
+						? null : Unquote(value).Replace("/n", "\n");
 					return true;
 				case "gen":
 					if (!int.TryParse(Unquote(value), out node.gen) || node.gen < 1)
